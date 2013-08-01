@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Bash_Script | Jeswang's Blog]]></title>
-  <link href="http://blog.jeswang.org/blog/categories/bash-script/atom.xml" rel="self"/>
-  <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-01T13:15:53+08:00</updated>
-  <id>http://blog.jeswang.org/</id>
+  <link href="http://Jeswang.github.com/blog/categories/bash-script/atom.xml" rel="self"/>
+  <link href="http://Jeswang.github.com/"/>
+  <updated>2013-08-01T14:32:04+08:00</updated>
+  <id>http://Jeswang.github.com/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress新建博客脚本]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/"/>
+    <link href="http://Jeswang.github.com/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/"/>
     <updated>2012-12-30T21:38:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben</id>
+    <id>http://Jeswang.github.com/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben</id>
     <content type="html"><![CDATA[<h2>重复性质的准备工作</h2>
 
 <p>每次用Octopress写博客，都要</p>
