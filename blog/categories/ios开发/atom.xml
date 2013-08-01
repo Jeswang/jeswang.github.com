@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: iOS开发 | Jeswang's Blog]]></title>
-  <link href="http://Jeswang.github.com/blog/categories/ios开发/atom.xml" rel="self"/>
-  <link href="http://Jeswang.github.com/"/>
-  <updated>2013-08-01T14:45:37+08:00</updated>
-  <id>http://Jeswang.github.com/</id>
+  <link href="http://blog.jeswang.org/blog/categories/ios开发/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T16:01:10+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[cocos2d-iPhone框架学习]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/06/28/cocos2dkuang-jia-xue-xi/"/>
+    <link href="http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi/"/>
     <updated>2012-06-28T15:18:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/06/28/cocos2dkuang-jia-xue-xi</id>
+    <id>http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi</id>
     <content type="html"><![CDATA[<h2>cocos2d-iPhone框架</h2>
 
 <h3>简介</h3>
@@ -73,9 +73,9 @@
   
   <entry>
     <title type="html"><![CDATA[cocos2d工具@192 days 考研倒计]]></title>
-    <link href="http://Jeswang.github.com/blog/2011/07/02/cocos2d%E5%B7%A5%E5%85%B7%40192-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/"/>
+    <link href="http://blog.jeswang.org/blog/2011/07/02/cocos2d%E5%B7%A5%E5%85%B7%40192-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/"/>
     <updated>2011-07-02T00:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2011/07/02/cocos2d工具@192-days-考研倒计</id>
+    <id>http://blog.jeswang.org/blog/2011/07/02/cocos2d工具@192-days-考研倒计</id>
     <content type="html"><![CDATA[<p>接触Cocos2d有一段时间了，总是间歇性的了解一些，学习的也不系统。</p>
 
 

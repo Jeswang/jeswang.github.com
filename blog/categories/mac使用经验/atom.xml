@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Mac使用经验 | Jeswang's Blog]]></title>
-  <link href="http://Jeswang.github.com/blog/categories/mac使用经验/atom.xml" rel="self"/>
-  <link href="http://Jeswang.github.com/"/>
-  <updated>2013-08-01T14:45:37+08:00</updated>
-  <id>http://Jeswang.github.com/</id>
+  <link href="http://blog.jeswang.org/blog/categories/mac使用经验/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T16:01:10+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mac下制作U盘启动]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/02/13/burn-iso-to-usb-on-mac/"/>
+    <link href="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/"/>
     <updated>2012-02-13T12:50:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/02/13/burn-iso-to-usb-on-mac</id>
+    <id>http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac</id>
     <content type="html"><![CDATA[<p class="info">
 很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
 </p>

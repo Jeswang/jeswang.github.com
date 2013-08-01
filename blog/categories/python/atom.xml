@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Python | Jeswang's Blog]]></title>
-  <link href="http://Jeswang.github.com/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://Jeswang.github.com/"/>
-  <updated>2013-08-01T14:45:37+08:00</updated>
-  <id>http://Jeswang.github.com/</id>
+  <link href="http://blog.jeswang.org/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T16:01:10+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[天涯书城 生成 TXT]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/04/12/tianya-book/"/>
+    <link href="http://blog.jeswang.org/blog/2012/04/12/tianya-book/"/>
     <updated>2012-04-12T08:43:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/04/12/tianya-book</id>
+    <id>http://blog.jeswang.org/blog/2012/04/12/tianya-book</id>
     <content type="html"><![CDATA[<p class="info">
 视频地址：<br />
 <a href="http://www.56.com/u85/v_NjI1MzgzMzA.html">有一种大哥叫刘华强</a>
@@ -178,9 +178,9 @@
   
   <entry>
     <title type="html"><![CDATA[音悦台MV下载 Python版本]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
+    <link href="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
     <updated>2012-02-21T23:25:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
+    <id>http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
     <content type="html"><![CDATA[<h3>制作过程：</h3>
 
 <p>前面写过了一个<a href="/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
@@ -239,9 +239,9 @@
   
   <entry>
     <title type="html"><![CDATA[GMusicDown Python版本]]></title>
-    <link href="http://Jeswang.github.com/blog/2011/07/30/GMusicDown/"/>
+    <link href="http://blog.jeswang.org/blog/2011/07/30/GMusicDown/"/>
     <updated>2011-07-30T00:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2011/07/30/GMusicDown</id>
+    <id>http://blog.jeswang.org/blog/2011/07/30/GMusicDown</id>
     <content type="html"><![CDATA[<p>很早以前就想做一个能从Google Music上下载一张专辑的软件，毕竟一首歌一首歌的去点击有点麻烦，但是当时也啥也不会，看HTML页面是如何跳转的也完全没有头绪，然后就放下了这个念头。后来看到有人做出了这种功能的软件，虽然没有使用，但是心里也有了个印象。</p>
 
 
@@ -277,7 +277,7 @@
 
 
 
-<p><img src="http://Jeswang.github.com/images/gmusicdown.png" alt="程序截图1" /></p>
+<p><img src="http://blog.jeswang.org/images/gmusicdown.png" alt="程序截图1" /></p>
 
 
 

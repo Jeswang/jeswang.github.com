@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Jeswang's Blog]]></title>
-  <link href="http://Jeswang.github.com/atom.xml" rel="self"/>
-  <link href="http://Jeswang.github.com/"/>
-  <updated>2013-08-01T14:45:37+08:00</updated>
-  <id>http://Jeswang.github.com/</id>
+  <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T16:01:10+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[新相机 —— GF5]]></title>
-    <link href="http://Jeswang.github.com/blog/2013/07/31/xin-xiang-ji/"/>
+    <link href="http://blog.jeswang.org/blog/2013/07/31/xin-xiang-ji/"/>
     <updated>2013-07-31T12:57:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2013/07/31/xin-xiang-ji</id>
-    <content type="html"><![CDATA[<p><img src="http://Jeswang.github.com/images/camera_GF5.JPG" alt="GF5" /></p>
+    <id>http://blog.jeswang.org/blog/2013/07/31/xin-xiang-ji</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.jeswang.org/images/camera_GF5.JPG" alt="GF5" /></p>
 
 <!--more-->
 
@@ -51,9 +51,9 @@
 
 <h3>PS: 附上两张在北京海洋馆拍的样张</h3>
 
-<p><img src="http://Jeswang.github.com/images/gf5/1.JPG" alt="1" /></p>
+<p><img src="http://blog.jeswang.org/images/gf5/1.JPG" alt="1" /></p>
 
-<p><img src="http://Jeswang.github.com/images/gf5/2.jpg" alt="2" /></p>
+<p><img src="http://blog.jeswang.org/images/gf5/2.jpg" alt="2" /></p>
 
 <p>- EOF -</p>
 ]]></content>
@@ -61,9 +61,9 @@
   
   <entry>
     <title type="html"><![CDATA[常用的 Chrome 插件]]></title>
-    <link href="http://Jeswang.github.com/blog/2013/06/25/chang-yong-de-chromecha-jian/"/>
+    <link href="http://blog.jeswang.org/blog/2013/06/25/chang-yong-de-chromecha-jian/"/>
     <updated>2013-06-25T14:17:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2013/06/25/chang-yong-de-chromecha-jian</id>
+    <id>http://blog.jeswang.org/blog/2013/06/25/chang-yong-de-chromecha-jian</id>
     <content type="html"><![CDATA[<h3>我爱折腾</h3>
 
 <p>和一些程序员一样，我喜欢折腾。面对不断变化、让人眼花缭乱的新软件，我总结自己的折腾分为两个阶段：</p>
@@ -116,7 +116,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/1.png" alt="一翻截图" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/1.png" alt="一翻截图" /></p>
 
 <h4>One-Click Extensions Manager</h4>
 
@@ -126,7 +126,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/2.png" alt="One-Click Extensions Manager" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/2.png" alt="One-Click Extensions Manager" /></p>
 
 <h4>WhatFont</h4>
 
@@ -136,7 +136,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/3.png" alt="WhatFont" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/3.png" alt="WhatFont" /></p>
 
 <h4>Hover Zoom</h4>
 
@@ -146,7 +146,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/4.png" alt="Hover Zoom" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/4.png" alt="Hover Zoom" /></p>
 
 <h4>Evernote Web Clipper</h4>
 
@@ -156,7 +156,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/5.png" alt="Evernote Web Clipper" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/5.png" alt="Evernote Web Clipper" /></p>
 
 <h4>Clearly</h4>
 
@@ -166,7 +166,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/6.png" alt="Clearly" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/6.png" alt="Clearly" /></p>
 
 <h4>cookie.txt export</h4>
 
@@ -176,7 +176,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/7.png" alt="cookie.txt export" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/7.png" alt="cookie.txt export" /></p>
 
 <h4>json tool</h4>
 
@@ -186,7 +186,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/8.png" alt="json tool" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/8.png" alt="json tool" /></p>
 
 <h4>Better History</h4>
 
@@ -196,7 +196,7 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/9.png" alt="Better History" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/9.png" alt="Better History" /></p>
 
 <h4>妈妈再也不用担心我的macbook发烫计划2.0</h4>
 
@@ -206,15 +206,15 @@
 
 <p>截图：</p>
 
-<p><img src="http://Jeswang.github.com/images/chrome/10.jpg" alt="妈妈再也不用担心我的macbook发烫计划2.0" /></p>
+<p><img src="http://blog.jeswang.org/images/chrome/10.jpg" alt="妈妈再也不用担心我的macbook发烫计划2.0" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Tmux 快速教程]]></title>
-    <link href="http://Jeswang.github.com/blog/2013/06/24/tmux-kuai-su-jiao-cheng/"/>
+    <link href="http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/"/>
     <updated>2013-06-24T16:54:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2013/06/24/tmux-kuai-su-jiao-cheng</id>
+    <id>http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng</id>
     <content type="html"><![CDATA[<p class="info">
 翻译的文章：<a href="http://robots.thoughtbot.com/post/2641409235/a-tmux-crash-course">A Tmux Crash Course</a>
 </p>
@@ -326,9 +326,9 @@
   
   <entry>
     <title type="html"><![CDATA[试用Farbox]]></title>
-    <link href="http://Jeswang.github.com/blog/2013/06/17/shi-yong-farbox/"/>
+    <link href="http://blog.jeswang.org/blog/2013/06/17/shi-yong-farbox/"/>
     <updated>2013-06-17T12:52:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2013/06/17/shi-yong-farbox</id>
+    <id>http://blog.jeswang.org/blog/2013/06/17/shi-yong-farbox</id>
     <content type="html"><![CDATA[<h2>Hi, Farbox Editor.</h2>
 
 <p>在使用 <a href="http://octopress.org">Octopress</a> 和 <a href="http://pages.github.com">Github Pages</a> 作为自己的 Blog 系统，种种原因，好久没有更新。</p>
@@ -357,9 +357,9 @@
   
   <entry>
     <title type="html"><![CDATA[豆瓣图书和电影列表]]></title>
-    <link href="http://Jeswang.github.com/blog/2013/03/18/dou-ban-tu-shu-he-dian-ying-lie-biao/"/>
+    <link href="http://blog.jeswang.org/blog/2013/03/18/dou-ban-tu-shu-he-dian-ying-lie-biao/"/>
     <updated>2013-03-18T01:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2013/03/18/dou-ban-tu-shu-he-dian-ying-lie-biao</id>
+    <id>http://blog.jeswang.org/blog/2013/03/18/dou-ban-tu-shu-he-dian-ying-lie-biao</id>
     <content type="html"><![CDATA[<p class="info">
 一年以前写的抓取自己豆瓣电影和图书列表的脚本。
 </p>
@@ -367,7 +367,7 @@
 
 
 
-<figure class='code'><figcaption><span>[抓取代码] (getDoubanList.py)</span> <a href='http://Jeswang.github.com/downloads/code/getDoubanList.py'>download</a></figcaption>
+<figure class='code'><figcaption><span>[抓取代码] (getDoubanList.py)</span> <a href='http://blog.jeswang.org/downloads/code/getDoubanList.py'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -620,7 +620,7 @@
 </ul>
 
 
-<p><img src="http://Jeswang.github.com/images/getdouban.png" alt="image-1" /></p>
+<p><img src="http://blog.jeswang.org/images/getdouban.png" alt="image-1" /></p>
 
 <ul>
 <li>修改代码中的dowang为你的豆瓣名字。</li>
@@ -634,9 +634,9 @@
   
   <entry>
     <title type="html"><![CDATA[我的VIM配置文件]]></title>
-    <link href="http://Jeswang.github.com/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian/"/>
+    <link href="http://blog.jeswang.org/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian/"/>
     <updated>2013-01-14T12:54:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian</id>
+    <id>http://blog.jeswang.org/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian</id>
     <content type="html"><![CDATA[<p>这学期的课都上完了，终于有时间和代码相处了。</p>
 
 <p>好久没有使用vim，有些快捷键的淡忘了。</p>
@@ -794,9 +794,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress新建博客脚本]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/"/>
+    <link href="http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/"/>
     <updated>2012-12-30T21:38:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben</id>
+    <id>http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben</id>
     <content type="html"><![CDATA[<h2>重复性质的准备工作</h2>
 
 <p>每次用Octopress写博客，都要</p>
@@ -865,9 +865,9 @@
   
   <entry>
     <title type="html"><![CDATA[2012年读书总结]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/12/30/2012nian-du-shu-zong-jie/"/>
+    <link href="http://blog.jeswang.org/blog/2012/12/30/2012nian-du-shu-zong-jie/"/>
     <updated>2012-12-30T19:44:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/12/30/2012nian-du-shu-zong-jie</id>
+    <id>http://blog.jeswang.org/blog/2012/12/30/2012nian-du-shu-zong-jie</id>
     <content type="html"><![CDATA[<p>2012年是进入研究生学习的第一个半年，尽管了解了很多学习的方向和名词，但是认真阅读的时间很少，深入思考的时间也很少。看的书多是娱乐休闲，好几本有难度需要思考总结的图书都没有完整看完，很惭愧。</p>
 
 <p>决心要在2013年，有一个完整的，有总结的读书计划。读更多的有益之书，读更多英文原著。</p>
@@ -937,13 +937,13 @@
 
 <p>最后附几张鲁豫到李敖新书房采访的节目的截屏，自勉：</p>
 
-<p><img src="http://Jeswang.github.com/images/liao/1.png" height="500" width="500" alt="image-1" /></p>
+<p><img src="http://blog.jeswang.org/images/liao/1.png" height="500" width="500" alt="image-1" /></p>
 
-<p><img src="http://Jeswang.github.com/images/liao/2.png" height="500" width="500" alt="image-2" /></p>
+<p><img src="http://blog.jeswang.org/images/liao/2.png" height="500" width="500" alt="image-2" /></p>
 
-<p><img src="http://Jeswang.github.com/images/liao/3.png" height="500" width="500" alt="image-3" /></p>
+<p><img src="http://blog.jeswang.org/images/liao/3.png" height="500" width="500" alt="image-3" /></p>
 
-<p><img src="http://Jeswang.github.com/images/liao/4.png" height="500" width="500" alt="image-4" /></p>
+<p><img src="http://blog.jeswang.org/images/liao/4.png" height="500" width="500" alt="image-4" /></p>
 
 <p>- EOF -</p>
 ]]></content>
@@ -951,9 +951,9 @@
   
   <entry>
     <title type="html"><![CDATA[Stay hungry, stay foolish]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/12/03/stay-hungry/"/>
+    <link href="http://blog.jeswang.org/blog/2012/12/03/stay-hungry/"/>
     <updated>2012-12-03T22:49:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/12/03/stay-hungry</id>
+    <id>http://blog.jeswang.org/blog/2012/12/03/stay-hungry</id>
     <content type="html"><![CDATA[<p>最近两周的生活有点不太规律，总是在被任务追着走，效率不高，连每天做了什么都无法记录。问题出在哪里？</p>
 
 <p>~~~~</p>
@@ -987,9 +987,9 @@
   
   <entry>
     <title type="html"><![CDATA[《影响力》我读到了什么？]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/10/25/ying-xiang-li-wo-du-dao-liao-shi-yao/"/>
+    <link href="http://blog.jeswang.org/blog/2012/10/25/ying-xiang-li-wo-du-dao-liao-shi-yao/"/>
     <updated>2012-10-25T10:33:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/10/25/ying-xiang-li-wo-du-dao-liao-shi-yao</id>
+    <id>http://blog.jeswang.org/blog/2012/10/25/ying-xiang-li-wo-du-dao-liao-shi-yao</id>
     <content type="html"><![CDATA[<h2>为什么读？</h2>
 
 <p>假期里，认真地读了李笑来老师的《把时间当朋友》和刘未鹏的《暗时间》（准确的说是一部分），书里都提到了《影响力》这本书。然后就用了大约1周的时间，在公交车上仔细的读了一下。虽然读的断断续续的，但是读的时候都很投入，很被书里的内容吸引，内容上也很受启发。</p>
@@ -1045,10 +1045,10 @@
   
   <entry>
     <title type="html"><![CDATA[制作iOS App会用到的资源]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/08/12/zhi-zuo-ios-appke-neng-yong-dao-de-zi-yuan/"/>
+    <link href="http://blog.jeswang.org/blog/2012/08/12/zhi-zuo-ios-appke-neng-yong-dao-de-zi-yuan/"/>
     <updated>2012-08-12T08:43:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/08/12/zhi-zuo-ios-appke-neng-yong-dao-de-zi-yuan</id>
-    <content type="html"><![CDATA[<p><img src="http://Jeswang.github.com/images/iphone_resource/BluePrint.jpg" alt="image-1" /></p>
+    <id>http://blog.jeswang.org/blog/2012/08/12/zhi-zuo-ios-appke-neng-yong-dao-de-zi-yuan</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.jeswang.org/images/iphone_resource/BluePrint.jpg" alt="image-1" /></p>
 
 <p>接触iOS开发已经有一段时间了，虽然没有什么拿得出手作品，但是积累了一些在制作App的过程中会用到的资源，拿出来整理一下。</p>
 
@@ -1116,9 +1116,9 @@
   
   <entry>
     <title type="html"><![CDATA[cocos2d-iPhone框架学习]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/06/28/cocos2dkuang-jia-xue-xi/"/>
+    <link href="http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi/"/>
     <updated>2012-06-28T15:18:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/06/28/cocos2dkuang-jia-xue-xi</id>
+    <id>http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi</id>
     <content type="html"><![CDATA[<h2>cocos2d-iPhone框架</h2>
 
 <h3>简介</h3>
@@ -1154,15 +1154,15 @@
 
 <h4>菜单界面</h4>
 
-<p><img src="http://Jeswang.github.com/images/cocos2d/1.png" alt="Menu" /></p>
+<p><img src="http://blog.jeswang.org/images/cocos2d/1.png" alt="Menu" /></p>
 
 <h4>游戏界面</h4>
 
-<p><img src="http://Jeswang.github.com/images/cocos2d/2.png" alt="Game" /></p>
+<p><img src="http://blog.jeswang.org/images/cocos2d/2.png" alt="Game" /></p>
 
 <h4>结束界面</h4>
 
-<p><img src="http://Jeswang.github.com/images/cocos2d/3.png" alt="Score" /></p>
+<p><img src="http://blog.jeswang.org/images/cocos2d/3.png" alt="Score" /></p>
 
 <h2>总结</h2>
 
@@ -1174,9 +1174,9 @@
   
   <entry>
     <title type="html"><![CDATA[Zen-Coding]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/05/21/zen-coding/"/>
+    <link href="http://blog.jeswang.org/blog/2012/05/21/zen-coding/"/>
     <updated>2012-05-21T12:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/05/21/zen-coding</id>
+    <id>http://blog.jeswang.org/blog/2012/05/21/zen-coding</id>
     <content type="html"><![CDATA[<p class="info">
 测试一下列表的显示样式。
 </p>
@@ -1228,16 +1228,16 @@
   
   <entry>
     <title type="html"><![CDATA[画 来自 Paper by FiftyThree]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/05/05/hua/"/>
+    <link href="http://blog.jeswang.org/blog/2012/05/05/hua/"/>
     <updated>2012-05-05T10:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/05/05/hua</id>
+    <id>http://blog.jeswang.org/blog/2012/05/05/hua</id>
     <content type="html"><![CDATA[<h2>我的画</h2>
 
 <p>最近买了<a href="http://www.fiftythree.com/paper">Paper by FiftyThree</a>，这里是用iPad花的几幅画：</p>
 
-<p><img src="http://Jeswang.github.com/images/papers/image-1.jpg" alt="image-1" />
-<img src="http://Jeswang.github.com/images/papers/image-2.jpg" alt="image-2" />
-<img src="http://Jeswang.github.com/images/papers/image-3.jpg" alt="image-3" /></p>
+<p><img src="http://blog.jeswang.org/images/papers/image-1.jpg" alt="image-1" />
+<img src="http://blog.jeswang.org/images/papers/image-2.jpg" alt="image-2" />
+<img src="http://blog.jeswang.org/images/papers/image-3.jpg" alt="image-3" /></p>
 
 <h2>其他人的画：</h2>
 
@@ -1247,9 +1247,9 @@
   
   <entry>
     <title type="html"><![CDATA[天涯书城 生成 TXT]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/04/12/tianya-book/"/>
+    <link href="http://blog.jeswang.org/blog/2012/04/12/tianya-book/"/>
     <updated>2012-04-12T08:43:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/04/12/tianya-book</id>
+    <id>http://blog.jeswang.org/blog/2012/04/12/tianya-book</id>
     <content type="html"><![CDATA[<p class="info">
 视频地址：<br />
 <a href="http://www.56.com/u85/v_NjI1MzgzMzA.html">有一种大哥叫刘华强</a>
@@ -1285,7 +1285,7 @@
 
 
 
-<figure class='code'><figcaption><span> (tianyabook.py)</span> <a href='http://Jeswang.github.com/downloads/code/tianyabook.py'>download</a></figcaption>
+<figure class='code'><figcaption><span> (tianyabook.py)</span> <a href='http://blog.jeswang.org/downloads/code/tianyabook.py'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1413,9 +1413,9 @@
   
   <entry>
     <title type="html"><![CDATA[每个人都需要VimWiki]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/04/04/my-wiki-life/"/>
+    <link href="http://blog.jeswang.org/blog/2012/04/04/my-wiki-life/"/>
     <updated>2012-04-04T19:29:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/04/04/my-wiki-life</id>
+    <id>http://blog.jeswang.org/blog/2012/04/04/my-wiki-life</id>
     <content type="html"><![CDATA[<h2>为什么要记录？</h2>
 
 <ul>
@@ -1475,7 +1475,7 @@
 </ul>
 
 
-<p><img src="http://Jeswang.github.com/images/vimwiki.png" alt="My VimWiki" /></p>
+<p><img src="http://blog.jeswang.org/images/vimwiki.png" alt="My VimWiki" /></p>
 
 <h2>链接</h2>
 
@@ -1502,12 +1502,12 @@
   
   <entry>
     <title type="html"><![CDATA[音悦台MV下载 Python版本]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
+    <link href="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
     <updated>2012-02-21T23:25:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
+    <id>http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
     <content type="html"><![CDATA[<h3>制作过程：</h3>
 
-<p>前面写过了一个<a href="http://Jeswang.github.com/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
+<p>前面写过了一个<a href="http://blog.jeswang.org/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
 
 <p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
 
@@ -1563,9 +1563,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mac下制作U盘启动]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/02/13/burn-iso-to-usb-on-mac/"/>
+    <link href="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/"/>
     <updated>2012-02-13T12:50:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/02/13/burn-iso-to-usb-on-mac</id>
+    <id>http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac</id>
     <content type="html"><![CDATA[<p class="info">
 很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
 </p>
@@ -1606,7 +1606,7 @@
 
 <p>效果如图：</p>
 
-<p><img src="http://Jeswang.github.com/images/dd.png" alt="dd" /></p>
+<p><img src="http://blog.jeswang.org/images/dd.png" alt="dd" /></p>
 
 <p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
 
@@ -1632,9 +1632,9 @@
   
   <entry>
     <title type="html"><![CDATA[问自己的几个问题]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/01/27/ask-myself/"/>
+    <link href="http://blog.jeswang.org/blog/2012/01/27/ask-myself/"/>
     <updated>2012-01-27T02:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/01/27/ask-myself</id>
+    <id>http://blog.jeswang.org/blog/2012/01/27/ask-myself</id>
     <content type="html"><![CDATA[<h2>问题的由来</h2>
 
 <p>前几日与同学小聚， 听到了一个这样的说法： 女孩子找对象最好不要找一个学计算机出身的男生， 因为计算机这个东西太容易学会了， 随便找一个本科生学几个月就可以做IT了。 学计算机的男生在社会的竞争中一点优势都没有， 很容易就被淘汰了， 不如其他自然科学的学习来得扎实。</p>
@@ -1689,9 +1689,9 @@
   
   <entry>
     <title type="html"><![CDATA[新的Blog系统---OCTOPress]]></title>
-    <link href="http://Jeswang.github.com/blog/2012/01/24/xin-de-blogxi-tong-octopress/"/>
+    <link href="http://blog.jeswang.org/blog/2012/01/24/xin-de-blogxi-tong-octopress/"/>
     <updated>2012-01-24T02:00:00+08:00</updated>
-    <id>http://Jeswang.github.com/blog/2012/01/24/xin-de-blogxi-tong-octopress</id>
+    <id>http://blog.jeswang.org/blog/2012/01/24/xin-de-blogxi-tong-octopress</id>
     <content type="html"><![CDATA[<h2>新的起点</h2>
 
 <p>最近octopress很火爆, 就clone了一个下来, 在Github Pages上重新搭建一下博客.</p>
