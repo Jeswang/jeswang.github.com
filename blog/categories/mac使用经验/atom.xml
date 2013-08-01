@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac使用经验 | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/mac使用经验/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T13:15:53+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mac下制作U盘启动]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/"/>
+    <updated>2012-02-13T12:50:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac</id>
+    <content type="html"><![CDATA[<p class="info">
+很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
+</p>
+
+
+<h3>缘由：</h3>
+
+<p>实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。</p>
+
+<p>经常使用U盘安装系统的朋友知道Windows下有一个<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a>的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用。</p>
+
+<p>自从使用了Mac的磁盘恢复以后，我就对Mac下的磁盘恢复很有好感，觉得应该也可以直接恢复ISO到U盘。于是就尝试了一下，结果遇到一下问题：</p>
+
+<p>```</p>
+
+<pre><code>磁盘工具显示错误：未能验证来源：无效的自变量
+</code></pre>
+
+<p>```</p>
+
+<h3>解决方法：</h3>
+
+<p>使用命令恢复ISO镜像到U盘：</p>
+
+<p><code>bash
+$ diskutil list ＃显示当前所有得磁盘情况
+$ diskutil unmountDisk /dev/disk1 ＃卸载U盘上的所有磁盘
+$ dd if={ISO_IMAGE_HERE_} of=/dev/disk1 bs=1m #拷贝磁盘
+</code></p>
+
+<p>上面的命令你看不到复制的过程，你可以通过pv命令（默认Mac没有这条命令，需要brew install pv安装一下）
+如</p>
+
+<p>``` bash</p>
+
+<pre><code>$ pv -petr ubuntu-11.10-desktop-i386.iso | dd of=/dev/disk2 bs=1m
+</code></pre>
+
+<p>```</p>
+
+<p>效果如图：</p>
+
+<p><img src="/images/dd.png" alt="dd" /></p>
+
+<p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
+
+<ul>
+<li><p><strong><a href="http://www.gingerbeardman.com/dd-gui/">dd-gui</a></strong></p></li>
+<li><p><strong><a href="http://unetbootin.sourceforge.net/">UNetbootin</a></strong></p></li>
+</ul>
+
+
+<h4>2012-2-27 更新：</h4>
+
+<p>今天尝试用这个方法将 Windows7 的ISO启动失败了，原因未知。</p>
+
+<h4>内容参考来源：</h4>
+
+<p>[1] <a href="http://forums.macrumors.com/showthread.php?t=598291">how to "burn" an ISO to USB flash drive?</a></p>
+
+<p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
+
+<p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bash_Script | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/bash-script/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T13:15:53+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress新建博客脚本]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/"/>
+    <updated>2012-12-30T21:38:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben</id>
+    <content type="html"><![CDATA[<h2>重复性质的准备工作</h2>
+
+<p>每次用Octopress写博客，都要</p>
+
+<ul>
+<li>打开终端，转到Octopress的目录</li>
+<li>敲入<code>rake 文章名字</code></li>
+<li>打开创建的文件开始写Blog</li>
+<li>在终端输入，<code>rake preview</code></li>
+<li>浏览器中看到输出的样式</li>
+</ul>
+
+
+<p>这样重复机械性的工作，不仅增加了写博客的准备时间，也增加了开始写博客的心理代价。</p>
+
+<h2>Mac下的解决方案</h2>
+
+<p>Shell反反复复只写过一些简单的例子，而且也忘得差不多了。写几行程序刚好可以再复习一下相关内容，就写了一段Shell来完成上面的工作。代码如下：</p>
+
+<p>``` sh 简化创建博客的流程
+export BLOG="/Path/to/octopress"</p>
+
+<p>function post()
+{</p>
+
+<pre><code>BLOG_NAME=$1
+BLOG_ADDR=$BLOG
+cd $BLOG_ADDR/source/_posts; 
+
+rake new_post\[${BLOG_NAME}\];
+
+open $BLOG_ADDR/source/_posts
+open $BLOG_ADDR/source/images
+
+NEW_POST_NAME=`ls -t|head -1`
+echo $NEW_POST_NAME
+open -a Marked $NEW_POST_NAME
+open -a Sublime\ Text\ 2 $NEW_POST_NAME
+cd -
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>这样，每次写博客，只需要在命令行输入 <code>post 文章名字</code> 就行了。</p>
+
+<p>- EOF -</p>
+]]></content>
+  </entry>
+  
+</feed>

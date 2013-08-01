@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iOS开发 | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/ios开发/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T13:15:53+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[cocos2d-iPhone框架学习]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi/"/>
+    <updated>2012-06-28T15:18:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi</id>
+    <content type="html"><![CDATA[<h2>cocos2d-iPhone框架</h2>
+
+<h3>简介</h3>
+
+<p>cocos2d-iPhone是一个iPhone平台的2D游戏开发引擎，其前身是基于Python语言的cocos2d游戏引擎。</p>
+
+<!--more-->
+
+
+<h3>学习方法</h3>
+
+<p>文档：<a href="http://www.cocos2d-iphone.org/wiki/doku.php/">http://www.cocos2d-iphone.org/wiki/doku.php/</a></p>
+
+<p>书籍：<a href="http://www.ppurl.com/?s=cocos2d">http://www.ppurl.com/?s=cocos2d</a></p>
+
+<h3>教程</h3>
+
+<p>除了官方的教程，<a href="http://www.raywenderlich.com/tutorials">RayWenderlich的教程</a>是一个好的开始。</p>
+
+<h2>Sort Me</h2>
+
+<h3>来源</h3>
+
+<p>为什么做：Sort Me是我在学校iPhone课程的大作业程序，只实现了游戏的逻辑部分。</p>
+
+<p>游戏创意：创意来自一个PSP游戏《大众的爽快》（Minna no Sukkiri）中的《爽快！整理图书》。</p>
+
+<h3>心得</h3>
+
+<p>在制作的过程中，我学到了很多东西。最印象深刻的是游戏需要一个靠谱的美工，光是靠自己搜索，程序基本上就是惨不忍睹。</p>
+
+<h3>程序截图</h3>
+
+<h4>菜单界面</h4>
+
+<p><img src="/images/cocos2d/1.png" alt="Menu" /></p>
+
+<h4>游戏界面</h4>
+
+<p><img src="/images/cocos2d/2.png" alt="Game" /></p>
+
+<h4>结束界面</h4>
+
+<p><img src="/images/cocos2d/3.png" alt="Score" /></p>
+
+<h2>总结</h2>
+
+<p>很多成功的游戏都是使用cocos2d（我原来粗心地将其写做cocoa2d），比如说Tiny Wings。</p>
+
+<p>下一阶段关于cocos2d的学习是物理引擎的使用。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[cocos2d工具@192 days 考研倒计]]></title>
+    <link href="http://blog.jeswang.org/blog/2011/07/02/cocos2d%E5%B7%A5%E5%85%B7%40192-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/"/>
+    <updated>2011-07-02T00:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2011/07/02/cocos2d工具@192-days-考研倒计</id>
+    <content type="html"><![CDATA[<p>接触Cocos2d有一段时间了，总是间歇性的了解一些，学习的也不系统。</p>
+
+
+
+
+<p>所谓学习cocos2d，其实就是这三种方法来得比较奏效。首先是看别人开源的代码大致了解一下程序的框架，其次是找找网上的教程，跟着人家做一些简单的程序，最后就是照着人家的代码，自己也照猫画虎的实现一个程序。</p>
+
+
+
+
+<p>刚好这学期期末要交一个iPhone课程的大作业，我也笨手笨脚的做了一个游戏的雏形。这是我搜到的一些可能会用到的工具的列表：</p>
+
+
+
+
+<ul>
+
+<li><a class="wpgallery" href="slick.cokeandcode.com/demos/hiero.jnlp">Hiero</a> v2.0。把你想要的字体加工成位图和plist的工具，方便在程序中使用(譬如说你想为你的计时器加上自己想要的字体，就是它了)bug多多，每次用都要重启一下，还是java写得，启动有点慢。</li>
+
+<li><a class="wpgallery" href="http://dualface.qeeplay.com/downloads/Zwoptex-0.4b10.dmg">Zwoptex-0.4b10</a>。 将多个png图片序列合并为一个png。(教程可见<a class="wpgallery" href="http://dualface.qeeplay.com/index.php/archives/406">我是妖精&mdash;&mdash;如何创建帧动画</a>）</li>
+
+<li>afconvert(Mac自带的命令行工具) 。用于将各种音频格式转换成caf格式。</li>
+
+</ul>
+
+
+
+
+<p>附：</p>
+
+
+
+
+<p>afconvert用法：</p>
+
+
+
+
+<p class="p1">afconvert -f caff -d LEI16@44100 -c 1in.wav out.caf</p>
+
+
+
+
+<p class="p1">-f 指定文件格式为caff，即采用ima4压缩的.caf文件格式；</p>
+
+
+
+
+<p class="p1">-d 指定数据格式，LEI16@44100则表示16位44100Hz；</p>
+
+
+
+
+<p class="p1">-c 指定声道数。</p>
+
+
+
+
+<p class="p1">其他参数参见man afconvert</p>
+
+
+
+
+<p class="p1">&nbsp;</p>
+
+
+
+
+<p class="p1">另，附上stackoverflow上看到的一个批量处理的脚本（原帖链接找不到了。。。）</p>
+
+
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="background-color: #fffeeb; padding: 5px;">#!/bin/bashfor f in*.mp3;do
+
+  echo"Processing $f file..."
+
+  afconvert -f caff -d LEI16@44100 -c 1"$f""${f/mp3/caf}"
+
+done</pre>
+
+
+
+
+<p>完</p>
+
+]]></content>
+  </entry>
+  
+</feed>

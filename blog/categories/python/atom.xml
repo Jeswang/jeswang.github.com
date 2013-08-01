@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T13:15:53+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[天涯书城 生成 TXT]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/04/12/tianya-book/"/>
+    <updated>2012-04-12T08:43:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/04/12/tianya-book</id>
+    <content type="html"><![CDATA[<p class="info">
+视频地址：<br />
+<a href="http://www.56.com/u85/v_NjI1MzgzMzA.html">有一种大哥叫刘华强</a>
+</p>
+
+
+<h4>看完了视频觉得孙红雷真Man，这是什么电视剧？</h4>
+
+<p>征服。(<a href="http://baike.baidu.com/view/84818.htm#sub8097649">百度百科</a>)</p>
+
+<h4>没看过，这黑帮老大是不是有原型啊？</h4>
+
+<p>一搜，果真有，原型是刘华强。（<a href="http://baike.baidu.com/view/1615163.htm">百度百科</a>）</p>
+
+<h4>我记得我在天涯里看过一个8新中国各种犯罪分子的帖子来着，回头找找。</h4>
+
+<p>哎呀，天涯论坛居然打不开（联通无线），太坑爹了，刷新几次。</p>
+
+<p>仍然打不开，百度下天涯，从首页进吧。</p>
+
+<h4>一搜，看到了天涯在线书库。进去随便找了本书，翻了两页。</h4>
+
+<p>在线看太麻烦了，整个网站抓下来又比较大，而且怕是无法搜索。</p>
+
+<p>算了，抓到本地生成TXT在Kindle下看吧。</p>
+
+<p>打开Vim开始写。。。</p>
+
+<p>代码在<a href="https://gist.github.com/2356875">这里</a>：</p>
+
+<!-- more -->
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (tianyabook.py)</span> <a href='/downloads/code/tianyabook.py'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c">#!/usr/local/bin/python</span>
+</span><span class='line'><span class="c"># -*- coding: utf-8 -*-</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">codecs</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">urlToTxt</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">bookUrl</span> <span class="o">=</span> <span class="n">url</span>
+</span><span class='line'>    <span class="n">suffix</span> <span class="o">=</span> <span class="s">&quot;html&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">url</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s">&#39;htm&#39;</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;htm&#39;</span>
+</span><span class='line'>    <span class="n">source</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">bookUrl</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">rootSoup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">charpterNum</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">u&#39;[0-9]+(?:\.[0-9]*)?.&#39;</span><span class="o">+</span><span class="n">suffix</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">charpterNum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charpterNum</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">links</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;class&quot;</span> <span class="p">:</span> <span class="s">&quot;tt2&quot;</span> <span class="p">})</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">bookName</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;书的名字是 &#39;</span> <span class="o">+</span> <span class="n">bookName</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;共有 &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">charpterNum</span><span class="p">)</span> <span class="o">+</span> <span class="s">u&#39; 章节&#39;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">bookName</span><span class="o">+</span><span class="s">u&quot;.txt&quot;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;http:/www.tianyabook.com&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">continue</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="o">+</span><span class="s">&#39;------------------------------------------&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="o">+</span><span class="n">i</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">getStrFromUrl</span><span class="p">(</span><span class="n">url</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span><span class="o">+</span><span class="n">i</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">]))</span>
+</span><span class='line'>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">getStrFromUrl</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;正在获取&#39;</span> <span class="o">+</span> <span class="n">url</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s">u&#39;&#39;</span>
+</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">pageSoup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;GB18030&quot;</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">text</span> <span class="o">=</span> <span class="n">pageSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s">&#39;586&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">continue</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="c">#result += &#39;\n\r&#39; </span>
+</span><span class='line'>            <span class="k">continue</span>
+</span><span class='line'>        <span class="k">else</span> <span class="p">:</span>
+</span><span class='line'>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span class='line'>    <span class="c">#urlToTxt(&quot;http://www.tianyabook.com/zw/shijieyinnibutong/index.html&quot;)</span>
+</span><span class='line'>    <span class="c">#getStrFromFile(&quot;32.html&quot;)</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;输入书籍目录URL&#39;</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">urlToTxt</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;生成完毕&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>完。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[音悦台MV下载 Python版本]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
+    <updated>2012-02-21T23:25:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
+    <content type="html"><![CDATA[<h3>制作过程：</h3>
+
+<p>前面写过了一个<a href="/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
+
+<p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
+
+<p>这个过程还是有一点点曲折的：</p>
+
+<ul>
+<li>读HTML代码，发现文件的链接是嵌入的Flash获取一个videoId,然后根据videoId获取的。</li>
+<li>找了一个可以反编译Flash文件的软件<a href="http://www.sothink.com/product/flashdecompiler/">SWFDecompiler</a>,反编译了一下Flash文件，简单读了一下相关的代码，不是很有头绪，然后决定从Flash发起的HTTP请求入手。</li>
+<li>先用了<a href="http://www.wireshark.org/">Wireshark</a>尝试抓了一下包，结果发现自己学艺不精，不太会用<a href="http://www.wireshark.org/">Wireshark</a>，找不到链接是怎么来的。</li>
+<li>决定找一个相对简单的HTTP请求获取的软件，StackOverflow搜到在Mac下有这几个软件可以实现
+
+<ul>
+<li><a href="http://www.charlesproxy.com/">Charles</a>：Mac版本收费。</li>
+<li><a href="http://code.google.com/p/andiparos/">Andiparos</a>：开源软件，功能也很齐全。</li>
+</ul>
+
+
+<p>  我用的是后者，非常好用，简单直接的找到了URL所在的HTTP请求。</p></li>
+<li>Python脚本发送HTTP请求，正则表达式分析出URL，再从原页面获取MV的名字，wget下载。</li>
+</ul>
+
+
+<p>代码在<a href="https://gist.github.com/1844416">这里</a>。</p>
+
+<!-- more -->
+
+
+
+
+<script src="https://gist.github.com/1844416.js"> </script>
+
+
+<h3>总结：</h3>
+
+<p>其实音悦台也提供了下载功能，但是需要下载一个Winodows的客户端，有没有其他的需要我不知道，因为客户端也没用过。</p>
+
+<p>写这种脚本，纯粹是为了满足自己需要。回头想想，觉得这种有用的脚本除了能被人方便的使用以外，还可以告诉程序员：程序无所不能，所有你可以看到的数据都可以获取。</p>
+
+<p>PS：</p>
+
+<p>还搜索到了几个有用的脚本，在这里分享一下：</p>
+
+<ul>
+<li><a href="https://github.com/iambus/youku-lixian">youku-lixian</a>：优酷视频下载的Python脚本。</li>
+<li><a href="https://github.com/rg3/youtube-dl">youtube-dl</a>：Youtube视频下载。</li>
+<li><a href="http://www.cnblogs.com/chinull/archive/2011/07/02/2096317.html">易读文库下载器</a>：Windows平台下载百度文库中文档的工具，话说我也简单分析了一下百度文库的Flash，有机会也搞一个脚本试试。</li>
+</ul>
+
+
+<p>完。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GMusicDown Python版本]]></title>
+    <link href="http://blog.jeswang.org/blog/2011/07/30/GMusicDown/"/>
+    <updated>2011-07-30T00:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2011/07/30/GMusicDown</id>
+    <content type="html"><![CDATA[<p>很早以前就想做一个能从Google Music上下载一张专辑的软件，毕竟一首歌一首歌的去点击有点麻烦，但是当时也啥也不会，看HTML页面是如何跳转的也完全没有头绪，然后就放下了这个念头。后来看到有人做出了这种功能的软件，虽然没有使用，但是心里也有了个印象。</p>
+
+
+
+
+<p>前阵子因为GAE的原因，学了一些Python编程，试着用BeautifulSoup写了一些小程序，也算是学了点东西。</p>
+
+
+
+
+<p>前段时间又看到那个软件，就想下下来试试。但是作者只提供的MFC和Java版本的，在Mac下不太方便，所以就读了读作者提供的源代码，自己写了个Python的脚本。</p>
+
+
+
+
+<p>GMusicDown程序链接：<a class="wpGallery" href="http://sites.google.com/site/clock88731/Software/GMusicDown">http://sites.google.com/site/clock88731/Software/GMusicDown</a>（貌似需要翻墙访问）</p>
+
+
+
+
+<p>小众软件介绍GMusicDown链接：<a class="wpGallery" href="http://www.appinn.com/gmusicdown/">http://www.appinn.com/gmusicdown</a></p>
+
+
+
+
+<p>在这里特别感谢这个作者吧。（貌似是大我一届的华中科技大的学长。。。）</p>
+
+
+
+
+<p>我写的脚本的程序截图：</p>
+
+
+
+
+<p><img src="http://blog.jeswang.org/images/gmusicdown.png" alt="程序截图1" /></p>
+
+
+
+
+<p>具体的代码就不贴了，没有太多的技术含量，有需要或者想跑跑试试的同学见github。<br />
+
+程序在这里：<a class="wpGallery" href="https://github.com/Eec/GMusicDownloader">https://github.com/Eec/GMusicDownloader</a></p>
+
+
+
+
+<p>简单说下还存在的问题：</p>
+
+
+
+
+<ol>
+
+<li>链接抓多了，服务器会记录你的IP，然后每次打开下载页都需要输入验证码的。我没有写任何破解验证码的程序，Google的这个验证码对于现阶段的我来说还是个太技术的活了。好在输入一次验证码后，验证码中的 Token 会有效一段时间，足够抓取整个专辑的下载地址了，具体怎么操作程序中有写。</li>
+
+<li>野蛮地开启了和歌曲数量相同的线程数。</li>
+
+<li>Python中文编码遇到了一点小问题，花了一些时间才搞定。</li>
+
+</ol>
+
+
+
+
+<p>完。</p>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jeswang's Blog</title>
+  <meta name="author" content="jeswang">
+
+  
+  <meta name="description" content="接触Cocos2d有一段时间了，总是间歇性的了解一些，学习的也不系统。 所谓学习cocos2d，其实就是这三种方法来得比较奏效。首先是看别人开源的代码大致了解一下程序的框架，其次是找找网上的教程，跟着人家做一些简单的程序，最后就是照着人家的代码，自己也照猫画虎的实现一个程序。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.jeswang.org/blog/page/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jeswang's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30797933-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jeswang's Blog</a></h1>
+  
+    <h2>盲目跟随还是独立去做，To be or not to be?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.jeswang.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/">Blog</a></li>
+    <li><a href="/projects">Projects</a></li>
+	<li><a href="/about-me">About Me</a></li>
+	<li><a href="/book">Books</a></li>
+	<li><a href="/movie">Movies</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/02/cocos2d%E5%B7%A5%E5%85%B7%40192-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">Cocos2d工具@192 Days 考研倒计</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-02T00:00:00+08:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2011</time>
+        
+         | <a href="/blog/2011/07/02/cocos2d%E5%B7%A5%E5%85%B7%40192-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>接触Cocos2d有一段时间了，总是间歇性的了解一些，学习的也不系统。</p>
+
+<p>所谓学习cocos2d，其实就是这三种方法来得比较奏效。首先是看别人开源的代码大致了解一下程序的框架，其次是找找网上的教程，跟着人家做一些简单的程序，最后就是照着人家的代码，自己也照猫画虎的实现一个程序。</p>
+
+<p>刚好这学期期末要交一个iPhone课程的大作业，我也笨手笨脚的做了一个游戏的雏形。这是我搜到的一些可能会用到的工具的列表：</p>
+
+<ul>
+
+<li><a class="wpgallery" href="slick.cokeandcode.com/demos/hiero.jnlp">Hiero</a> v2.0。把你想要的字体加工成位图和plist的工具，方便在程序中使用(譬如说你想为你的计时器加上自己想要的字体，就是它了)bug多多，每次用都要重启一下，还是java写得，启动有点慢。</li>
+
+<li><a class="wpgallery" href="http://dualface.qeeplay.com/downloads/Zwoptex-0.4b10.dmg">Zwoptex-0.4b10</a>。 将多个png图片序列合并为一个png。(教程可见<a class="wpgallery" href="http://dualface.qeeplay.com/index.php/archives/406">我是妖精&mdash;&mdash;如何创建帧动画</a>）</li>
+
+<li>afconvert(Mac自带的命令行工具) 。用于将各种音频格式转换成caf格式。</li>
+
+</ul>
+
+<p>附：</p>
+
+<p>afconvert用法：</p>
+
+<p class="p1">afconvert -f caff -d LEI16@44100 -c 1in.wav out.caf</p>
+
+<p class="p1">-f 指定文件格式为caff，即采用ima4压缩的.caf文件格式；</p>
+
+<p class="p1">-d 指定数据格式，LEI16@44100则表示16位44100Hz；</p>
+
+<p class="p1">-c 指定声道数。</p>
+
+<p class="p1">其他参数参见man afconvert</p>
+
+<p class="p1">&nbsp;</p>
+
+<p class="p1">另，附上stackoverflow上看到的一个批量处理的脚本（原帖链接找不到了。。。）</p>
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="background-color: #fffeeb; padding: 5px;">#!/bin/bashfor f in*.mp3;do
+
+  echo"Processing $f file..."
+
+  afconvert -f caff -d LEI16@44100 -c 1"$f""${f/mp3/caf}"
+
+done</pre>
+
+<p>完</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/01/%E6%80%9D%E8%80%83%40193-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">思考@193 Days 考研倒计</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-01T00:00:00+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/07/01/%E6%80%9D%E8%80%83%40193-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近在读Paul Graham的&lt;黑客与画家&gt;，文章都写得妙极。一是观点的独到。作者在阐述自己的观点时，可以看出确实是在认真的思考问题并寻求问题的答案，虽然有些结论有悖于常理，但有严密的思考过程为证，又让人觉得水到渠成，言之有理。二是思考的条理性。作者在多角度阐述观点时，常给人柳暗花明的感觉，而且所列条目之间泾渭分明。</p>
+
+<p>面对大师的杰作，免不了进行一番自省。</p>
+
+<p><strong>一 不思考</strong></p>
+
+<p>不思考貌似是我生活的一种常态。主要是因为不知道思考什么。</p>
+
+<p>上学前，记事不多，多是听从父母管教，听父母的话是生活的第一准则，谈不上思考，更不知道要思考什么。</p>
+
+<p>到了学校里，需要听话的情况更是日益多见。</p>
+
+<p>在课堂上，有应试教育的敦促，老师自然不敢怠慢，按照课本的内容一个知识点一个知识点的娓娓道来，有的老师讲得乏味，有的老师讲得生动，但是总体上都是老师在不停的讲。这不需要思考，全然记住了，知道什么时候从脑袋里拿出什么来就万事大吉了。</p>
+
+<p>生活中，校规校纪是我们的指路明灯。学校在这方面绝不含糊，奖罚分明，而我们则在这不断的正负激励下做起了遵守纪律的好学生。</p>
+
+<p>思考些什么好呢？一切疑问似乎已经得到了很好的答复。</p>
+
+<p><strong>二 不会思考</strong></p>
+
+<p>面对一个横空出现的需要思考的问题，总是感觉脑袋里是一团浆糊，怎么捋也捋不出个头绪。想说出几个自己的观点吧，又很没自信，这是我自己的观点吗？我总觉得我说出来的观点都是道听途说来的，完全没有自己思考的成分。唉，到底什么是思考，应该怎么思考呢，真是个愁人的问题。</p>
+
+<p><strong>三 不爱思考<br /> </strong></p>
+
+<p>思考是一件给人感觉很费力才能办到的事情。</p>
+
+<p>或许也有上面提到的两个原因，我已经开始对思考这件费力的事情产生了本能的抗拒。凡是能不思考的地方就尽量不思考，遇到需要思考的问题也只是机械的搜索别人提出观点。</p>
+
+<p>&nbsp;</p>
+
+<p>我知道这样不好，但是到底应该怎么思考呢？多读书就能多思考吗？还是需要刻意的强迫自己思考？不断寻求答案中。。。</p>
+
+<p>完。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/30/tips%40194-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">Tips@194 Days 考研倒计</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-30T00:00:00+08:00" pubdate data-updated="true">Jun 30<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/06/30/tips%40194-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>来自 <a class="wpGallery" href="http://www.ppurl.com/2009/11/linux-server-hacks.html">Linux Server Hacks </a></p>
+
+<p><strong>TIP 1<br /> </strong></p>
+
+<p>在Shell中, 经常使用cd前往一个目录很麻烦, 事实上可以为CD命令添加自定义的搜索路径, 比如说:/Users/wangyi/Documents, 你就可以这样设定:</p>
+
+<pre class="brush: bash;light: true; fontsize: 100; first-line: 1; " style="background-color: #fffeeb;"> CDPATH=.:/Users/wangyi/Documents</pre>
+
+<p>这样就可以随时随地 cd 到你制定目录下的某个文件夹了.</p>
+
+<p><strong>TIP 2</strong></p>
+
+<p>登陆一个Linux的服务器, 往往想要知道Linux的发行版本, 方法有很多, 比如说:</p>
+
+<pre class="brush: bash;light: true; fontsize: 100; first-line: 1; " style="background-color: #fffeeb;"> cat /proc/version
+
+  or
+
+ uname -a</pre>
+
+<p>PS: 推荐网站 <a class="wpGallery" href="ppurl.com">ppurl.com</a> &larr; 所有英文技术书都在里面了!</p>
+
+<p>完</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/25/199-days---%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">199 Days - 考研倒计</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-25T00:00:00+08:00" pubdate data-updated="true">Jun 25<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/06/25/199-days---%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近的一些读书的清单吧, 有的是在京东买的畅销书, 有的只是在图书馆有看过部分, 觉得都很好, 应该细读:</p>
+
+<ul>
+
+<li>高效程序员的45个习惯</li>
+
+<li><a class="wpgallery" href="http://www.ppurl.com/2010/04/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%EF%BC%9A%E4%BB%8E%E5%B0%8F%E5%B7%A5%E5%88%B0%E4%B8%93%E5%AE%B6.html" target="_blank">程序员修炼之道: 从小工到专家</a></li>
+
+<li>黑客与画家(Reading&#8230;)</li>
+
+<li>离散数学及其应用</li>
+
+</ul>
+
+<p>本来是考研的嘛 没有太多时间看这些书 看这些书纯当休息了。</p>
+
+<p>&lt;高效程序员的45个习惯&gt;中, 我在图书馆只翻看了态度篇一章, 一些观点让我觉得很赞同, 在此处分享以自省(非原文, 是我自己的理解):</p>
+
+<ol>
+
+<li>遇到问题不要抱怨或者指责别人, 而是找出问题所在, 想出解决办法. 没有人愿意和只知道抱怨的人一起Coding或者工作, 我也一样。</li>
+
+<li>欲速则不达. 用小聪明、权宜之计解决问题，求快而不顾代码质量，会给项目留下要命的死角。</li>
+
+<li><span style="color: black;" lang="ZH-CN">对事不对人. 做人做事都要谦让有度, 越是志达的人越是知道自己的无知, 只有无知的人才觉得自己什么都知道了。&nbsp;</span></li>
+
+<li><span style="color: black;" lang="ZH-CN">在讨论中善于听取别人的想法, 不要总是在听取意见之前就否定别人的看法(我就有些这个缺点)。</span></li>
+
+</ol>
+
+<p>只写这么多吧, 更多的是给我自己的一个提醒。</p>
+
+<p>完。</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/18/206-days---%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">206 Days - 考研倒计</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/06/18/206-days---%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="white-space: pre;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span>花费了好长时间才最后决定要考研继续念下去。 在这两个月经历了很多个忙忙碌碌的日子， 其中包括一些熬夜工作的日子， 也一些激动得让人难眠的日子， 总之经历了一些事情。</p>
+
+<p><span style="white-space: pre;"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span>首先是KaiSquare的比赛。 在假期过年那几天做的一个iPhone上的app， 其实实际实现的功能真的没有多少内容， 最后得奖了也有参加人数比较少的原因。 但是拿到了奖金， 也在动手的过程中学到了很多原来没接触过得内容自己就感觉很开心了。 学到了 facebook iOS的框架<a href="http://three20.info/">three20</a>， iPhone上Http的库<a href="http://allseeing-i.com/ASIHTTPRequest/">ASIHTTPRequest</a>（一部分很基础的部分， 还有很多关于云存储的部分什么的高级应用没有接触）， 还有就是代码写得一团糟， 自己写的代码缺少注释，而且基本没有什么结构上的设计， 基本是想到哪里就写到哪里， 很随意的添加功能， 而且明显知道这样不好， 还懒得回头去重构。</p>
+
+<p><span style="white-space: pre;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </span>然后是和华仔建翔完成的深客服的远程虚拟打印机的项目。 我做的工作只是很少的一部分， 包括找到了一个合适的开源框架， 调通了一个Remote Tunnel的例子程序， 写了一点点的zlib的例子， 然后就是文档的书写。 具体的传输工作还有raw格式的分析啊， 分页啊， 测试啊， 什么的都是他们俩在做， 毕竟已经开始准备考研的事情了， 轻松愉快的完成了这个项目， 也拿到了一点点报酬， 买了一个Kindle 3， 也挺开心的。 自己心里也琢磨， 怎么好事情都让我遇上了。</p>
+
+<p><span style="white-space: pre;"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span>然后是iPhone大作业， 一直在关注Cocos2d， 终于自己下定了决心， 又是P图片， 又是下各种工具， 又是找开源软件的， 写了一个小游戏， 没评分， 没设置， 就一程序， 创意还是出自我玩过的一个PSP的游戏， 自己也很有成就感吧， 然后就觉得自己可以看点英文的材料， 英文的书籍， 自己做点什么。有机会放上来， 供给初学的同学胡乱读一读。</p>
+
+<p><span style="white-space: pre;"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span>和iPhone大作业同时完成的还有我们三个人准备的 QQ 校园之星 比赛， 我们选题是QQ Map相关的开发。 最初的创意是我想的， 通过用户输入为用途推荐旅游路线， 但是在实现过程以及最后的结果来看， 这个创意缺乏创意， 而且需要做的工作太多了， 不太适合这个比赛。 比赛的结果已经透露了， 没能杀进50个小组的复赛， 没有拿到华仔梦寐的100QB。 有我的责任吧， 有点太注重于网站的外观上了， 而具体的内容做得太少了， 数据也没挖掘出来。 但是也有收获的：</p>
+
+<ul>
+
+<li>首先是Ruby on Rails，先前是听说听说听说， 终于有一回实战的经历， 说实话， 不太愉快， 感觉缺少别人的指点， 很多地方根本就是走各种弯路， 看来以后做比赛还是可熟悉的框架来吧， 还有下次吗？&nbsp;</li>
+
+<li>然后是调JavaScript，快吐血了， 浏览器之间的差异太大了。&nbsp;</li>
+
+<li>还有juery 和 juery UI 以及各种juery的库。</li>
+
+<li>git。最最核心的分支部分我们当他不存在， 就是在master上提交来合并去的， 毫无技术含量。</li>
+
+<li>学了学仰慕已久的nginx的配置， 虽然仍然是学到了一些皮毛， 但是还是很开心能接触这么高端的东西。</li>
+
+<li>就是这样， 暂时还挂在<a href="map.jeswang.info">map.jeswang.info</a>上。托项目的光， VPS两个月的租金有了出路， 挺喜欢有一个自己可以配置的Linux一直运行在美利坚和众国， 这样有很多好处的， 你懂的。</li>
+
+</ul>
+
+<p><span style="white-space: pre;"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span>说了这么多， 和考研也没啥关系， 就是对这两个月忙忙碌碌（是不是庸庸碌碌我也不知道）生活的一个总结吧。 考研的生活还在继续， 我总隐约觉得这很可行， 我也很享受认真复习学过的东西的过程， 毕竟曾经没这么认真的面对过， 你懂的。</p>
+
+<p><span style="white-space: pre;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </span>Life will go on， 无论如何， 加油总是没有错的。&nbsp;</p>
+
+<p>完。</p>
+
+<p>PS: 在VPS上搭建了一个L2TP on IPSec, 可以看外国的视频节目， 很High， 想体验的同学可以联系我 wangyi724#gmail.com</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/03/my-first-blog/">My First Blog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-03T00:00:00+08:00" pubdate data-updated="true">Apr 3<span>rd</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/03/my-first-blog/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天是清明节放假的第一天, 我们俩在自习室有些坐不住了, 回到了寝室, 吃到老婆做的鸡蛋煎面包, 开心开心.</p>
+
+<p>挺喜欢&nbsp;<a href="http://blog.jjgod.org">jjgod</a> wordpress的主题的, 下午就下了一个, 修改了成了Micolog的主题. 说是修改其实就是把php里的动态变量换成python的, 还有一些小Bug, 留着以后修改吧.</p>
+
+<p>完.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Jeswang</h1>
+  <p style="margin-bottom:0">梦想太多，正急着去实现。</p>
+  <p><a href="/about-me/">更多</a> </p>
+  <img src="/images/blog/esay_avatar.jpg"><br>
+  <font>联系方式:</font><br>
+  <font>wangyi724(at)gmail.com</font>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/01/zi-ti-jiang-zuo/">字体讲座</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/%5Bru-he-yue-du-%5B%3F%5D-ben-shu-%5D-jiao-wo-de-shi/">「如何阅读一本书」教我的事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">Tmux 快速教程</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  
+      
+            <ul id='Categories'><li class='category'><a class='category' href='/blog/categories/bash-script/'>Bash_Script</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/python/'>Python</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ios开发/'>iOS开发</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/工具控/'>工具控</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/生活记录/'>生活记录</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/阅读/'>阅读</a></li></ul>      
+      
+  
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - jeswang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'esaysblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

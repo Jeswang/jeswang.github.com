@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 工具控 | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/工具控/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-01T13:15:53+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[新相机 —— GF5]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/07/31/xin-xiang-ji/"/>
+    <updated>2013-07-31T12:57:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/07/31/xin-xiang-ji</id>
+    <content type="html"><![CDATA[<p><img src="/images/camera_GF5.JPG" alt="GF5" /></p>
+
+<p>今年的7月24日是我的24岁生日，买了我人生的第一部相机—— GF5。</p>
+
+<h2>记录生活</h2>
+
+<p>人是很健忘的，昨天去家附近很久没有去的游泳馆，只是感觉到一点点熟悉，曾经这里发生的故事和结识的朋友都已经完全模糊了。</p>
+
+<p>如果生活缺少了记录，我们要如何知道自己是谁，曾经做了些什么，有过什么样的梦想，将要去向何方？记录生活就像是为岁月刻下印记，记录过了，你才终于可以完全放下遗忘的包袱，尽情地出发。</p>
+
+<p>年初换手机很大一部分原因是想要一个好用的摄像头，能随时随地地记录我的生活。一直向往一台单反，但是心里也有诸多的抵触，向往是因为对于物的喜爱，抵触一部分是因为个头太大，携带不方便，还有被认为装B的嫌疑，另一部分是因为害怕本末倒置，本该注重生活本身，却过于追求记录。</p>
+
+<p>买 GF5 我也没经过太多的比较，一方面预算比较有限，一方面对于参数的比较也有点疲了，买最新款的肯定没有错，如果天天盯着性价比，盯着这个功能，那个功能的，就又沦为了比较的奴隶，忘了自己为什么要买个相机。作为一个微单，它还是可以换镜头的，待学习一段时间的摄影，有了一些预算，可以再买几个实用的镜头。</p>
+
+<h2>学习摄影</h2>
+
+<p>想要拍出好的照片，甚至是清晰的照片，都需要学习摄影的知识，了解基本的成像原理。学习的过程中我发现，学习摄影和计算机有些不同，计算机方面的知识很容在实践中掌握内在的规律，但是相机是个不能拆开的黑盒子，想要轻易地知道咔嚓一声的背后发生了什么有点困难。</p>
+
+<p>作为一个喜欢刨根问底的程序员，找不到一本说得特别明白的摄影书很让我苦恼，大部分我看到的书都在讲怎么构图之类的高级的主题，而对于成像的原理说明得很少，大概是写书人觉得这些内容太过于简单了吧。但是同时，摄影中的名词和规律相比计算机要少，哪怕一个名词理解个几天，个把月也都弄清楚了，而且进步立竿见影，拍出来就看到了，不必等待用户的反馈。</p>
+
+<h2>美不要理论</h2>
+
+<p>虽然摄影需要学习技巧，但是好照片居然是不需要任何理论和技巧的。一张好的照片给人的冲击就像是一则寓言，久久凝视，就能给人感动，让人好奇，渴望追随，找回初心。</p>
+
+<p>人与人成长的环境不同，资质也有所差异，所以在面对我和别人取得成绩上的差距时，我也多了一份从容。</p>
+
+<p><a href="http://www.mikematas.com/">Mike Matas</a> 的照片实在是太美了，值得去看一看。</p>
+
+<h3>PS: 附上两张在北京海洋馆拍的样张</h3>
+
+<p><img src="/images/gf5/1.JPG" alt="1" /></p>
+
+<p><img src="/images/gf5/2.JPG" alt="2" /></p>
+
+<p>- EOF -</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[常用的 Chrome 插件]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/06/25/chang-yong-de-chromecha-jian/"/>
+    <updated>2013-06-25T14:17:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/06/25/chang-yong-de-chromecha-jian</id>
+    <content type="html"><![CDATA[<h3>我爱折腾</h3>
+
+<p>和一些程序员一样，我喜欢折腾。面对不断变化、让人眼花缭乱的新软件，我总结自己的折腾分为两个阶段：</p>
+
+<ul>
+<li>要折腾！首先，好的工具可以提供生产力。其次，拒绝画地为牢。最后，接触新鲜事物可以开拓自己的眼界。</li>
+<li>不折腾。折腾了一段时间后，发现自己迷失在追求更新更快的工具的路上，磨刀误了砍材工。觉得得不偿失，于是删掉自己用过的大部分软件，只留下最好用，最喜欢的工具，一切又变得清新了。自己美其名曰：返璞归真。</li>
+</ul>
+
+
+<p>这样不断折腾的过程虽然花费了很长时间，但是留下了一些好用软件的使用经历，算作是花费时间的回报。</p>
+
+<!--more-->
+
+
+<h3>我爱插件</h3>
+
+<p>浏览器就是一个真实的例子。</p>
+
+<p>最初我喜欢使用 Chrome ，想到什么功能就搜相应功能的插件安装，结果安装了一大堆插件。慢慢地，不知道是不是插件的问题， Chrome 变得越来越慢（可能也和电脑的硬件性能有关），再加上我结识了 <a href="https://addons.mozilla.org/en-us/firefox/addon/vimperator/">Vimperator</a>，我就放弃了 Chrome，改用 Firefox。使用有 Vimperator 插件的 Firefox，一切键盘操作，方便快捷。但是随着 Safari 的不断进化、iOS 设备同步需求的增强以及升级后 Firefox 对插件兼容性的长时间检查的不耐心，我逐渐放弃了 Firefox，投奔了 Safari 的清爽世界。</p>
+
+<p>上面的描述是我不断折腾更换浏览器的一个循环。很快我进入了下一个循环，渐渐地，我又回到了 Chrome 阵营，原因如下：</p>
+
+<ul>
+<li>Mac 下的 Chrome 表现日趋好转，特别是在retina屏幕上页面滑动的流畅性达到了可用的程度。</li>
+<li>Ubuntu 下表现不错。</li>
+<li>最主要的原因，有几个特别好用的插件让我用得很爽。</li>
+</ul>
+
+
+<p>现在想想，除了浏览器本身的功能之外，影响我选择浏览器的重要因素只有一个：插件。</p>
+
+<h3>正在使用的插件</h3>
+
+<p>Chrome 商店里的插件实在太多，淘到自己喜欢的插件一定要记录一下，免得以后想用的时候又找不到。</p>
+
+<h4>一翻</h4>
+
+<p>什么 VPN、GOAGENT，统统不喜欢，这个插件的翻墙模式才是我最喜欢的。</p>
+
+<p>任何好用的设计都应该是让人感觉不到，却又踏实工作的。我最早在使用的 GOAGENT，需要打开终端，输入一行命令，看着一行行的 LOG 不断输出，然后才能访问喜欢的网站。这个过程总是给我不舒服，很慢很费电的感觉。当然，也不指望免费的 GOAGENT 能提供多好多快的网络连接。</p>
+
+<p>购买过 MxVPN 的收费服务，每次都打开那个客户端等待刷新，一大堆服务器列表，一个一个去尝试，在校园网环境下有些无法访问，有些验证出错，真是很不爽的体验。</p>
+
+<p>虽然一翻是个服务收费的插件（难道你认为不应该收费吗），但是使用这个软件让我自由地右键-〉GOOGLE搜索带来的效率的提高远远超过付出的费用。其安静省心的工作方式，让任何小白用户无须配置，就可以立刻使用。</p>
+
+<p>推荐购买使用。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/%E4%B8%80%E7%BF%BB/oiiafbodjidmgmhhpodaighdijlgfjig">一翻</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/1.png" alt="一翻截图" /></p>
+
+<h4>One-Click Extensions Manager</h4>
+
+<p>打开 Chrome 插件管理的界面是一件麻烦的事情，这个插件可以快接地启用和禁用插件，避免 Chrome 变得越来越慢。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja">One-Click Extensions Manager</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/2.png" alt="One-Click Extensions Manager" /></p>
+
+<h4>WhatFont</h4>
+
+<p>可以方便地查看网页上的文字到底使用的是什么字体。（查看作者的网站才知道，作者是个中国人，做了一些很牛X的事，值得进一步关注。）</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm">WhatFont</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/3.png" alt="WhatFont" /></p>
+
+<h4>Hover Zoom</h4>
+
+<p>鼠标放在小图片上就能显示大图的神奇插件。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/hover-zoom/nonjdcjchghhkdoolnlbekcfllmednbl">Hover Zoom</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/4.png" alt="Hover Zoom" /></p>
+
+<h4>Evernote Web Clipper</h4>
+
+<p>任何使用Evernote做整理的人都需要的软件。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc">Evernote Web Clipper</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/5.png" alt="Evernote Web Clipper" /></p>
+
+<h4>Clearly</h4>
+
+<p>有的博客的字体和配色实在不适合阅读，使用 Clearly 可以轻松地阅读，并且保存没有乱七八糟格式的内容到Evernote。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/clearly/iooicodkiihhpojmmeghjclgihfjdjhj">Clearly</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/6.png" alt="Clearly" /></p>
+
+<h4>cookie.txt export</h4>
+
+<p>如果有什么内容必须登录才能下载，而你又不喜欢使用 Chrome 的下载功能，使用这个插件配合 wget 是你的另一个选择。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/cookietxt-export/lopabhfecdfhgogdbojmaicoicjekelh">cookie.txt export</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/7.png" alt="cookie.txt export" /></p>
+
+<h4>json tool</h4>
+
+<p>遇到 JSON 内容就靠它了。虽然有很多相似功能的插件，但是还是这个插件的功能最实用。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/json-tool/eahnbknbmkcbfgphjideioohcdcoilcb">json tool</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/8.png" alt="json tool" /></p>
+
+<h4>Better History</h4>
+
+<p>比 Chrome 自带更好用的历史统计和搜索。</p>
+
+<p>下载地址：<a href="https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb">Better History</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/9.png" alt="Better History" /></p>
+
+<h4>妈妈再也不用担心我的macbook发烫计划2.0</h4>
+
+<p>没有广告看 youku ，如果你使用的是 Mac 系统，还能让你的笔记本安静一些。</p>
+
+<p>下载地址：<a href="http://zythum.sinaapp.com/youkuhtml5playerbookmark/">妈妈再也不用担心我的macbook发烫计划2.0</a></p>
+
+<p>截图：</p>
+
+<p><img src="/images/chrome/10.jpg" alt="妈妈再也不用担心我的macbook发烫计划2.0" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[我的VIM配置文件]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian/"/>
+    <updated>2013-01-14T12:54:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian</id>
+    <content type="html"><![CDATA[<p>这学期的课都上完了，终于有时间和代码相处了。</p>
+
+<p>好久没有使用vim，有些快捷键的淡忘了。</p>
+
+<p>整理一下配置文件，重新来过。</p>
+
+<p>``` sh 我的VIM配置文件
+inoremap <C-e> <END>
+inoremap <C-a> <HOME>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left></p>
+
+<p>nmap <Left> :bp<CR>
+nmap <Right> :bn<CR>
+nmap <F4> :bd<CR></p>
+
+<p>set nocompatible
+syntax on
+filetype off
+colorscheme desert
+set nu
+set mouse=a
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+filetype plugin indent on</p>
+
+<p>Bundle 'Lokaltog/vim-powerline'
+set nocompatible</p>
+
+<p>set laststatus=2
+set t_Co=256</p>
+
+<p>Bundle 'ZenCoding.vim'</p>
+
+<p>Bundle 'a.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'cocoa.vim'
+Bundle 'FencView.vim'
+Bundle 'Markdown-syntax'
+Bundle 'unite.vim'
+Bundle 'Syntastic'</p>
+
+<p>Bundle 'Tagbar'
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'<br/>
+let g:tagbar_width=26</p>
+
+<p>Bundle 'taglist.vim'
+Bundle 'taglist-plus'
+let Tlist_Use_Right_Window=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'</p>
+
+<p>Bundle 'The-NERD-tree'
+let NERDTreeShowBookmarks=1</p>
+
+<p>Bundle 'altercation/vim-colors-solarized'
+" set background=dark
+" colorscheme solarized</p>
+
+<p>Bundle 'neocomplcache'
+let g:neocomplcache_enable_at_startup=1
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete</p>
+
+<p>Bundle 'pyflackes'
+Bundle 'python_flod'</p>
+
+<p>if has("gui_running")
+"    set guifont=Microsoft\ YaHei\ Mono:h16</p>
+
+<pre><code>set guifont=Monaco:h14
+set guifontwide=Microsoft\ YaHei:h15
+set linespace=2
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set showtabline=1
+set noimd
+</code></pre>
+
+<p>endif</p>
+
+<p>```</p>
+
+<p>- EOF -</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[新的Blog系统---OCTOPress]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/01/24/xin-de-blogxi-tong-octopress/"/>
+    <updated>2012-01-24T02:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/01/24/xin-de-blogxi-tong-octopress</id>
+    <content type="html"><![CDATA[<h2>新的起点</h2>
+
+<p>最近octopress很火爆, 就clone了一个下来, 在Github Pages上重新搭建一下博客.</p>
+
+<h2>旧的文件</h2>
+
+<p>这两天还想尝试一下把Micolog上写过的几篇文章搬过来.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tips@194 days 考研倒计]]></title>
+    <link href="http://blog.jeswang.org/blog/2011/06/30/tips%40194-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/"/>
+    <updated>2011-06-30T00:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2011/06/30/tips@194-days-考研倒计</id>
+    <content type="html"><![CDATA[<p>来自 <a class="wpGallery" href="http://www.ppurl.com/2009/11/linux-server-hacks.html">Linux Server Hacks </a></p>
+
+
+
+
+<p><strong>TIP 1<br /> </strong></p>
+
+
+
+
+<p>在Shell中, 经常使用cd前往一个目录很麻烦, 事实上可以为CD命令添加自定义的搜索路径, 比如说:/Users/wangyi/Documents, 你就可以这样设定:</p>
+
+
+
+
+<pre class="brush: bash;light: true; fontsize: 100; first-line: 1; " style="background-color: #fffeeb;"> CDPATH=.:/Users/wangyi/Documents</pre>
+
+
+
+
+<p>这样就可以随时随地 cd 到你制定目录下的某个文件夹了.</p>
+
+
+
+
+<p><strong>TIP 2</strong></p>
+
+
+
+
+<p>登陆一个Linux的服务器, 往往想要知道Linux的发行版本, 方法有很多, 比如说:</p>
+
+
+
+
+<pre class="brush: bash;light: true; fontsize: 100; first-line: 1; " style="background-color: #fffeeb;"> cat /proc/version
+
+  or
+
+ uname -a</pre>
+
+
+
+
+<p>PS: 推荐网站 <a class="wpGallery" href="ppurl.com">ppurl.com</a> &larr; 所有英文技术书都在里面了!</p>
+
+
+
+
+<p>完</p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>音悦台MV下载 Python版本 - Jeswang's Blog</title>
+  <meta name="author" content="jeswang">
+
+  
+  <meta name="description" content="制作过程： 前面写过了一个GoogleMusic专辑下载的Python版本，这里是下载脚本另一则。 因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jeswang's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30797933-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jeswang's Blog</a></h1>
+  
+    <h2>盲目跟随还是独立去做，To be or not to be?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.jeswang.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/">Blog</a></li>
+    <li><a href="/projects">Projects</a></li>
+	<li><a href="/about-me">About Me</a></li>
+	<li><a href="/book">Books</a></li>
+	<li><a href="/movie">Movies</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">音悦台MV下载 Python版本</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-21T23:25:00+08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>制作过程：</h3>
+
+<p>前面写过了一个<a href="/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
+
+<p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
+
+<p>这个过程还是有一点点曲折的：</p>
+
+<ul>
+<li>读HTML代码，发现文件的链接是嵌入的Flash获取一个videoId,然后根据videoId获取的。</li>
+<li>找了一个可以反编译Flash文件的软件<a href="http://www.sothink.com/product/flashdecompiler/">SWFDecompiler</a>,反编译了一下Flash文件，简单读了一下相关的代码，不是很有头绪，然后决定从Flash发起的HTTP请求入手。</li>
+<li>先用了<a href="http://www.wireshark.org/">Wireshark</a>尝试抓了一下包，结果发现自己学艺不精，不太会用<a href="http://www.wireshark.org/">Wireshark</a>，找不到链接是怎么来的。</li>
+<li>决定找一个相对简单的HTTP请求获取的软件，StackOverflow搜到在Mac下有这几个软件可以实现
+
+<ul>
+<li><a href="http://www.charlesproxy.com/">Charles</a>：Mac版本收费。</li>
+<li><a href="http://code.google.com/p/andiparos/">Andiparos</a>：开源软件，功能也很齐全。</li>
+</ul>
+
+
+<p>  我用的是后者，非常好用，简单直接的找到了URL所在的HTTP请求。</p></li>
+<li>Python脚本发送HTTP请求，正则表达式分析出URL，再从原页面获取MV的名字，wget下载。</li>
+</ul>
+
+
+<p>代码在<a href="https://gist.github.com/1844416">这里</a>。</p>
+
+<!-- more -->
+
+
+
+
+<script src="https://gist.github.com/1844416.js"> </script>
+
+
+<h3>总结：</h3>
+
+<p>其实音悦台也提供了下载功能，但是需要下载一个Winodows的客户端，有没有其他的需要我不知道，因为客户端也没用过。</p>
+
+<p>写这种脚本，纯粹是为了满足自己需要。回头想想，觉得这种有用的脚本除了能被人方便的使用以外，还可以告诉程序员：程序无所不能，所有你可以看到的数据都可以获取。</p>
+
+<p>PS：</p>
+
+<p>还搜索到了几个有用的脚本，在这里分享一下：</p>
+
+<ul>
+<li><a href="https://github.com/iambus/youku-lixian">youku-lixian</a>：优酷视频下载的Python脚本。</li>
+<li><a href="https://github.com/rg3/youtube-dl">youtube-dl</a>：Youtube视频下载。</li>
+<li><a href="http://www.cnblogs.com/chinull/archive/2011/07/02/2096317.html">易读文库下载器</a>：Windows平台下载百度文库中文档的工具，话说我也简单分析了一下百度文库的Flash，有机会也搞一个脚本试试。</li>
+</ul>
+
+
+<p>完。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jeswang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-21T23:25:00+08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/python/'>Python</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/" data-via="" data-counturl="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/13/burn-iso-to-usb-on-mac/" title="Previous Post: Mac下制作U盘启动">&laquo; Mac下制作U盘启动</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/04/04/my-wiki-life/" title="Next Post: 每个人都需要VimWiki">每个人都需要VimWiki &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Jeswang</h1>
+  <p style="margin-bottom:0">梦想太多，正急着去实现。</p>
+  <p><a href="/about-me/">更多</a> </p>
+  <img src="/images/blog/esay_avatar.jpg"><br>
+  <font>联系方式:</font><br>
+  <font>wangyi724(at)gmail.com</font>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/01/zi-ti-jiang-zuo/">字体讲座</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/%5Bru-he-yue-du-%5B%3F%5D-ben-shu-%5D-jiao-wo-de-shi/">「如何阅读一本书」教我的事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">Tmux 快速教程</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  
+      
+            <ul id='Categories'><li class='category'><a class='category' href='/blog/categories/bash-script/'>Bash_Script</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/python/'>Python</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ios开发/'>iOS开发</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/工具控/'>工具控</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/生活记录/'>生活记录</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/阅读/'>阅读</a></li></ul>      
+      
+  
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - jeswang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'esaysblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/';
+        var disqus_url = 'http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

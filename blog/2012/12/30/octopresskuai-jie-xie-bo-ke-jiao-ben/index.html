@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Octopress新建博客脚本 - Jeswang's Blog</title>
+  <meta name="author" content="jeswang">
+
+  
+  <meta name="description" content="重复性质的准备工作 每次用Octopress写博客，都要 打开终端，转到Octopress的目录
+敲入rake 文章名字
+打开创建的文件开始写Blog
+在终端输入，rake preview
+浏览器中看到输出的样式 这样重复机械性的工作，不仅增加了写博客的准备时间，也增加了开始写博客的心理代价。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jeswang's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30797933-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jeswang's Blog</a></h1>
+  
+    <h2>盲目跟随还是独立去做，To be or not to be?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.jeswang.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/">Blog</a></li>
+    <li><a href="/projects">Projects</a></li>
+	<li><a href="/about-me">About Me</a></li>
+	<li><a href="/book">Books</a></li>
+	<li><a href="/movie">Movies</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Octopress新建博客脚本</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-30T21:38:00+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>重复性质的准备工作</h2>
+
+<p>每次用Octopress写博客，都要</p>
+
+<ul>
+<li>打开终端，转到Octopress的目录</li>
+<li>敲入<code>rake 文章名字</code></li>
+<li>打开创建的文件开始写Blog</li>
+<li>在终端输入，<code>rake preview</code></li>
+<li>浏览器中看到输出的样式</li>
+</ul>
+
+
+<p>这样重复机械性的工作，不仅增加了写博客的准备时间，也增加了开始写博客的心理代价。</p>
+
+<h2>Mac下的解决方案</h2>
+
+<p>Shell反反复复只写过一些简单的例子，而且也忘得差不多了。写几行程序刚好可以再复习一下相关内容，就写了一段Shell来完成上面的工作。代码如下：</p>
+
+<figure class='code'><figcaption><span>简化创建博客的流程</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">export </span><span class="nv">BLOG</span><span class="o">=</span><span class="s2">&quot;/Path/to/octopress&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">function </span>post<span class="o">()</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="nv">BLOG_NAME</span><span class="o">=</span><span class="nv">$1</span>
+</span><span class='line'>    <span class="nv">BLOG_ADDR</span><span class="o">=</span><span class="nv">$BLOG</span>
+</span><span class='line'>    <span class="nb">cd</span> <span class="nv">$BLOG_ADDR</span>/source/_posts;
+</span><span class='line'>
+</span><span class='line'>    rake new_post<span class="se">\[</span><span class="k">${</span><span class="nv">BLOG_NAME</span><span class="k">}</span><span class="se">\]</span>;
+</span><span class='line'>
+</span><span class='line'>    open <span class="nv">$BLOG_ADDR</span>/source/_posts
+</span><span class='line'>    open <span class="nv">$BLOG_ADDR</span>/source/images
+</span><span class='line'>
+</span><span class='line'>    <span class="nv">NEW_POST_NAME</span><span class="o">=</span><span class="sb">`</span>ls -t|head -1<span class="sb">`</span>
+</span><span class='line'>    <span class="nb">echo</span> <span class="nv">$NEW_POST_NAME</span>
+</span><span class='line'>    open -a Marked <span class="nv">$NEW_POST_NAME</span>
+</span><span class='line'>    open -a Sublime<span class="se">\ </span>Text<span class="se">\ </span>2 <span class="nv">$NEW_POST_NAME</span>
+</span><span class='line'>    <span class="nb">cd</span> -
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样，每次写博客，只需要在命令行输入 <code>post 文章名字</code> 就行了。</p>
+
+<p>- EOF -</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jeswang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-30T21:38:00+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bash-script/'>Bash_Script</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/" data-via="" data-counturl="http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/30/2012nian-du-shu-zong-jie/" title="Previous Post: 2012年读书总结">&laquo; 2012年读书总结</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian/" title="Next Post: 我的VIM配置文件">我的VIM配置文件 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Jeswang</h1>
+  <p style="margin-bottom:0">梦想太多，正急着去实现。</p>
+  <p><a href="/about-me/">更多</a> </p>
+  <img src="/images/blog/esay_avatar.jpg"><br>
+  <font>联系方式:</font><br>
+  <font>wangyi724(at)gmail.com</font>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/01/zi-ti-jiang-zuo/">字体讲座</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/%5Bru-he-yue-du-%5B%3F%5D-ben-shu-%5D-jiao-wo-de-shi/">「如何阅读一本书」教我的事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">Tmux 快速教程</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  
+      
+            <ul id='Categories'><li class='category'><a class='category' href='/blog/categories/bash-script/'>Bash_Script</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/python/'>Python</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ios开发/'>iOS开发</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/工具控/'>工具控</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/生活记录/'>生活记录</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/阅读/'>阅读</a></li></ul>      
+      
+  
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - jeswang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'esaysblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/';
+        var disqus_url = 'http://blog.jeswang.org/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

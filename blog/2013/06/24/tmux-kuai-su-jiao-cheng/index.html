@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tmux 快速教程 - Jeswang's Blog</title>
+  <meta name="author" content="jeswang">
+
+  
+  <meta name="description" content="翻译的文章：A Tmux Crash Course 译文 我已经使用 Tmux 近 4 个月了，它和 vim 一样成为了我工作流中不可或缺的部分。Pane 和 windows 的管理，在输出信息中可导航的复制模式以及 seesion 的管理让 Tmux 成为了命令行爱好者（特别是 vim 使用者 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jeswang's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30797933-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jeswang's Blog</a></h1>
+  
+    <h2>盲目跟随还是独立去做，To be or not to be?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.jeswang.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/">Blog</a></li>
+    <li><a href="/projects">Projects</a></li>
+	<li><a href="/about-me">About Me</a></li>
+	<li><a href="/book">Books</a></li>
+	<li><a href="/movie">Movies</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Tmux 快速教程</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-24T16:54:00+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p class="info">
+翻译的文章：<a href="http://robots.thoughtbot.com/post/2641409235/a-tmux-crash-course">A Tmux Crash Course</a>
+</p>
+
+
+<h2>译文</h2>
+
+<p>我已经使用 Tmux 近 4 个月了，它和 vim 一样成为了我工作流中不可或缺的部分。Pane 和 windows 的管理，在输出信息中可导航的复制模式以及 seesion 的管理让 Tmux 成为了命令行爱好者（特别是 vim 使用者）毫不费力就能使用的工具。我收集了一些我日常使用的 tmux 命令，这些命令让我的工作更加高效。</p>
+
+<p><img src="http://ui.thoughtbot.com/assets/tmux-panes.png" alt="image-1" /></p>
+
+<p>如果我提到的 tmux 命令不是默认的快捷键， 我会在介绍的间隙说明。</p>
+
+<h3>Session 管理</h3>
+
+<p>Seesion 可以有效地分离工作环境。我有一个“工作” session 和一个“娱乐” session；在“工作”中，我打开所有日常开发需要的内容，而在“娱乐”中，我只打开当前开源的 gem 或者在家 hack 的一些东西。</p>
+
+<ul>
+<li>tmux new -s session_name <p>创建一个叫做 session_name 的 tmux session</p></li>
+<li>tmux attach -t session_name <p> 重新开启叫做 session_name 的 tmux session </p></li>
+<li>tmux switch -t session_name <p>转换到叫做 session_name 的 tmux session</p></li>
+<li>tmux list-sessions <p>列出现有的所有 session </p></li>
+<li>tmux detach (prefix + d) <p>离开当前开启的 session</p></li>
+</ul>
+
+
+<h3>Windows</h3>
+
+<p>Tmux 有一个含有标签的界面，但是它命名这些标签为 “Windows”。为了保持有序，我重新命名了所有我使用的 windows；如果我正在编写一个 gem，我会使用这个 gem 的名字来命名 window。客户端的应用程序也一样。这样，我就能通过名字而不是运行的程序找到相应的 window。</p>
+
+<ul>
+<li>tmux new-window (perfix + c) <p> 创建一个新的 window </p></li>
+<li>tmux select-window -t :0-9 (perfix + 0-9) <p>根据索引转到该 window</p></li>
+<li>tmux rename-window (perfix + ,)<p>重命名当前 window</p></li>
+</ul>
+
+
+<h3>Panes</h3>
+
+<p>Panes 让我的开发时间从平淡变为棒极了。它们也是我卸载 MacVim 并且单独使用 iTem2 开发的原因。我无须切换应用程序以变换上下文（编辑，浏览 log，使用IRB，等）。任何我想做的事情，我可以在一个终端中完成。有人认为 OS X 的 Cmd + Tab 很快，我不这么认为。</p>
+
+<ul>
+<li>tmux split-window (perfix + &#8220;) <p>将 window 垂直划分为两个 pane</p></li>
+<li>tmux split-window -h (perfix + %) <p>将 window 水平划分为两个 pane</p></li>
+<li>tmux swap-pane -[UDLR] (perfix + { or }) <p>在指定的方向交换 pane</p></li>
+<li>tmux select-pane -[UDLR] <p>在指定的方向选择下一个 pane</p></li>
+<li>tmux select-pane -t :.+ <p>选择按数字顺序的下一个 pane</p></li>
+</ul>
+
+
+<h3>其他有益的 TMUX 命令</h3>
+
+<ul>
+<li>tmux list-keys <p>列出所有可以的快捷键和其运行的 tmux 命令</p></li>
+<li>tmux list-commands <p>列出所有的 tmux 命令及其参数</p></li>
+<li>tmux info <p>流出所有的 session, window, pane, 运行的进程号，等。</p></li>
+<li>tmux source-file ~/.tmux.conf <p>重新加载当前的 tmux 配置（基于一个默认的 tmux 配置）</li>
+</ul>
+
+
+<h3>必须用到的几条配置</h3>
+
+<p>这是几个我必须用到的配置：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># remap prefix to Control + a
+</span><span class='line'>set -g prefix C-a
+</span><span class='line'>unbind C-b
+</span><span class='line'>bind C-a send-prefix
+</span><span class='line'>
+</span><span class='line'># force a reload of the config file
+</span><span class='line'>unbind r
+</span><span class='line'>bind r source-file ~/.tmux.conf
+</span><span class='line'>
+</span><span class='line'># quick pane cycling
+</span><span class='line'>unbind ^A
+</span><span class='line'>bind ^A select-pane -t :.+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>工作流程</h3>
+
+<p>在白天，我的工作包括编码一个或者两个 Rails 应用，修改我的 dotfiles，运行 irssi，还有可能在另一个窗口打开一个 vim 来做笔记。如我提到的，我会运行所有这些在一个 tmux 的 session 中， 并且在不同的 windows 中来回切换。</p>
+
+<p>特别是当我在做 Rails 工作时，我必须用一个 75% / 25% 的垂直分割放置 vim 和一个终端，并在其中运行测试，和 git 交互，以及写代码。如果我在运行测试或者使用 &#8216;git diff&#8217;，我想要看到多余 25% 的输出，我会使用 tmux 来交换 pane 并切换到复制模式来查看我想查看的东西。</p>
+
+<p>最后，我在全屏模式运行 iTems2。为了一个编辑器和终端而切换 OS X 的应用实在是太愚蠢了。</p>
+
+<h2>更多学习的链接</h2>
+
+<ul>
+<li><a href="https://wiki.freebsdchina.org/software/t/tmux">使用tmux——freebsdchina</a></li>
+<li><a href="http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/">TMUX – The Terminal Multiplexer (Part 1)</a></li>
+<li><a href="http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/">TMUX – The Terminal Multiplexer (Part 2)</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jeswang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-24T16:54:00+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/" data-via="" data-counturl="http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/17/shi-yong-farbox/" title="Previous Post: 试用Farbox">&laquo; 试用Farbox</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/06/25/chang-yong-de-chromecha-jian/" title="Next Post: 常用的 Chrome 插件">常用的 Chrome 插件 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Jeswang</h1>
+  <p style="margin-bottom:0">梦想太多，正急着去实现。</p>
+  <p><a href="/about-me/">更多</a> </p>
+  <img src="/images/blog/esay_avatar.jpg"><br>
+  <font>联系方式:</font><br>
+  <font>wangyi724(at)gmail.com</font>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/01/zi-ti-jiang-zuo/">字体讲座</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/%5Bru-he-yue-du-%5B%3F%5D-ben-shu-%5D-jiao-wo-de-shi/">「如何阅读一本书」教我的事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">Tmux 快速教程</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  
+      
+            <ul id='Categories'><li class='category'><a class='category' href='/blog/categories/bash-script/'>Bash_Script</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/python/'>Python</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ios开发/'>iOS开发</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/工具控/'>工具控</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/生活记录/'>生活记录</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/阅读/'>阅读</a></li></ul>      
+      
+  
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - jeswang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'esaysblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/';
+        var disqus_url = 'http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
