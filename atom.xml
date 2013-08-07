@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-07T23:45:48+08:00</updated>
+  <updated>2013-08-08T00:08:29+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -59,7 +59,7 @@
 <p>需要注意的是，pixel 是一个固定大小的物理物体（尽管还没有一个标准；不同的设备的 pixel 有着不同的形状和尺寸，已知最小的只有11¼ μm）。因此，一个屏幕上的 PPI 是固定的——不是你在某个地方输入一个新的数字就能够更改的。大部显示器都是 66 - 130ppi。</p>
 
 <p><img src="http://blog.jeswang.org/images/ppi/4.png" alt="image-4" />
-*上面所示的方块是在被缩放为 100% 时的 200 x 200 pixel 的方块。查看你显示器的 PPI，可以把你的显示器也缩放为 100%， 然后量正方形的长和高。用 200 除以长和高就是显示的水平和垂直 PPI。</p>
+<em>上面所示的方块是在被缩放为 100% 时的 200 x 200 pixel 的方块。查看你显示器的 PPI，可以把你的显示器也缩放为 100%， 然后量正方形的长和高。用 200 除以长和高就是显示的水平和垂直 PPI。</em></p>
 
 <p>这是什么意思？<strong>如果你只是在一个屏幕上看图片，屏幕的 PPI 并不重要，因为你屏幕的 PPI 已经是确定的了。</strong>所以，下一次有人告诉你向一个网站上传一个 72ppi 的图片（因为 72ppi 是“网络的解析率”）时，你可以告诉他们，他们增加了一个可笑的额外步骤。除非他们关心网站的访问者可能将图片拷贝出去并打印出来，否则 PPI 无关紧要。一个 72ppi 的图片和一个 3000ppi 的图片在屏幕上是一样的。</p>
 
@@ -94,7 +94,7 @@
 
 <p>打印机不能通过纸上通过叠加像素的方式重现一张图片。取而代之的方式是通过散出4种颜色（青色，品红，黄色和黑色，即Cyan, Magenta, Yellow and Black，简称为CMYK）组合（通过减色模型可以得到一定范围的色调）的 dot 来重现一幅图像。这些 dot 之间一定会有空隙，而这就是 DPI 所描述的：它们的密度。</p>
 
-<p><img src="http://blog.jeswang.org/images/ppi/8.jpg" alt="image-8" />
+<p><img src="http://blog.jeswang.org/images/ppi/8.png" alt="image-8" />
 <em>左侧的图片说明了一个打印机是如何使用 dot 重组一幅图片的；右侧的图片是打印出的 dot 的近距离观看，很有可能是在很低的 DPI 的情况下（两幅均来自 <a href="http://en.wikipedia.org/wiki/Dots_per_inch">Wikipedia</a>）。</em></p>
 
 <p>比如说，你以 600 dpi 来打印一幅 150ppi 的图像，那么每个“pixel”将会包括16个 dot（600 dot/150 “pixel” = 4 x 4 / “pixel”)。</p>
