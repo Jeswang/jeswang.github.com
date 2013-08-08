@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 译文 | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/译文/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-08T14:05:44+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PPI vs. DPI: 有什么区别?]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/"/>
+    <updated>2013-08-07T15:15:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie</id>
+    <content type="html"><![CDATA[<p><img src="/images/ppi/0.png" alt="image-0" /></p>
+
+<p>Photoshop 新建图像窗口中 Resolution（解析度）这个参数我一直不明白，刚好又被问到了这个问题，所以就搜了一下。搜索到的中文内容看得我一头雾水，倒是这篇英文，通读了几遍，觉得自己搞清楚了，顺带就翻译了一下，搞清楚文中的更多细节。</p>
+
+<p class="info">
+翻译的文章：<a href="http://99designs.com/designer-blog/2013/02/26/ppi-vs-dpi-whats-the-difference/">PPI vs. DPI: what’s the difference?
+</a>
+</p>
+
+
+<p>如果你制作过打印出来的设计，使用过 Photoshop 或者其他修图软件，你一定遇到过这两个名词—— DPI（dots per inch）和/或 PPI（pixels per inch）。更有可能的是，你被不懂这些名词意义的客户问到过一些让人疑惑的关于 DPI 或 PPI 的问题。在你抱怨之前，不妨停下来发问：你自己对这些名词了解多少？</p>
+
+<!--more-->
+
+
+<p><img src="/images/ppi/1.png" alt="image-1" />
+<em>Adobe Phtoshop（左侧）提到 PPI 时使用的是 “pixels per inch”，但是在接下来的内容里我们会看到，“Resolution”这个词的用法仍然让人误解；Apple Preview（右侧）使用 DPI 来代表实际上的 PPI，让人误解。</em></p>
+
+<p>在 DPI/PPI 问题上感到不知所措一点也不难堪；因为这个世界正在尽人类想象所能地使其变得难懂。在众多原因中，有一个原因起了主要的作用，那就是有一些人在使用这两个名词时，实际上指代的是完全不同的东西。但是，不必担心：在这个短文的结尾，你就能完全理解这两个名词，并让你感到足够来回答将来的客户。</p>
+
+<h2>Pixels Per Inch（PPI）</h2>
+
+<p>我们从这里开始是因为，如果你是一个设计师，你首要关心的内容将是 PPI。DPI，我们在后面会讨论，指的是打印设备的一个技术指标，这并不直接关系到你——这是打印店的领域。现在，可以这样说吧，当人们提到“DPI”时，他们实际上指的是“PPI”——实在是太多了，所以这就变成了一种你必须容忍的约定俗成（Apple，Microsoft 和 Adobe 对于这种误用都有责任）。重要的是，当别人使用 DPI 时，你能够分辨指的是真正的 DPI 还是 实际上的 PPI。阅读接下来的内容，你就会明白。</p>
+
+<h3>PPI 的数字基础</h3>
+
+<p>首先，什么是 pixel？这看起来是个原始的概念，但是很多误解都是从这里开始的。Pixel 表示的是“图片的元素”。它是人眼可分辨的电子显示设备的最小物理组成部分。足够靠近你显示屏上的图片你就会看到他们：一排一排的小方块。换句话说，他们也是一个电子图片的最小可寻址单元。</p>
+
+<p><img src="/images/ppi/2.png" alt="image-2" />
+<em>这张图中的方块代表 pixel。当你足够靠近相当低像素的图片时，你可以看到类似的东西。图片来自 <a href="http://www.flickr.com/photos/pistocasero/5361516052/">PistoCasero</a></em></p>
+
+<p>实际上，这些 pixel 是由一些“sub-pixel”组成的——红色，绿色和蓝色的光学元件。肉眼无法看到这些元素是因为累加颜色的过程将这些“sub-pixel”混合为一个单一的色调，并呈现为一个 pixel。但是这些内容并不和设计师直接相关。</p>
+
+<p><strong>困惑点：</strong>可悲的是，一些生产厂商将这些 sub-pixel 描述为“dot”，因为这些 sub-pixel 和打印机中的 CMYK dot 相似，工作方式相同，但是是抵消光源的过程（后文详述）。然后，这些厂商开始吹嘘他们显示屏幕的“DPI”。如果你看到这些，请无视！这是一种令人恼怒的名词误用，也很有可能“击倒”你。</p>
+
+<p><img src="/images/ppi/3.png" alt="image-3" />
+<em>这两张图给你了一个物理或者机械上对于 pixel 本质的认识，向你展示了红色、绿色和蓝色的 sub-pixel 的光学元件。左侧是一个巨大 LED 显示屏的 pixel 阵列（来自 <a href="http://www.flickr.com/photos/whiskeytango/247740639/">BruceTurner</a>)；右侧是一个 iPad 4 屏幕的超近距离照片（来自 <a href="http://www.flickr.com/photos/56164003@N02/8419208409/">citoki0815</a>）</em></p>
+
+<p>需要注意的是，pixel 是一个固定大小的物理物体（尽管还没有一个标准；不同的设备的 pixel 有着不同的形状和尺寸，已知最小的只有11¼ μm）。因此，一个屏幕上的 PPI 是固定的——不是你在某个地方输入一个新的数字就能够更改的。大部显示器都是 66 - 130ppi。</p>
+
+<p><img src="/images/ppi/4.png" alt="image-4" />
+<em>上面所示的方块是在被缩放为 100% 时的 200 x 200 pixel 的方块。查看你显示器的 PPI，可以把你的显示器也缩放为 100%， 然后量正方形的长和高。用 200 除以长和高就是显示的水平和垂直 PPI。</em></p>
+
+<p>这是什么意思？<strong>如果你只是在一个屏幕上看图片，屏幕的 PPI 并不重要，因为你屏幕的 PPI 已经是确定的了。</strong>所以，下一次有人告诉你向一个网站上传一个 72ppi 的图片（因为 72ppi 是“网络的解析率”）时，你可以告诉他们，他们增加了一个可笑的额外步骤。除非他们关心网站的访问者可能将图片拷贝出去并打印出来，否则 PPI 无关紧要。一个 72ppi 的图片和一个 3000ppi 的图片在屏幕上是一样的。</p>
+
+<h3>需要了解的内容：PPI 和打印的目标</h3>
+
+<p>所以我们现在知道了：只有要打印出来时，设定 PPI 才有效——将数字化的图片转化为非数字化的图片的转变过程。“但是，等一等”你说，“我们讨论的是每英寸有多少个 pixel，但是打印纸没有 pixel 啊！”对，这很让人困惑。请继续读。</p>
+
+<p>在打印的过程中，所有在屏幕上组成图片的物理 pixel 都被转换成不同色调的小正方形。显而易见的是，纸上没有发光设备意义上的 pixel，而是更加抽象意义的一个方块形元素的“pixel”（这里为了以示区分，这种“pixel”以引号标注）。</p>
+
+<p><img src="/images/ppi/5.jpg" alt="image-5" />
+<em>Yuriy Babich 的艺术品使用一种粗糙的、打印出来的“pixel”样式的来显示出抽象的效果（来自 <a href="http://www.flickr.com/photos/uclarochit/448591854/">Укларочить</a>）</em></p>
+
+<p>这是什么意思？纸上的“pixel”没有固定的大小。如果你增加图片的大小 300%，那么纸上的“pixel”就会增大三倍，结果就是一个更大，而且看上去更加模糊的图像。</p>
+
+<p>你要如何增加或者减小输出图像的大小呢？通过调节 PPI 的数值。</p>
+
+<p>假设你有一个 300 x 300 pixel 的图像。如果你设定 PPI 为10，那么图像将会相对非常大：将会是 30 x 30 inch。如果你设定 PPI 为 300，那么打印出来将会非常小：每英寸 300 个 pixel，纸张将会是 1 x 1 inch。这回合理了？</p>
+
+<p><strong>简单来说： 对于最终的打印输出而言，将 PPI 输入认为是一种调节物理大小的方式，而不是分辨率。</strong>减少 PPI，相应的就增大了打印出的大小，输出的图片看上去质量也比较差，因为“pixel”也更大更可见。到那时记住，这只是一种相对的标准；如果你站的足够远，图片又会和原来一样清楚。图像的绝对分辨率并没有改变；还是有和原来一样多的“pixel”。所以，增加一个图像的分辨率的方式是让图像拥有更多额外的 pixel，而不是增加 PPI。</p>
+
+<p><strong>注意：</strong>简单地扩大一个图像的 pixel 数目通常不是增加质量的一个好方法，因为计算机将会用奇怪的像素塞满整幅图像。</p>
+
+<p><img src="/images/ppi/6.jpg" alt="image-6" />
+<em>凑近仔细看这个广告牌，像素清晰可见（上面的 dot 也一样，接下来会进一步讨论 dot）。但是在一定距离之外的路人看到它时，会觉得这张图片很清楚（来自 <a href="http://www.flickr.com/photos/crackersunited/19108452/">Friction NYC</a>）</em></p>
+
+<h1>Dots Per Inch (DPI )</h1>
+
+<p>这个章节会很短，因为如果你是一个设计师，DPI 基本上不会困扰到你。但是，这也是一个需要理解的重要概念。</p>
+
+<p><img src="/images/ppi/7.jpg" alt="image-7" />
+<em>这是来自 <a href="http://www.flickr.com/photos/nicksherman/8292725849/">Nick Sherman</a> 的一张图片，其标题为 “Bits of Bits”，展示了一幅使用了低 DPI 的低分辨率的图片，很好的说明了 PPI 和 DPI 的概念。</em></p>
+
+<p>打印机不能通过纸上通过叠加像素的方式重现一张图片。取而代之的方式是通过散出4种颜色（青色，品红，黄色和黑色，即Cyan, Magenta, Yellow and Black，简称为CMYK）组合（通过减色模型可以得到一定范围的色调）的 dot 来重现一幅图像。这些 dot 之间一定会有空隙，而这就是 DPI 所描述的：它们的密度。</p>
+
+<p><img src="/images/ppi/8.png" alt="image-8" />
+<em>左侧的图片说明了一个打印机是如何使用 dot 重组一幅图片的；右侧的图片是打印出的 dot 的近距离观看，很有可能是在很低的 DPI 的情况下（两幅均来自 <a href="http://en.wikipedia.org/wiki/Dots_per_inch">Wikipedia</a>）。</em></p>
+
+<p>比如说，你以 600 dpi 来打印一幅 150ppi 的图像，那么每个“pixel”将会包括16个 dot（600 dot/150 “pixel” = 4 x 4 / “pixel”)。</p>
+
+<p>客户关心这个是因为，根据经验来说，DPI 越高，图像的色调和颜色混合的平滑程度就越好（但是同时也需要使用更多的抹灰和花费更长的时间打印，所以在家庭打印的时候要注意这一点）。150dpi 通常被认为是图书杂志这类高质量摄影制品的最低标准。报纸通常使用 85dpi 并且结果也很明显：独立的 dot 可见，而且丢失了一些细节。广告版通常使用的是 45dpi，因为你通常在很远的地方看，所以无法分辨。通常来说，dot 矩阵打印机可打印的 dpi 范围为 60 - 90，喷墨打印机的 dpi 范围为 300 - 600，而激光打印机为 600 - 1800。</p>
+
+<p><strong>注意：</strong>更高的 dpi 也不一定等统一更好的质量，因为 dot 的大小和形状并没有标准，这几意味着一个厂商的 1200dpi 可能和另一个厂商的 700 dpi 效果相同。但是总之，这不是你的问题。</p>
+
+<p><strong>简而言之：</strong>DPI 只是打印机的技术参数，就像是你电脑显示器的 pixel 分辨率。作为一个设计师，你无法控制这个参数。你所能只的就是向你的用户推荐一个专业的打印店，并且了解这个店设备的参数，并使用这些参数。</p>
+
+<h3>关于 PPI vs. DPI 是否还有其他的问题或者指点？</h3>
+
+<p><strong>相关文章：</strong></p>
+
+<p><a href="http://99designs.com/designer-blog/2013/01/22/polka-dots-art-the-cosmos-and-graphic-design/">History of the polka dot: art, the cosmos and graphic design</a></p>
+
+<p><a href="http://99designs.com/designer-blog/2012/02/21/correct-file-formats-rgb-and-cmyk/">Correct file formats: RGB and CMYK</a></p>
+
+<p><a href="http://99designs.com/designer-blog/2011/11/04/99designs-glossary-for-contest-holders-and-designers/">99designs glossary for contest holders and designers</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tmux 快速教程]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng/"/>
+    <updated>2013-06-24T16:54:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/06/24/tmux-kuai-su-jiao-cheng</id>
+    <content type="html"><![CDATA[<p class="info">
+翻译的文章：<a href="http://robots.thoughtbot.com/post/2641409235/a-tmux-crash-course">A Tmux Crash Course</a>
+</p>
+
+
+<h2>译文</h2>
+
+<p>我已经使用 Tmux 近 4 个月了，它和 vim 一样成为了我工作流中不可或缺的部分。Pane 和 windows 的管理，在输出信息中可导航的复制模式以及 seesion 的管理让 Tmux 成为了命令行爱好者（特别是 vim 使用者）毫不费力就能使用的工具。我收集了一些我日常使用的 tmux 命令，这些命令让我的工作更加高效。</p>
+
+<p><img src="http://ui.thoughtbot.com/assets/tmux-panes.png" alt="image-1" /></p>
+
+<p>如果我提到的 tmux 命令不是默认的快捷键， 我会在介绍的间隙说明。</p>
+
+<h3>Session 管理</h3>
+
+<p>Seesion 可以有效地分离工作环境。我有一个“工作” session 和一个“娱乐” session；在“工作”中，我打开所有日常开发需要的内容，而在“娱乐”中，我只打开当前开源的 gem 或者在家 hack 的一些东西。</p>
+
+<ul>
+<li>tmux new -s session_name <p>创建一个叫做 session_name 的 tmux session</p></li>
+<li>tmux attach -t session_name <p> 重新开启叫做 session_name 的 tmux session </p></li>
+<li>tmux switch -t session_name <p>转换到叫做 session_name 的 tmux session</p></li>
+<li>tmux list-sessions <p>列出现有的所有 session </p></li>
+<li>tmux detach (prefix + d) <p>离开当前开启的 session</p></li>
+</ul>
+
+
+<h3>Windows</h3>
+
+<p>Tmux 有一个含有标签的界面，但是它命名这些标签为 “Windows”。为了保持有序，我重新命名了所有我使用的 windows；如果我正在编写一个 gem，我会使用这个 gem 的名字来命名 window。客户端的应用程序也一样。这样，我就能通过名字而不是运行的程序找到相应的 window。</p>
+
+<ul>
+<li>tmux new-window (perfix + c) <p> 创建一个新的 window </p></li>
+<li>tmux select-window -t :0-9 (perfix + 0-9) <p>根据索引转到该 window</p></li>
+<li>tmux rename-window (perfix + ,)<p>重命名当前 window</p></li>
+</ul>
+
+
+<h3>Panes</h3>
+
+<p>Panes 让我的开发时间从平淡变为棒极了。它们也是我卸载 MacVim 并且单独使用 iTem2 开发的原因。我无须切换应用程序以变换上下文（编辑，浏览 log，使用IRB，等）。任何我想做的事情，我可以在一个终端中完成。有人认为 OS X 的 Cmd + Tab 很快，我不这么认为。</p>
+
+<ul>
+<li>tmux split-window (perfix + ") <p>将 window 垂直划分为两个 pane</p></li>
+<li>tmux split-window -h (perfix + %) <p>将 window 水平划分为两个 pane</p></li>
+<li>tmux swap-pane -[UDLR] (perfix + { or }) <p>在指定的方向交换 pane</p></li>
+<li>tmux select-pane -[UDLR] <p>在指定的方向选择下一个 pane</p></li>
+<li>tmux select-pane -t :.+ <p>选择按数字顺序的下一个 pane</p></li>
+</ul>
+
+
+<h3>其他有益的 TMUX 命令</h3>
+
+<ul>
+<li>tmux list-keys <p>列出所有可以的快捷键和其运行的 tmux 命令</p></li>
+<li>tmux list-commands <p>列出所有的 tmux 命令及其参数</p></li>
+<li>tmux info <p>流出所有的 session, window, pane, 运行的进程号，等。</p></li>
+<li>tmux source-file ~/.tmux.conf <p>重新加载当前的 tmux 配置（基于一个默认的 tmux 配置）</li>
+</ul>
+
+
+<h3>必须用到的几条配置</h3>
+
+<p>这是几个我必须用到的配置：</p>
+
+<p>```</p>
+
+<h1>remap prefix to Control + a</h1>
+
+<p>set -g prefix C-a
+unbind C-b
+bind C-a send-prefix</p>
+
+<h1>force a reload of the config file</h1>
+
+<p>unbind r
+bind r source-file ~/.tmux.conf</p>
+
+<h1>quick pane cycling</h1>
+
+<p>unbind ^A
+bind ^A select-pane -t :.+
+```</p>
+
+<h3>工作流程</h3>
+
+<p>在白天，我的工作包括编码一个或者两个 Rails 应用，修改我的 dotfiles，运行 irssi，还有可能在另一个窗口打开一个 vim 来做笔记。如我提到的，我会运行所有这些在一个 tmux 的 session 中， 并且在不同的 windows 中来回切换。</p>
+
+<p>特别是当我在做 Rails 工作时，我必须用一个 75% / 25% 的垂直分割放置 vim 和一个终端，并在其中运行测试，和 git 交互，以及写代码。如果我在运行测试或者使用 'git diff'，我想要看到多余 25% 的输出，我会使用 tmux 来交换 pane 并切换到复制模式来查看我想查看的东西。</p>
+
+<p>最后，我在全屏模式运行 iTems2。为了一个编辑器和终端而切换 OS X 的应用实在是太愚蠢了。</p>
+
+<h2>更多学习的链接</h2>
+
+<ul>
+<li><a href="https://wiki.freebsdchina.org/software/t/tmux">使用tmux——freebsdchina</a></li>
+<li><a href="http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/">TMUX – The Terminal Multiplexer (Part 1)</a></li>
+<li><a href="http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/">TMUX – The Terminal Multiplexer (Part 2)</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

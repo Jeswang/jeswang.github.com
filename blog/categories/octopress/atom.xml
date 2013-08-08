@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-08T14:05:44+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zen-Coding]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/05/21/zen-coding/"/>
+    <updated>2012-05-21T12:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/05/21/zen-coding</id>
+    <content type="html"><![CDATA[<p class="info">
+测试一下列表的显示样式。
+</p>
+
+
+<h2>各种元素代表的含义：</h2>
+
+<table>
+<thead>
+<tr>
+<th>元素      </th>
+<th> 代表的含义以及例子 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E           </td>
+<td> 元素名 (div, p)  </td>
+</tr>
+<tr>
+<td>E#id        </td>
+<td> 带id的元素 (div#content, p#intro, span#error) </td>
+</tr>
+<tr>
+<td>E.class     </td>
+<td> 带class的元素 (div.header, p.error.critial)id 和 class 可以连写，如： div#content.column.width</td>
+</tr>
+<tr>
+<td>E>N         </td>
+<td> 子元素 (div>p, div#footer>p>span)</td>
+</tr>
+<tr>
+<td>E+N         </td>
+<td> 兄弟元素 (h1+p, div#header+div#content+div#footer);</td>
+</tr>
+<tr>
+<td>E*N        </td>
+<td> 多项元素 (ul#nav>l *5>a)</td>
+</tr>
+<tr>
+<td>E$*N       </td>
+<td> 带序号的元素 (ul#nav>li.item-$*5);</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+</feed>

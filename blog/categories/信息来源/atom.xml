@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 信息来源 | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/信息来源/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-08T14:05:44+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Google自定义搜索@186 days 考研倒计]]></title>
+    <link href="http://blog.jeswang.org/blog/2011/07/08/google%E8%87%AA%E5%AE%9A%E4%B9%89%E6%90%9C%E7%B4%A2%40186-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/"/>
+    <updated>2011-07-08T00:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2011/07/08/google自定义搜索@186-days-考研倒计</id>
+    <content type="html"><![CDATA[<p>Google居然还可以自定义搜索，我真的是孤陋寡闻了，今天无意间看到 <a class="wpGallery" href="http://www.lixiaolai.com/">李笑来</a> 的博客才知道的。<a class="wpGallery" href="http://www.lixiaolai.com/index.php/archives/992.html">原文链接</a></p>
+
+
+
+
+<p>Custom Search 的说明文档：<a class="wpGallery" href="http://code.google.com/intl/en/apis/customsearch/docs/dev_guide.html">http://code.google.com/intl/en/apis/customsearch/docs/dev_guide.html</a></p>
+
+
+
+
+<p>真的是很有用的一个api啊。</p>
+
+
+
+
+<p>这是文章页面里提到的几个有用的自定义搜索的链接：</p>
+
+
+
+
+<p>英文媒体搜索：<a class="wpGallery" href="http://www.google.com/cse/home?cx=017195234153172777936%3Arprimc6muy0">http://www.google.com/cse/home?cx=017195234153172777936%3Arprimc6muy0</a></p>
+
+
+
+
+<blockquote>
+
+<p>只搜索以下网站</p>
+
+<p>http://www.economist.com/<br /> http://www.cnn.com/<br /> http://www.time.com/<br /> http://nytimes.com/<br /> http://www.washingtonpost.com/<br /> http://www.usnews.com/<br /> http://usatoday.com/<br /> http://www.reuters.com/<br /> http://www.bbc.co.uk/<br /> http://en.wikinews.org/</p>
+
+</blockquote>
+
+
+
+
+<p>百科类搜索：<a class="wpGallery" href="http://www.google.com/cse/home?cx=017195234153172777936:urvj51ftram">http://www.google.com/cse/home?cx=017195234153172777936:urvj51ftram</a></p>
+
+
+
+
+<blockquote>
+
+<p>只搜索<br /> http://en.wikipedia.org/<br /> http://encarta.msn.com/<br /> http://knol.google.com/<br /> http://www.thecanadianencyclopedia.com/<br /> http://en.citizendium.org/<br /> http://www.bartleby.com/65/<br /> http://www.eb.com/</p>
+
+</blockquote>
+
+
+
+
+<p>在线文件共享站点搜索：<a class="wpGallery" href="http://www.google.com/coop/cse?cx=006422944775554126616:e5kwgj0fhu4">http://www.google.com/coop/cse?cx=006422944775554126616:e5kwgj0fhu4</a></p>
+
+
+
+
+<p>不得不感叹一下，拥有这么庞大的数据，随便做一个小应用就造福众生。</p>
+
+
+
+
+<p>PS：</p>
+
+
+
+
+<p>最近折腾了一下 <a class="wpGallery" href="http://blog.codingnow.com/2011/06/dns_tunnel.html">DNS隧道</a> ，晚上熄灯的时候，蹭中国联通的无线网，玩得优哉游哉。</p>
+
+
+
+
+<p>给 Macbook 换了一个 500g 的硬盘，数据直接磁盘间拷贝，这功能太爽了。</p>
+
+
+
+
+<p>这几天没怎么看考研的内容，罪过罪过啊，自省。</p>
+
+
+
+
+<p>完。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

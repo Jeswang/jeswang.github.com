@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mac使用经验 | Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/blog/categories/mac使用经验/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-08T13:59:43+08:00</updated>
+  <updated>2013-08-08T14:05:44+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[每个人都需要VimWiki]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/04/04/my-wiki-life/"/>
+    <updated>2012-04-04T19:29:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/04/04/my-wiki-life</id>
+    <content type="html"><![CDATA[<h2>为什么要记录？</h2>
+
+<ul>
+<li><p>学过的东西，要么学的时候就不太明白，要么当时学明白了，后来渐渐淡忘了。</p></li>
+<li><p>搜过的东西，遇到了相同的问题还要重新搜索。</p></li>
+<li><p>好的网址用各种书签工具都无法分类处理。</p></li>
+<li><p>内容整理在一起，方便将来再查看和使用。</p></li>
+</ul>
+
+
+<h2>尝试过Mac下的软件</h2>
+
+<table>
+<thead>
+<tr>
+<th>工具   </th>
+<th> 价钱  </th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> VoodooPad</td>
+<td> 39.95$ </td>
+<td> 最早尝试过的一款笔记软件，但是不太喜欢其内容组织形式，没使用太长时间。<br />网址：<a href="http://flyingmeat.com/voodoopad">http://flyingmeat.com/voodoopad</a></td>
+</tr>
+<tr>
+<td> Evernote </td>
+<td> Free </td>
+<td> 功能多，支持多种平台同步的一款笔记软件。但是我觉得有很多功能是我不需要的，而且富文本编辑对我来说让内容很难做到美观。<br />网址：<a href="http://www.evernote.com">http://www.evernote.com</a>                    </td>
+</tr>
+<tr>
+<td> Notational Velocity</td>
+<td> Free</td>
+<td> simplenote的Mac客户端程序。开源，足够简洁，整个界面一个按钮也没有，适合记录一些暂时需要，而且不需要整理的内容。<br />网址：<a href="http://notational.net">http://notational.net</a>                                                      </td>
+</tr>
+<tr>
+<td> nvALT   </td>
+<td> Free</td>
+<td>Notational Velocity的加强软件。添加的很多功能都很实用。<br />网址：<a href="http://brettterpstra.com/project/nvalt">http://brettterpstra.com/project/nvalt</a> </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>VimWiki</h2>
+
+<p>随着渐渐习惯了使用vim进行文件的编辑，对其爱不释手，并且发现了好用的VimWiki。</p>
+
+<p>VimWiki完全满足了我想要记录内容的需要：</p>
+
+<ul>
+<li>简单的语法。</li>
+<li>内容可以任意组织。</li>
+<li>可以生成HTML随时浏览。</li>
+<li>自定义模版，怎么舒服怎么来。</li>
+</ul>
+
+
+<p><img src="/images/vimwiki.png" alt="My VimWiki" /></p>
+
+<h2>链接</h2>
+
+<h4>在线Wiki链接：</h4>
+
+<ul>
+<li><a href="http://wiki.hotoo.me/">闲耘™.Wiki</a></li>
+<li><a href="http://zwiki.sinaapp.com/">拾墨.wiki</a></li>
+<li><a href="http://wiki.ktmud.com/index.html">丘迟.wiki</a></li>
+</ul>
+
+
+<h4>其他介绍个人知识管理的博客链接：</h4>
+
+<ul>
+<li><a href="http://www.gracecode.com/archives/3022/">推荐 VimWiki</a></li>
+<li><a href="http://www.gtdstudy.com/?p=2234">个人知识管理：我为什么使用Onenote</a></li>
+<li><a href="http://blog.hotoo.me/use-vimwiki-for-blog.html">用 Vimwiki 写博客</a></li>
+<li><a href="http://wiki.ktmud.com/tips/vim/ways-to-sync-vimwiki.html">同步 vimwiki 到线上的各种方法</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mac下制作U盘启动]]></title>
