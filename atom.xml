@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-08T14:05:44+08:00</updated>
+  <updated>2013-08-08T14:08:10+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -160,52 +160,6 @@
 <p><img src="http://blog.jeswang.org/images/gf5/2.jpg" alt="2" /></p>
 
 <p>- EOF -</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[字体讲座]]></title>
-    <link href="http://blog.jeswang.org/blog/2013/07/01/zi-ti-jiang-zuo/"/>
-    <updated>2013-07-01T19:32:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2013/07/01/zi-ti-jiang-zuo</id>
-    <content type="html"><![CDATA[<p>这个周末到望京听了一场 Lawrence Li 的讲座——「文字设计讲座」，虽然只有一个小时，但是还是学到了很多东西。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[「如何阅读一本书」教我的事]]></title>
-    <link href="http://blog.jeswang.org/blog/2013/06/30/%5Bru-he-yue-du-%5B%3F%5D-ben-shu-%5D-jiao-wo-de-shi/"/>
-    <updated>2013-06-30T14:56:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2013/06/30/[ru-he-yue-du-[?]-ben-shu-]-jiao-wo-de-shi</id>
-    <content type="html"><![CDATA[<h3>为什么要阅读</h3>
-
-<h3>读什么书</h3>
-
-<h3>阅读的层次</h3>
-
-<h3>为什么要写出来</h3>
-
-<h3>像阅读一样地写作</h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[见识]]></title>
-    <link href="http://blog.jeswang.org/blog/2013/06/30/yan-jie/"/>
-    <updated>2013-06-30T00:54:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2013/06/30/yan-jie</id>
-    <content type="html"><![CDATA[<p>在「罗辑思维」的「拒绝逃离北上广，见识决定命运」中，罗振宇表达了这样一个观点：要留在北上广，因为在这里，你才能有见识。</p>
-
-<p>我在最近的学习中不断地认识到见识的重要。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[盲从]]></title>
-    <link href="http://blog.jeswang.org/blog/2013/06/28/mang-cong/"/>
-    <updated>2013-06-28T09:51:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2013/06/28/mang-cong</id>
-    <content type="html"><![CDATA[<p>不盲从意味着不跟随自己听到或者看到的内容，而是听从自己内心的选择。</p>
 ]]></content>
   </entry>
   
@@ -1194,15 +1148,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[假期实习总结]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/10/25/jia-qi-shi-xi-zong-jie/"/>
-    <updated>2012-10-25T09:43:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/10/25/jia-qi-shi-xi-zong-jie</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[制作iOS App会用到的资源]]></title>
     <link href="http://blog.jeswang.org/blog/2012/08/12/zhi-zuo-ios-appke-neng-yong-dao-de-zi-yuan/"/>
     <updated>2012-08-12T08:43:00+08:00</updated>
@@ -1274,49 +1219,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[我想做什么样的产品]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/08/04/wo-xiang-zuo-shi-yao-yang-de-chan-pin/"/>
-    <updated>2012-08-04T14:52:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/08/04/wo-xiang-zuo-shi-yao-yang-de-chan-pin</id>
-    <content type="html"><![CDATA[<h2>网络信息的获取和推荐</h2>
-
-<h3>需求</h3>
-
-<p>网络上的信息无穷无尽，基本上现实世界中的所有信息都被映射到了虚拟的网络中。通过网络，我们可以学习到新的编程技术，解决生活和工作中遇到的问题。</p>
-
-<p>虽然网络给人提供了信息，但是网络上的信息存在着一个巨大的问题——质量的良莠不齐。具体的体现有：</p>
-
-<ul>
-<li>有效信息所占的比例小。大量的转载却不标注出处的信息充斥网络，让人很难找到信息原本的来源。</li>
-<li>看似有效的信息当中也有不可靠的信息。</li>
-<li>有效信息的连贯性不强。太碎了，一片一片的。</li>
-</ul>
-
-
-<p>针对这个问题，我认为现在一共有两种解决方案。</p>
-
-<ul>
-<li>搜索引擎，比如说谷歌，通过搜索网络中已有的信息来获取想要的信息。</li>
-<li>问答网站，比如说知乎，Quora。通过向其他有经验的人获取有效的信息。</li>
-</ul>
-
-
-<p>前者的结果是算法计算出来的，但是我觉得缺少了人的参与，信息的质量不如问答网站。</p>
-
-<p>正是因为这些原因，读书是一种更有效获取信息的途径。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[thepast.me]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/07/25/thepast-dot-me/"/>
-    <updated>2012-07-25T15:42:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/07/25/thepast-dot-me</id>
-    <content type="html"><![CDATA[<p>FluNDKS9qI0V4xte</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[cocos2d-iPhone框架学习]]></title>
     <link href="http://blog.jeswang.org/blog/2012/06/28/cocos2dkuang-jia-xue-xi/"/>
     <updated>2012-06-28T15:18:00+08:00</updated>
@@ -1371,6 +1273,521 @@
 <p>很多成功的游戏都是使用cocos2d（我原来粗心地将其写做cocoa2d），比如说Tiny Wings。</p>
 
 <p>下一阶段关于cocos2d的学习是物理引擎的使用。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Zen-Coding]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/05/21/zen-coding/"/>
+    <updated>2012-05-21T12:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/05/21/zen-coding</id>
+    <content type="html"><![CDATA[<p class="info">
+测试一下列表的显示样式。
+</p>
+
+
+<h2>各种元素代表的含义：</h2>
+
+<table>
+<thead>
+<tr>
+<th>元素      </th>
+<th> 代表的含义以及例子 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E           </td>
+<td> 元素名 (div, p)  </td>
+</tr>
+<tr>
+<td>E#id        </td>
+<td> 带id的元素 (div#content, p#intro, span#error) </td>
+</tr>
+<tr>
+<td>E.class     </td>
+<td> 带class的元素 (div.header, p.error.critial)id 和 class 可以连写，如： div#content.column.width</td>
+</tr>
+<tr>
+<td>E>N         </td>
+<td> 子元素 (div>p, div#footer>p>span)</td>
+</tr>
+<tr>
+<td>E+N         </td>
+<td> 兄弟元素 (h1+p, div#header+div#content+div#footer);</td>
+</tr>
+<tr>
+<td>E*N        </td>
+<td> 多项元素 (ul#nav>l *5>a)</td>
+</tr>
+<tr>
+<td>E$*N       </td>
+<td> 带序号的元素 (ul#nav>li.item-$*5);</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[画 来自 Paper by FiftyThree]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/05/05/hua/"/>
+    <updated>2012-05-05T10:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/05/05/hua</id>
+    <content type="html"><![CDATA[<h2>我的画</h2>
+
+<p>最近买了<a href="http://www.fiftythree.com/paper">Paper by FiftyThree</a>，这里是用iPad花的几幅画：</p>
+
+<p><img src="http://blog.jeswang.org/images/papers/image-1.jpg" alt="image-1" />
+<img src="http://blog.jeswang.org/images/papers/image-2.jpg" alt="image-2" />
+<img src="http://blog.jeswang.org/images/papers/image-3.jpg" alt="image-3" /></p>
+
+<h2>其他人的画：</h2>
+
+<p>更多使用Paper创作的精彩作品：<a href="http://madewithpaper.fiftythree.com/">#MadeWithPaper</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[天涯书城 生成 TXT]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/04/12/tianya-book/"/>
+    <updated>2012-04-12T08:43:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/04/12/tianya-book</id>
+    <content type="html"><![CDATA[<p class="info">
+视频地址：<br />
+<a href="http://www.56.com/u85/v_NjI1MzgzMzA.html">有一种大哥叫刘华强</a>
+</p>
+
+
+<h4>看完了视频觉得孙红雷真Man，这是什么电视剧？</h4>
+
+<p>征服。(<a href="http://baike.baidu.com/view/84818.htm#sub8097649">百度百科</a>)</p>
+
+<h4>没看过，这黑帮老大是不是有原型啊？</h4>
+
+<p>一搜，果真有，原型是刘华强。（<a href="http://baike.baidu.com/view/1615163.htm">百度百科</a>）</p>
+
+<h4>我记得我在天涯里看过一个8新中国各种犯罪分子的帖子来着，回头找找。</h4>
+
+<p>哎呀，天涯论坛居然打不开（联通无线），太坑爹了，刷新几次。</p>
+
+<p>仍然打不开，百度下天涯，从首页进吧。</p>
+
+<h4>一搜，看到了天涯在线书库。进去随便找了本书，翻了两页。</h4>
+
+<p>在线看太麻烦了，整个网站抓下来又比较大，而且怕是无法搜索。</p>
+
+<p>算了，抓到本地生成TXT在Kindle下看吧。</p>
+
+<p>打开Vim开始写。。。</p>
+
+<p>代码在<a href="https://gist.github.com/2356875">这里</a>：</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'><figcaption><span> (tianyabook.py)</span> <a href='http://blog.jeswang.org/downloads/code/tianyabook.py'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c">#!/usr/local/bin/python</span>
+</span><span class='line'><span class="c"># -*- coding: utf-8 -*-</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">codecs</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">urlToTxt</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">bookUrl</span> <span class="o">=</span> <span class="n">url</span>
+</span><span class='line'>    <span class="n">suffix</span> <span class="o">=</span> <span class="s">&quot;html&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">url</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s">&#39;htm&#39;</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;htm&#39;</span>
+</span><span class='line'>    <span class="n">source</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">bookUrl</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">rootSoup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">charpterNum</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">u&#39;[0-9]+(?:\.[0-9]*)?.&#39;</span><span class="o">+</span><span class="n">suffix</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">charpterNum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charpterNum</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">links</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;class&quot;</span> <span class="p">:</span> <span class="s">&quot;tt2&quot;</span> <span class="p">})</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">bookName</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;书的名字是 &#39;</span> <span class="o">+</span> <span class="n">bookName</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;共有 &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">charpterNum</span><span class="p">)</span> <span class="o">+</span> <span class="s">u&#39; 章节&#39;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">bookName</span><span class="o">+</span><span class="s">u&quot;.txt&quot;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;http:/www.tianyabook.com&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">continue</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="o">+</span><span class="s">&#39;------------------------------------------&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="o">+</span><span class="n">i</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">getStrFromUrl</span><span class="p">(</span><span class="n">url</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span><span class="o">+</span><span class="n">i</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">]))</span>
+</span><span class='line'>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">getStrFromUrl</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;正在获取&#39;</span> <span class="o">+</span> <span class="n">url</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s">u&#39;&#39;</span>
+</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">pageSoup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;GB18030&quot;</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">text</span> <span class="o">=</span> <span class="n">pageSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s">&#39;586&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">continue</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="c">#result += &#39;\n\r&#39; </span>
+</span><span class='line'>            <span class="k">continue</span>
+</span><span class='line'>        <span class="k">else</span> <span class="p">:</span>
+</span><span class='line'>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span class='line'>    <span class="c">#urlToTxt(&quot;http://www.tianyabook.com/zw/shijieyinnibutong/index.html&quot;)</span>
+</span><span class='line'>    <span class="c">#getStrFromFile(&quot;32.html&quot;)</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;输入书籍目录URL&#39;</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">urlToTxt</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;生成完毕&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每个人都需要VimWiki]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/04/04/my-wiki-life/"/>
+    <updated>2012-04-04T19:29:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/04/04/my-wiki-life</id>
+    <content type="html"><![CDATA[<h2>为什么要记录？</h2>
+
+<ul>
+<li><p>学过的东西，要么学的时候就不太明白，要么当时学明白了，后来渐渐淡忘了。</p></li>
+<li><p>搜过的东西，遇到了相同的问题还要重新搜索。</p></li>
+<li><p>好的网址用各种书签工具都无法分类处理。</p></li>
+<li><p>内容整理在一起，方便将来再查看和使用。</p></li>
+</ul>
+
+
+<h2>尝试过Mac下的软件</h2>
+
+<table>
+<thead>
+<tr>
+<th>工具   </th>
+<th> 价钱  </th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> VoodooPad</td>
+<td> 39.95$ </td>
+<td> 最早尝试过的一款笔记软件，但是不太喜欢其内容组织形式，没使用太长时间。<br />网址：<a href="http://flyingmeat.com/voodoopad">http://flyingmeat.com/voodoopad</a></td>
+</tr>
+<tr>
+<td> Evernote </td>
+<td> Free </td>
+<td> 功能多，支持多种平台同步的一款笔记软件。但是我觉得有很多功能是我不需要的，而且富文本编辑对我来说让内容很难做到美观。<br />网址：<a href="http://www.evernote.com">http://www.evernote.com</a>                    </td>
+</tr>
+<tr>
+<td> Notational Velocity</td>
+<td> Free</td>
+<td> simplenote的Mac客户端程序。开源，足够简洁，整个界面一个按钮也没有，适合记录一些暂时需要，而且不需要整理的内容。<br />网址：<a href="http://notational.net">http://notational.net</a>                                                      </td>
+</tr>
+<tr>
+<td> nvALT   </td>
+<td> Free</td>
+<td>Notational Velocity的加强软件。添加的很多功能都很实用。<br />网址：<a href="http://brettterpstra.com/project/nvalt">http://brettterpstra.com/project/nvalt</a> </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>VimWiki</h2>
+
+<p>随着渐渐习惯了使用vim进行文件的编辑，对其爱不释手，并且发现了好用的VimWiki。</p>
+
+<p>VimWiki完全满足了我想要记录内容的需要：</p>
+
+<ul>
+<li>简单的语法。</li>
+<li>内容可以任意组织。</li>
+<li>可以生成HTML随时浏览。</li>
+<li>自定义模版，怎么舒服怎么来。</li>
+</ul>
+
+
+<p><img src="http://blog.jeswang.org/images/vimwiki.png" alt="My VimWiki" /></p>
+
+<h2>链接</h2>
+
+<h4>在线Wiki链接：</h4>
+
+<ul>
+<li><a href="http://wiki.hotoo.me/">闲耘™.Wiki</a></li>
+<li><a href="http://zwiki.sinaapp.com/">拾墨.wiki</a></li>
+<li><a href="http://wiki.ktmud.com/index.html">丘迟.wiki</a></li>
+</ul>
+
+
+<h4>其他介绍个人知识管理的博客链接：</h4>
+
+<ul>
+<li><a href="http://www.gracecode.com/archives/3022/">推荐 VimWiki</a></li>
+<li><a href="http://www.gtdstudy.com/?p=2234">个人知识管理：我为什么使用Onenote</a></li>
+<li><a href="http://blog.hotoo.me/use-vimwiki-for-blog.html">用 Vimwiki 写博客</a></li>
+<li><a href="http://wiki.ktmud.com/tips/vim/ways-to-sync-vimwiki.html">同步 vimwiki 到线上的各种方法</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[音悦台MV下载 Python版本]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
+    <updated>2012-02-21T23:25:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
+    <content type="html"><![CDATA[<h3>制作过程：</h3>
+
+<p>前面写过了一个<a href="http://blog.jeswang.org/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
+
+<p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
+
+<p>这个过程还是有一点点曲折的：</p>
+
+<ul>
+<li>读HTML代码，发现文件的链接是嵌入的Flash获取一个videoId,然后根据videoId获取的。</li>
+<li>找了一个可以反编译Flash文件的软件<a href="http://www.sothink.com/product/flashdecompiler/">SWFDecompiler</a>,反编译了一下Flash文件，简单读了一下相关的代码，不是很有头绪，然后决定从Flash发起的HTTP请求入手。</li>
+<li>先用了<a href="http://www.wireshark.org/">Wireshark</a>尝试抓了一下包，结果发现自己学艺不精，不太会用<a href="http://www.wireshark.org/">Wireshark</a>，找不到链接是怎么来的。</li>
+<li>决定找一个相对简单的HTTP请求获取的软件，StackOverflow搜到在Mac下有这几个软件可以实现
+
+<ul>
+<li><a href="http://www.charlesproxy.com/">Charles</a>：Mac版本收费。</li>
+<li><a href="http://code.google.com/p/andiparos/">Andiparos</a>：开源软件，功能也很齐全。</li>
+</ul>
+
+
+<p>  我用的是后者，非常好用，简单直接的找到了URL所在的HTTP请求。</p></li>
+<li>Python脚本发送HTTP请求，正则表达式分析出URL，再从原页面获取MV的名字，wget下载。</li>
+</ul>
+
+
+<p>代码在<a href="https://gist.github.com/1844416">这里</a>。</p>
+
+<!-- more -->
+
+
+
+
+<script src="https://gist.github.com/1844416.js"> </script>
+
+
+<h3>总结：</h3>
+
+<p>其实音悦台也提供了下载功能，但是需要下载一个Winodows的客户端，有没有其他的需要我不知道，因为客户端也没用过。</p>
+
+<p>写这种脚本，纯粹是为了满足自己需要。回头想想，觉得这种有用的脚本除了能被人方便的使用以外，还可以告诉程序员：程序无所不能，所有你可以看到的数据都可以获取。</p>
+
+<p>PS：</p>
+
+<p>还搜索到了几个有用的脚本，在这里分享一下：</p>
+
+<ul>
+<li><a href="https://github.com/iambus/youku-lixian">youku-lixian</a>：优酷视频下载的Python脚本。</li>
+<li><a href="https://github.com/rg3/youtube-dl">youtube-dl</a>：Youtube视频下载。</li>
+<li><a href="http://www.cnblogs.com/chinull/archive/2011/07/02/2096317.html">易读文库下载器</a>：Windows平台下载百度文库中文档的工具，话说我也简单分析了一下百度文库的Flash，有机会也搞一个脚本试试。</li>
+</ul>
+
+
+<p>完。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mac下制作U盘启动]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/"/>
+    <updated>2012-02-13T12:50:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac</id>
+    <content type="html"><![CDATA[<p class="info">
+很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
+</p>
+
+
+<h3>缘由：</h3>
+
+<p>实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。</p>
+
+<p>经常使用U盘安装系统的朋友知道Windows下有一个<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a>的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用。</p>
+
+<p>自从使用了Mac的磁盘恢复以后，我就对Mac下的磁盘恢复很有好感，觉得应该也可以直接恢复ISO到U盘。于是就尝试了一下，结果遇到一下问题：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>磁盘工具显示错误：未能验证来源：无效的自变量</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>解决方法：</h3>
+
+<p>使用命令恢复ISO镜像到U盘：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>diskutil list ＃显示当前所有得磁盘情况
+</span><span class='line'><span class="nv">$ </span>diskutil unmountDisk /dev/disk1 ＃卸载U盘上的所有磁盘
+</span><span class='line'><span class="nv">$ </span>dd <span class="k">if</span><span class="o">={</span>ISO_IMAGE_HERE_<span class="o">}</span> <span class="nv">of</span><span class="o">=</span>/dev/disk1 <span class="nv">bs</span><span class="o">=</span>1m <span class="c">#拷贝磁盘</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的命令你看不到复制的过程，你可以通过pv命令（默认Mac没有这条命令，需要brew install pv安装一下）
+如</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>pv -petr ubuntu-11.10-desktop-i386.iso | dd <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>效果如图：</p>
+
+<p><img src="http://blog.jeswang.org/images/dd.png" alt="dd" /></p>
+
+<p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
+
+<ul>
+<li><p><strong><a href="http://www.gingerbeardman.com/dd-gui/">dd-gui</a></strong></p></li>
+<li><p><strong><a href="http://unetbootin.sourceforge.net/">UNetbootin</a></strong></p></li>
+</ul>
+
+
+<h4>2012-2-27 更新：</h4>
+
+<p>今天尝试用这个方法将 Windows7 的ISO启动失败了，原因未知。</p>
+
+<h4>内容参考来源：</h4>
+
+<p>[1] <a href="http://forums.macrumors.com/showthread.php?t=598291">how to &#8220;burn&#8221; an ISO to USB flash drive?</a></p>
+
+<p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
+
+<p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[问自己的几个问题]]></title>
+    <link href="http://blog.jeswang.org/blog/2012/01/27/ask-myself/"/>
+    <updated>2012-01-27T02:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2012/01/27/ask-myself</id>
+    <content type="html"><![CDATA[<h2>问题的由来</h2>
+
+<p>前几日与同学小聚， 听到了一个这样的说法： 女孩子找对象最好不要找一个学计算机出身的男生， 因为计算机这个东西太容易学会了， 随便找一个本科生学几个月就可以做IT了。 学计算机的男生在社会的竞争中一点优势都没有， 很容易就被淘汰了， 不如其他自然科学的学习来得扎实。</p>
+
+<p>作为一个学软件的男生， 听到这样一番话胸中难免有一点酸楚。 难道自己这样付出过的日子就这样不受到别人的认可？ 难道计算机专业的本科的平均水平就只是一种廉价的劳动力，谁都可以轻易胜任？</p>
+
+<p>我不想反驳什么， 因为我所表达的任何反驳都带着我的立场， 我的情绪， 有很多不客观的地方， 况且我写下这些是为了冷静的自我反省，而不是为了反驳那些持有这样观点的人。</p>
+
+<p>而且不得不承认这样的观点有它正确的一面。</p>
+
+<h2>问自己的几个问题</h2>
+
+<h3>我是谁？</h3>
+
+<p>我是一名大四的学生， 在今年的1月参加了研究生入学考试， 考试成绩不明， 在毕业将要来临的日子， 面临着没有书念和没有工作落脚的压力， 默默等待考研的成绩。 尽管听上去有点悲观， 但是却实实在在是现在的情况。</p>
+
+<p>我渴望有一个安静的校园安静地读书思考， 并且也为了这个梦想奋斗了6个月。 无论这个结果如何， 我也可以坦然地面对了， 因为我有不停地努力过。</p>
+
+<p>我同样渴望着有一份可以倾注我全部精力的工作， 踏踏实实做一些可以让他人生活得更方便的工作。 所以考研哪怕失利也不会让我对生活有一丝失望， 生活还会继续， 我还可以把喜欢的事情当作自己的事业， 并为之付出和收获。</p>
+
+<h3>是否总是说得太多而思考得太少？</h3>
+
+<h4>说话</h4>
+
+<p>面对陌生人， 我也学起大人一脸冷酷， 不理不睬， 大概我也已经成为了歌中的老男孩。</p>
+
+<p>面对熟悉的人， 我更喜欢多说话， 因为我意识到人和人之间只有通过不断的沟通才能和他人有那么一点点的相互的理解。 我总是说得太多， 而且说话时只关注自己的感受， 很少考虑他人听到的感受。</p>
+
+<ul>
+<li><p>总想着用自以为独到的观点去说服他人， 进而显示自己有多聪明， 有多渊博， 多不可一世。</p></li>
+<li><p>打心眼里不愿意赞同他人的观点， 哪怕心里也承认别人的观点很正确， 也非要搞出一点特殊， 说出一点不同， 找回一点自己现在想想都觉得可怜可笑的平衡。</p></li>
+</ul>
+
+
+<p>这是我说得很多的原因， 有点激进， 很不理智。</p>
+
+<h4>思考</h4>
+
+<p>说到思考， 我也十分惭愧， 我所知道的大部分信息的来源都是别人嚼过的食物。</p>
+
+<ul>
+<li><p>我无时无刻不在接受着别人的信息，例如用Google搜索别人写的各种教程， 看别人写的读书笔记， 看别人写的影评， 用别人写的各种工具， 在论坛听别人的言论。 人云亦云， 轻松愉快地接受着别人得出的结论， 贪婪地吮吸着“睿智的搜索引擎”给出的搜索结果。 我从这样做的开始就感觉到了一种强烈的自我膨胀， 我仿佛无所不能， 能解答任何人提出的任何问题， 我不需要再从书本学习知识了。 但是一点点地我发现了这只是一种假象， 就在我不停地浏览写满信息的网页时， 我什么都不知道， 我成了信息传播的工具。</p></li>
+<li><p>很少创造信息。 想法总是很多， 但总是找出这样或者那样的理由拖沓， 没有一个完整的计划和必须的执行力。</p></li>
+</ul>
+
+
+<h3>无声的反击</h3>
+
+<p>完。</p>
 ]]></content>
   </entry>
   
