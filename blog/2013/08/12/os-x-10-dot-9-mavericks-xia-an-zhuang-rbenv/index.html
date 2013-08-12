@@ -158,10 +158,20 @@
 </li>
 <li><p>安装指定版本的 ruby：</p>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv install 1.9.3-p392</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --without-tcl --without-tk" rbenv install 2.0.0-p195</span></code></pre></td></tr></table></div></figure>
 </li>
 </ul>
 
+
+<p><strong>注意：</strong>如果你需要安装 1.9.3 以前版本的 Ruby（比如说 1.9.3-p0 就不行，不知道具体从 1.9.3-p 多少开始可以使用 llvm 编译），可能需要安装 apple-gcc42：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew tap homebrew/dupes
+</span><span class='line'>brew install apple-gcc42</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后建立软连接之类的，自行搜索吧。</p>
 
 <h2>参考链接</h2>
 

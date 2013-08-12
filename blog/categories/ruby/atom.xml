@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-12T17:09:43+08:00</updated>
+  <updated>2013-08-12T17:17:39+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -66,11 +66,18 @@ brew install ruby-build
 </li>
 <li><p>安装指定版本的 ruby：</p>
 ```
-rbenv install 1.9.3-p392
+CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --without-tcl --without-tk" rbenv install 2.0.0-p195
 ```
 </li>
 </ul>
 
+
+<p><strong>注意：</strong>如果你需要安装 1.9.3 以前版本的 Ruby（比如说 1.9.3-p0 就不行，不知道具体从 1.9.3-p 多少开始可以使用 llvm 编译），可能需要安装 apple-gcc42：
+<code>
+brew tap homebrew/dupes
+brew install apple-gcc42
+</code>
+然后建立软连接之类的，自行搜索吧。</p>
 
 <h2>参考链接</h2>
 
