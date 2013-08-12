@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-12T17:20:13+08:00</updated>
+  <updated>2013-08-12T17:25:28+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -25,7 +25,9 @@
 
 <h2>rvm 换到 rbenv 的原因</h2>
 
-<p>使用 <a href="http://octopress.org/">Octopress</a> 一段时间了，一直使用 <a href="https://rvm.io/">rvm</a> 进行 Ruby 和 gem 的版本管理。直到最近了解到了 <a href="https://github.com/sstephenson/rbenv">rbenv</a> 这个项目，才知道 rvm 不是唯一选择，且 rbenv 的实现方法更加易懂（没有搞懂 rvm 是什么原理），简单到作者在 <a href="http://stackoverflow.com/questions/9394338/how-do-rvm-and-rbenv-actually-work#tabs">StackOverflow</a> 上用几段话就说明白了。</p>
+<p>使用 <a href="http://octopress.org/">Octopress</a> 一段时间了，一直使用 <a href="https://rvm.io/">rvm</a> 进行 Ruby 和 gem 的版本管理。直到最近了解到 <a href="https://github.com/sstephenson/rbenv">rbenv</a> ，才知道 rvm 不是唯一选择。</p>
+
+<p> rbenv 的实现非常简洁（没有搞懂 rvm 是什么原理），简洁到作者在用<a href="http://stackoverflow.com/questions/9394338/how-do-rvm-and-rbenv-actually-work#tabs">几段话</a>就说明白了。</p>
 
 <h2>删除 rvm</h2>
 
