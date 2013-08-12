@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Jeswang's Blog]]></title>
+  <link href="http://blog.jeswang.org/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://blog.jeswang.org/"/>
+  <updated>2013-08-12T17:09:43+08:00</updated>
+  <id>http://blog.jeswang.org/</id>
+  <author>
+    <name><![CDATA[jeswang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OS X 10.9 Mavericks 下使用 rbenv]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/"/>
+    <updated>2013-08-12T16:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv</id>
+    <content type="html"><![CDATA[<p><img src="/images/rbenv/terminal.png" alt="rbenv" /></p>
+
+<!--more-->
+
+
+<h2>rvm 换到 rbenv 的原因</h2>
+
+<p>使用 <a href="http://octopress.org/">Octopress</a> 一段时间了，一直使用 <a href="https://rvm.io/">rvm</a> 进行 Ruby 和 gem 的版本管理。直到最近了解到了 <a href="https://github.com/sstephenson/rbenv">rbenv</a> 这个项目，才知道 rvm 不是唯一选择，且 rbenv 的实现方法更加易懂（没有搞懂 rvm 是什么原理），简单到作者在 <a href="http://stackoverflow.com/questions/9394338/how-do-rvm-and-rbenv-actually-work#tabs">StackOverflow</a> 上用几段话就说明白了。</p>
+
+<h2>删除 rvm</h2>
+
+<p>使用这条命令删除 rvm 相关的文件：
+<code>
+$ rvm implode
+</code>
+如果有文件因为权限的问题无法删除，就 sudo 删除一下。
+<code>
+$ sudo rm -rf .rvm
+</code></p>
+
+<h2>在 OS X 10.9 Mavericks 下如何安装和使用 rbenv：</h2>
+
+<ul>
+<li><p>因为从 Xcode 5.0 开始，不再默认将头文件放在 /usr/include 中，所以在编译的过程中需要特殊指定头文件的位置，或者安装 Command Line Tools。这里推荐安装 Command Line Tools：</p>
+```
+sudo xcode-select --reset
+```
+</li>
+<li><p>安装 rbenv：</p>
+```
+brew update
+brew install rbenv
+```
+</li>
+<li><p>将 rbenv 初始化命令放入 .zshrc 或者其他终端启动执行的文件：</p>
+```
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+```
+</li>
+<li><p>安装 ruby-build 和 rbenv-gem-rehash：</p>
+```
+brew install rbenv-gem-rehash
+brew install ruby-build
+```
+</li>
+<li><p>安装指定版本的 ruby：</p>
+```
+rbenv install 1.9.3-p392
+```
+</li>
+</ul>
+
+
+<h2>参考链接</h2>
+
+<ol>
+<li><a href="http://edapx.com/2013/05/23/switching-from-rvm-to-rbenv/">switching from rvm to rbenv</a></li>
+<li><a href="https://coderwall.com/p/alfc_a">Installing Ruby on OS X 10.9 Mavericks using Rbenv</a></li>
+<li><a href="http://robots.thoughtbot.com/post/47273164981/using-rbenv-to-manage-rubies-and-gems">Using rbenv to manage rubies and gems</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

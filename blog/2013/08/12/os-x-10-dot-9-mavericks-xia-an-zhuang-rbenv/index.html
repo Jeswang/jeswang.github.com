@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Mac下制作U盘启动 - Jeswang's Blog</title>
+  <title>OS X 10.9 Mavericks 下使用 rbenv - Jeswang's Blog</title>
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。 缘由： 实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。 经常使用U盘安装系统的朋友知道Windows下有一个UltraISO的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用 &hellip;">
+  <meta name="description" content="rvm 换到 rbenv 的原因 使用 Octopress 一段时间了，一直使用 rvm 进行 Ruby 和 gem 的版本管理。直到最近了解到了 rbenv 这个项目，才知道 rvm 不是唯一选择，且 rbenv 的实现方法更加易懂（没有搞懂 rvm 是什么原理），简单到作者在 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/">
+  <link rel="canonical" href="http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">Mac下制作U盘启动</h1>
+      <h1 class="entry-title">OS X 10.9 Mavericks 下使用 Rbenv</h1>
     
     
       <p class="meta">
@@ -99,7 +99,7 @@
   
 
 
-<time datetime="2012-02-13T12:50:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2012</time>
+<time datetime="2013-08-12T16:00:00+08:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -108,67 +108,69 @@
   </header>
 
 
-<div class="entry-content"><p class="info">
-很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
-</p>
+<div class="entry-content"><p><img src="/images/rbenv/terminal.png" alt="rbenv" /></p>
+
+<!--more-->
 
 
-<h3>缘由：</h3>
+<h2>rvm 换到 rbenv 的原因</h2>
 
-<p>实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。</p>
+<p>使用 <a href="http://octopress.org/">Octopress</a> 一段时间了，一直使用 <a href="https://rvm.io/">rvm</a> 进行 Ruby 和 gem 的版本管理。直到最近了解到了 <a href="https://github.com/sstephenson/rbenv">rbenv</a> 这个项目，才知道 rvm 不是唯一选择，且 rbenv 的实现方法更加易懂（没有搞懂 rvm 是什么原理），简单到作者在 <a href="http://stackoverflow.com/questions/9394338/how-do-rvm-and-rbenv-actually-work#tabs">StackOverflow</a> 上用几段话就说明白了。</p>
 
-<p>经常使用U盘安装系统的朋友知道Windows下有一个<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a>的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用。</p>
+<h2>删除 rvm</h2>
 
-<p>自从使用了Mac的磁盘恢复以后，我就对Mac下的磁盘恢复很有好感，觉得应该也可以直接恢复ISO到U盘。于是就尝试了一下，结果遇到一下问题：</p>
+<p>使用这条命令删除 rvm 相关的文件：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>磁盘工具显示错误：未能验证来源：无效的自变量</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm implode</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>解决方法：</h3>
+<p>如果有文件因为权限的问题无法删除，就 sudo 删除一下。</p>
 
-<p>使用命令恢复ISO镜像到U盘：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>diskutil list ＃显示当前所有得磁盘情况
-</span><span class='line'><span class="nv">$ </span>diskutil unmountDisk /dev/disk1 ＃卸载U盘上的所有磁盘
-</span><span class='line'><span class="nv">$ </span>dd <span class="k">if</span><span class="o">={</span>ISO_IMAGE_HERE_<span class="o">}</span> <span class="nv">of</span><span class="o">=</span>/dev/disk1 <span class="nv">bs</span><span class="o">=</span>1m <span class="c">#拷贝磁盘</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo rm -rf .rvm</span></code></pre></td></tr></table></div></figure>
 
 
-<p>上面的命令你看不到复制的过程，你可以通过pv命令（默认Mac没有这条命令，需要brew install pv安装一下）
-如</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>pv -petr ubuntu-11.10-desktop-i386.iso | dd <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>效果如图：</p>
-
-<p><img src="/images/dd.png" alt="dd" /></p>
-
-<p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
+<h2>在 OS X 10.9 Mavericks 下如何安装和使用 rbenv：</h2>
 
 <ul>
-<li><p><strong><a href="http://www.gingerbeardman.com/dd-gui/">dd-gui</a></strong></p></li>
-<li><p><strong><a href="http://unetbootin.sourceforge.net/">UNetbootin</a></strong></p></li>
+<li><p>因为从 Xcode 5.0 开始，不再默认将头文件放在 /usr/include 中，所以在编译的过程中需要特殊指定头文件的位置，或者安装 Command Line Tools。这里推荐安装 Command Line Tools：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo xcode-select --reset</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>安装 rbenv：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew update
+</span><span class='line'>brew install rbenv</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>将 rbenv 初始化命令放入 .zshrc 或者其他终端启动执行的文件：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.zshrc
+</span><span class='line'>source ~/.zshrc</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>安装 ruby-build 和 rbenv-gem-rehash：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install rbenv-gem-rehash
+</span><span class='line'>brew install ruby-build</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>安装指定版本的 ruby：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv install 1.9.3-p392</span></code></pre></td></tr></table></div></figure>
+</li>
 </ul>
 
 
-<h4>2012-2-27 更新：</h4>
+<h2>参考链接</h2>
 
-<p>今天尝试用这个方法将 Windows7 的ISO启动失败了，原因未知。</p>
+<ol>
+<li><a href="http://edapx.com/2013/05/23/switching-from-rvm-to-rbenv/">switching from rvm to rbenv</a></li>
+<li><a href="https://coderwall.com/p/alfc_a">Installing Ruby on OS X 10.9 Mavericks using Rbenv</a></li>
+<li><a href="http://robots.thoughtbot.com/post/47273164981/using-rbenv-to-manage-rubies-and-gems">Using rbenv to manage rubies and gems</a></li>
+</ol>
 
-<h4>内容参考来源：</h4>
-
-<p>[1] <a href="http://forums.macrumors.com/showthread.php?t=598291">how to &#8220;burn&#8221; an ISO to USB flash drive?</a></p>
-
-<p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
-
-<p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
 </div>
 
 
@@ -191,12 +193,12 @@
   
 
 
-<time datetime="2012-02-13T12:50:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2012</time>
+<time datetime="2013-08-12T16:00:00+08:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a>
+    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
   
 </span>
 
@@ -205,7 +207,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/" data-via="" data-counturl="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/" data-via="" data-counturl="http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/" >Tweet</a>
   
   
   
@@ -214,10 +216,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/27/ask-myself/" title="Previous Post: 问自己的几个问题">&laquo; 问自己的几个问题</a>
+        <a class="basic-alignment left" href="/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/" title="Previous Post: PPI vs. DPI: 有什么区别?">&laquo; PPI vs. DPI: 有什么区别?</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/" title="Next Post: 音悦台MV下载 Python版本">音悦台MV下载 Python版本 &raquo;</a>
       
     </p>
   </footer>
@@ -298,8 +298,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/';
-        var disqus_url = 'http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/';
+        var disqus_identifier = 'http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/';
+        var disqus_url = 'http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/';
         var disqus_script = 'embed.js';
       
     (function () {

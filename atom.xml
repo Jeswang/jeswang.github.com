@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-08T14:08:10+08:00</updated>
+  <updated>2013-08-12T17:09:43+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OS X 10.9 Mavericks 下使用 rbenv]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/"/>
+    <updated>2013-08-12T16:00:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.jeswang.org/images/rbenv/terminal.png" alt="rbenv" /></p>
+
+<!--more-->
+
+
+<h2>rvm 换到 rbenv 的原因</h2>
+
+<p>使用 <a href="http://octopress.org/">Octopress</a> 一段时间了，一直使用 <a href="https://rvm.io/">rvm</a> 进行 Ruby 和 gem 的版本管理。直到最近了解到了 <a href="https://github.com/sstephenson/rbenv">rbenv</a> 这个项目，才知道 rvm 不是唯一选择，且 rbenv 的实现方法更加易懂（没有搞懂 rvm 是什么原理），简单到作者在 <a href="http://stackoverflow.com/questions/9394338/how-do-rvm-and-rbenv-actually-work#tabs">StackOverflow</a> 上用几段话就说明白了。</p>
+
+<h2>删除 rvm</h2>
+
+<p>使用这条命令删除 rvm 相关的文件：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm implode</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果有文件因为权限的问题无法删除，就 sudo 删除一下。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo rm -rf .rvm</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>在 OS X 10.9 Mavericks 下如何安装和使用 rbenv：</h2>
+
+<ul>
+<li><p>因为从 Xcode 5.0 开始，不再默认将头文件放在 /usr/include 中，所以在编译的过程中需要特殊指定头文件的位置，或者安装 Command Line Tools。这里推荐安装 Command Line Tools：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo xcode-select --reset</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>安装 rbenv：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew update
+</span><span class='line'>brew install rbenv</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>将 rbenv 初始化命令放入 .zshrc 或者其他终端启动执行的文件：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.zshrc
+</span><span class='line'>source ~/.zshrc</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>安装 ruby-build 和 rbenv-gem-rehash：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install rbenv-gem-rehash
+</span><span class='line'>brew install ruby-build</span></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>安装指定版本的 ruby：</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv install 1.9.3-p392</span></code></pre></td></tr></table></div></figure>
+</li>
+</ul>
+
+
+<h2>参考链接</h2>
+
+<ol>
+<li><a href="http://edapx.com/2013/05/23/switching-from-rvm-to-rbenv/">switching from rvm to rbenv</a></li>
+<li><a href="https://coderwall.com/p/alfc_a">Installing Ruby on OS X 10.9 Mavericks using Rbenv</a></li>
+<li><a href="http://robots.thoughtbot.com/post/47273164981/using-rbenv-to-manage-rubies-and-gems">Using rbenv to manage rubies and gems</a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PPI vs. DPI: 有什么区别?]]></title>
@@ -1731,63 +1802,6 @@
 <p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
 
 <p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[问自己的几个问题]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/01/27/ask-myself/"/>
-    <updated>2012-01-27T02:00:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/01/27/ask-myself</id>
-    <content type="html"><![CDATA[<h2>问题的由来</h2>
-
-<p>前几日与同学小聚， 听到了一个这样的说法： 女孩子找对象最好不要找一个学计算机出身的男生， 因为计算机这个东西太容易学会了， 随便找一个本科生学几个月就可以做IT了。 学计算机的男生在社会的竞争中一点优势都没有， 很容易就被淘汰了， 不如其他自然科学的学习来得扎实。</p>
-
-<p>作为一个学软件的男生， 听到这样一番话胸中难免有一点酸楚。 难道自己这样付出过的日子就这样不受到别人的认可？ 难道计算机专业的本科的平均水平就只是一种廉价的劳动力，谁都可以轻易胜任？</p>
-
-<p>我不想反驳什么， 因为我所表达的任何反驳都带着我的立场， 我的情绪， 有很多不客观的地方， 况且我写下这些是为了冷静的自我反省，而不是为了反驳那些持有这样观点的人。</p>
-
-<p>而且不得不承认这样的观点有它正确的一面。</p>
-
-<h2>问自己的几个问题</h2>
-
-<h3>我是谁？</h3>
-
-<p>我是一名大四的学生， 在今年的1月参加了研究生入学考试， 考试成绩不明， 在毕业将要来临的日子， 面临着没有书念和没有工作落脚的压力， 默默等待考研的成绩。 尽管听上去有点悲观， 但是却实实在在是现在的情况。</p>
-
-<p>我渴望有一个安静的校园安静地读书思考， 并且也为了这个梦想奋斗了6个月。 无论这个结果如何， 我也可以坦然地面对了， 因为我有不停地努力过。</p>
-
-<p>我同样渴望着有一份可以倾注我全部精力的工作， 踏踏实实做一些可以让他人生活得更方便的工作。 所以考研哪怕失利也不会让我对生活有一丝失望， 生活还会继续， 我还可以把喜欢的事情当作自己的事业， 并为之付出和收获。</p>
-
-<h3>是否总是说得太多而思考得太少？</h3>
-
-<h4>说话</h4>
-
-<p>面对陌生人， 我也学起大人一脸冷酷， 不理不睬， 大概我也已经成为了歌中的老男孩。</p>
-
-<p>面对熟悉的人， 我更喜欢多说话， 因为我意识到人和人之间只有通过不断的沟通才能和他人有那么一点点的相互的理解。 我总是说得太多， 而且说话时只关注自己的感受， 很少考虑他人听到的感受。</p>
-
-<ul>
-<li><p>总想着用自以为独到的观点去说服他人， 进而显示自己有多聪明， 有多渊博， 多不可一世。</p></li>
-<li><p>打心眼里不愿意赞同他人的观点， 哪怕心里也承认别人的观点很正确， 也非要搞出一点特殊， 说出一点不同， 找回一点自己现在想想都觉得可怜可笑的平衡。</p></li>
-</ul>
-
-
-<p>这是我说得很多的原因， 有点激进， 很不理智。</p>
-
-<h4>思考</h4>
-
-<p>说到思考， 我也十分惭愧， 我所知道的大部分信息的来源都是别人嚼过的食物。</p>
-
-<ul>
-<li><p>我无时无刻不在接受着别人的信息，例如用Google搜索别人写的各种教程， 看别人写的读书笔记， 看别人写的影评， 用别人写的各种工具， 在论坛听别人的言论。 人云亦云， 轻松愉快地接受着别人得出的结论， 贪婪地吮吸着“睿智的搜索引擎”给出的搜索结果。 我从这样做的开始就感觉到了一种强烈的自我膨胀， 我仿佛无所不能， 能解答任何人提出的任何问题， 我不需要再从书本学习知识了。 但是一点点地我发现了这只是一种假象， 就在我不停地浏览写满信息的网页时， 我什么都不知道， 我成了信息传播的工具。</p></li>
-<li><p>很少创造信息。 想法总是很多， 但总是找出这样或者那样的理由拖沓， 没有一个完整的计划和必须的执行力。</p></li>
-</ul>
-
-
-<h3>无声的反击</h3>
-
-<p>完。</p>
 ]]></content>
   </entry>
   

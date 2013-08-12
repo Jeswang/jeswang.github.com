@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Mac下制作U盘启动 - Jeswang's Blog</title>
+  <title>Category: Ruby - Jeswang's Blog</title>
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。 缘由： 实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。 经常使用U盘安装系统的朋友知道Windows下有一个UltraISO的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用 &hellip;">
+  <meta name="description" content="Category: Ruby">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/">
+  <link rel="canonical" href="http://blog.jeswang.orgblog/categories/ruby/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,155 +79,36 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article", class="entry-content">
   
   <header>
-    
-      <h1 class="entry-title">Mac下制作U盘启动</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-13T12:50:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2012</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
+    <h1 class="entry-title">Category: Ruby</h1>
     
   </header>
-
-
-<div class="entry-content"><p class="info">
-很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
-</p>
-
-
-<h3>缘由：</h3>
-
-<p>实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。</p>
-
-<p>经常使用U盘安装系统的朋友知道Windows下有一个<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a>的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用。</p>
-
-<p>自从使用了Mac的磁盘恢复以后，我就对Mac下的磁盘恢复很有好感，觉得应该也可以直接恢复ISO到U盘。于是就尝试了一下，结果遇到一下问题：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>磁盘工具显示错误：未能验证来源：无效的自变量</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>解决方法：</h3>
-
-<p>使用命令恢复ISO镜像到U盘：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>diskutil list ＃显示当前所有得磁盘情况
-</span><span class='line'><span class="nv">$ </span>diskutil unmountDisk /dev/disk1 ＃卸载U盘上的所有磁盘
-</span><span class='line'><span class="nv">$ </span>dd <span class="k">if</span><span class="o">={</span>ISO_IMAGE_HERE_<span class="o">}</span> <span class="nv">of</span><span class="o">=</span>/dev/disk1 <span class="nv">bs</span><span class="o">=</span>1m <span class="c">#拷贝磁盘</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面的命令你看不到复制的过程，你可以通过pv命令（默认Mac没有这条命令，需要brew install pv安装一下）
-如</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>pv -petr ubuntu-11.10-desktop-i386.iso | dd <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>效果如图：</p>
-
-<p><img src="/images/dd.png" alt="dd" /></p>
-
-<p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
-
-<ul>
-<li><p><strong><a href="http://www.gingerbeardman.com/dd-gui/">dd-gui</a></strong></p></li>
-<li><p><strong><a href="http://unetbootin.sourceforge.net/">UNetbootin</a></strong></p></li>
-</ul>
-
-
-<h4>2012-2-27 更新：</h4>
-
-<p>今天尝试用这个方法将 Windows7 的ISO启动失败了，原因未知。</p>
-
-<h4>内容参考来源：</h4>
-
-<p>[1] <a href="http://forums.macrumors.com/showthread.php?t=598291">how to &#8220;burn&#8221; an ISO to USB flash drive?</a></p>
-
-<p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
-
-<p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">jeswang</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2013</h2>
+
+<article>
+  
+<h1><a href="/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/">OS X 10.9 Mavericks 下使用 rbenv</a></h1>
+<time datetime="2013-08-12T16:00:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>12</span> <span class='year'>2013</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
+</footer>
 
 
-<time datetime="2012-02-13T12:50:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2012</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/" data-via="" data-counturl="http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/01/27/ask-myself/" title="Previous Post: 问自己的几个问题">&laquo; 问自己的几个问题</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/" title="Next Post: 音悦台MV下载 Python版本">音悦台MV下载 Python版本 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -297,10 +178,7 @@
       var disqus_shortname = 'esaysblog';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/';
-        var disqus_url = 'http://blog.jeswang.org/blog/2012/02/13/burn-iso-to-usb-on-mac/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
