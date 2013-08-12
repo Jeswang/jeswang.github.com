@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-12T17:17:39+08:00</updated>
+  <updated>2013-08-12T17:20:13+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -73,7 +73,7 @@
 </ul>
 
 
-<p><strong>注意：</strong>如果你需要安装 1.9.3 以前版本的 Ruby（比如说 1.9.3-p0 就不行，不知道具体从 1.9.3-p 多少开始可以使用 llvm 编译），可能需要安装 apple-gcc42：</p>
+<p><strong>注意：</strong>如果你需要安装 1.9.3 以前版本的 Ruby（比如说 1.9.3-p0），可能需要安装 apple-gcc42：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -81,7 +81,7 @@
 </span><span class='line'>brew install apple-gcc42</span></code></pre></td></tr></table></div></figure>
 
 
-<p>然后建立软连接之类的，自行搜索吧。</p>
+<p>然后建立软连接之类的，自行搜索吧（不知道具体从 1.9.3-p 多少开始可以使用 llvm 编译，尝试 install 就会有相关的提示）。</p>
 
 <h2>参考链接</h2>
 
