@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 工具控 | Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/blog/categories/工具控/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-12T17:25:28+08:00</updated>
+  <updated>2013-08-17T17:38:28+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -12,6 +12,118 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[试用 Zotero]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/08/17/shi-yong-zotero/"/>
+    <updated>2013-08-17T14:52:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/08/17/shi-yong-zotero</id>
+    <content type="html"><![CDATA[<p><img src="/images/zotero.png" alt="zotero" /></p>
+
+<h2>Zotero 简介</h2>
+
+<p><a href="http://www.zotero.org/">Zotero</a> 在其主页上是这样介绍自己的：</p>
+
+<blockquote><p>Zetero 是一个自由且易用的工具，可以帮助你收集、整理、引用和分享你的研究源。</p>
+
+<p>Zotero [zoh-TAIR-oh] is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.</p></blockquote>
+
+<p>首先，Zotero 是一个活跃的开源软件，代码托管在 <a href="https://github.com/zotero/zotero">Github</a> 上；其次，它是一个文献管理软件，可以导入 PDF 文件。导入 PDF 时，具有神奇的 PDF 元数据搜索能力，对于已经出版的论文，结果很令人满意；最后，它是一个知识管理软件，你可以：</p>
+
+<ul>
+<li>收集信息。
+
+<ul>
+<li>使用 Firefox、Chrome、Safari 插件，随手收藏喜欢的网页，包含<strong>网页的快照（个人非常喜欢这个功能）</strong>。</li>
+<li>对于配置了 Translator 的网页，可以抓取网页中的信息添加到 Zotero 的数据库中。</li>
+</ul>
+</li>
+<li>组织信息。
+
+<ul>
+<li>为条目增加分组。</li>
+<li>为条目增加标签。</li>
+</ul>
+</li>
+<li>在线同步。</li>
+<li>多用户协作。</li>
+</ul>
+
+
+<h2>插件 Zotfile</h2>
+
+<p> <a href="http://www.columbia.edu/~jpl2136/zotfile.html">Zotfile</a> 是针对 Zotero for Firefox 的一个插件，可以添加附件、重命名 Zotero 库中的 pdf 文件以及将附件复制到指定的文件夹。
+<img src="/images/zotfile-reader-rename.jpg" alt="zotfile" /></p>
+
+<center> <p><strong>根据条目信息重命名 pdf 文件的功能非常实用</strong></p></center>
+
+
+<p> <em>注意：</em> Zotfile 暂时还不支持 Zotero 4.0，想要使用 Zotfile 得下载 Zotero 3.0 for Firefox。</p>
+
+<h2>与 Evernote 的对比</h2>
+
+<p>月初因为 Evernote 的流量超了，所以购买了一个月的高级用户。对于高级用户的各种功能整体上非常满意（特别是每日都有很多笔记进账的成就感），所以打算继续购买。但是在使用了 Zotero 之后，不禁要重新考虑一下。以下是我对两者进行的比较：</p>
+
+<table>
+<thead>
+<tr>
+<th>比较方面</th>
+<th> Zotero </th>
+<th> Evernote</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>采集</td>
+<td> 支持 Chrome、Safari 和 Firefox；</br>针对<a href="https://github.com/zotero/translators">部分网站</a>有数据收集功能；</br>针对文献，可以下载 PDF 全文； </td>
+<td> 支持 Chrome、Safari 和 Firefox；</br><a href="http://www.yinxiang.com/clearly/">悦读</a>插件好用；</td>
+</tr>
+<tr>
+<td>使用</td>
+<td>只支持标签的搜索，全文搜索需要借助其他工具；</td>
+<td>提供全文搜索；</br>高级版提供 PDF 的 OCR 功能；</td>
+</tr>
+<tr>
+<td>费用 </td>
+<td>  100M的免费空间；</br>可以将文件保存到 Dropbox；</td>
+<td> 免费用户每月提供 60M 免费上传流量；</br>高级用户每月 5$（ 年费为 45$）：</br><li>上传流量增加为 1G；</li><li>移动端离线查看；</li></td>
+</tr>
+<tr>
+<td>问题 </td>
+<td> 需要使用第三方的同步工具，比较麻烦；</br>同一个网站的多个快照不能共享相同的文件，相同的文件被保存了多份，占空间；</br>笔记的编写不能定制字体；</td>
+<td> 无法编辑 HTML 文件，导致收藏的网页有时不够美观；</br>不能使用 Markdown；</br>需要每月 5$ 的费用；</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>在比较之后的感受是，Zotero 和 Evernote 是两个侧重方面不同的软件：</p>
+
+<ul>
+<li>Zotero 更侧重于<strong>文献</strong>和网页的采集，而 Evernote 则更侧重于用户的自由编写。</li>
+<li>Zotero 专注于信息的整理，做好一个辅助研究的工具，而 Evernote 则更倾向于成为使用者输出内容的主力。</li>
+</ul>
+
+
+<p>比较了一下之后的结论是：在网页和文献的收集方面可以侧重于使用 Zotero，在输出信息或者策划活动时还得依靠 Evernote。</p>
+
+<h2>结论</h2>
+
+<p>作为一个开源软件，Zotero 竟然能做到如此贴心好用，非常值得一试，也许你也会像我一样，对它爱不释手。</p>
+
+<h3>更多信息</h3>
+
+<p>关于软件的介绍总是写得不够具体，不够明白，自己还需要多加练习才行。更多信息可以参考 <a href="http://www.yangzhiping.com/">阳志平</a>的几篇博客以及其中提到的一些链接：</p>
+
+<ul>
+<li><a href="http://www.yangzhiping.com/tech/zotero1.html">Zotero（1）：文献管理软件Zotero基础及进阶示范</a></li>
+<li><a href="http://www.yangzhiping.com/tech/zotero2.html">Zotero（2）：作为知识管理工具的Zotero</a></li>
+<li><a href="http://www.yangzhiping.com/tech/zotero3.html">Zotero（3）：平板与社交：再谈研究辅助工具Zotero兼配套APP</a></li>
+<li><a href="http://www.yangzhiping.com/tech/zotero4.html">Zotero（4）：Zotero之Zotfile插件的使用</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[新相机 —— GF5]]></title>
@@ -315,65 +427,6 @@ set noimd
 <h2>旧的文件</h2>
 
 <p>这两天还想尝试一下把Micolog上写过的几篇文章搬过来.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tips@194 days 考研倒计]]></title>
-    <link href="http://blog.jeswang.org/blog/2011/06/30/tips%40194-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/"/>
-    <updated>2011-06-30T00:00:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2011/06/30/tips@194-days-考研倒计</id>
-    <content type="html"><![CDATA[<p>来自 <a class="wpGallery" href="http://www.ppurl.com/2009/11/linux-server-hacks.html">Linux Server Hacks </a></p>
-
-
-
-
-<p><strong>TIP 1<br /> </strong></p>
-
-
-
-
-<p>在Shell中, 经常使用cd前往一个目录很麻烦, 事实上可以为CD命令添加自定义的搜索路径, 比如说:/Users/wangyi/Documents, 你就可以这样设定:</p>
-
-
-
-
-<pre class="brush: bash;light: true; fontsize: 100; first-line: 1; " style="background-color: #fffeeb;"> CDPATH=.:/Users/wangyi/Documents</pre>
-
-
-
-
-<p>这样就可以随时随地 cd 到你制定目录下的某个文件夹了.</p>
-
-
-
-
-<p><strong>TIP 2</strong></p>
-
-
-
-
-<p>登陆一个Linux的服务器, 往往想要知道Linux的发行版本, 方法有很多, 比如说:</p>
-
-
-
-
-<pre class="brush: bash;light: true; fontsize: 100; first-line: 1; " style="background-color: #fffeeb;"> cat /proc/version
-
-  or
-
- uname -a</pre>
-
-
-
-
-<p>PS: 推荐网站 <a class="wpGallery" href="ppurl.com">ppurl.com</a> &larr; 所有英文技术书都在里面了!</p>
-
-
-
-
-<p>完</p>
-
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="最近两周的生活有点不太规律，总是在被任务追着走，效率不高，连每天做了什么都无法记录。问题出在哪里？ ~~~~ 这两天看到了两次关于“初心”的议论： 第一次，是在柴静对采访李安时，李安提到的。他没有说初心这个词，他说的是纯洁。我想，李安说的纯洁，是指跟随自己内心的想法去拍摄和表达， &hellip;">
+  <meta name="description" content="2012年是进入研究生学习的第一个半年，尽管了解了很多学习的方向和名词，但是认真阅读的时间很少，深入思考的时间也很少。看的书多是娱乐休闲，好几本有难度需要思考总结的图书都没有完整看完，很惭愧。 决心要在2013年，有一个完整的，有总结的读书计划。读更多的有益之书，读更多英文原著。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/30/2012nian-du-shu-zong-jie/">2012年读书总结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-30T19:44:00+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/12/30/2012nian-du-shu-zong-jie/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>2012年是进入研究生学习的第一个半年，尽管了解了很多学习的方向和名词，但是认真阅读的时间很少，深入思考的时间也很少。看的书多是娱乐休闲，好几本有难度需要思考总结的图书都没有完整看完，很惭愧。</p>
+
+<p>决心要在2013年，有一个完整的，有总结的读书计划。读更多的有益之书，读更多英文原著。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/12/30/2012nian-du-shu-zong-jie/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -675,104 +720,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/13/burn-iso-to-usb-on-mac/">Mac下制作U盘启动</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-13T12:50:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/13/burn-iso-to-usb-on-mac/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">
-很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
-</p>
-
-
-<h3>缘由：</h3>
-
-<p>实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。</p>
-
-<p>经常使用U盘安装系统的朋友知道Windows下有一个<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a>的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用。</p>
-
-<p>自从使用了Mac的磁盘恢复以后，我就对Mac下的磁盘恢复很有好感，觉得应该也可以直接恢复ISO到U盘。于是就尝试了一下，结果遇到一下问题：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>磁盘工具显示错误：未能验证来源：无效的自变量</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>解决方法：</h3>
-
-<p>使用命令恢复ISO镜像到U盘：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>diskutil list ＃显示当前所有得磁盘情况
-</span><span class='line'><span class="nv">$ </span>diskutil unmountDisk /dev/disk1 ＃卸载U盘上的所有磁盘
-</span><span class='line'><span class="nv">$ </span>dd <span class="k">if</span><span class="o">={</span>ISO_IMAGE_HERE_<span class="o">}</span> <span class="nv">of</span><span class="o">=</span>/dev/disk1 <span class="nv">bs</span><span class="o">=</span>1m <span class="c">#拷贝磁盘</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面的命令你看不到复制的过程，你可以通过pv命令（默认Mac没有这条命令，需要brew install pv安装一下）
-如</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>pv -petr ubuntu-11.10-desktop-i386.iso | dd <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>效果如图：</p>
-
-<p><img src="/images/dd.png" alt="dd" /></p>
-
-<p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
-
-<ul>
-<li><p><strong><a href="http://www.gingerbeardman.com/dd-gui/">dd-gui</a></strong></p></li>
-<li><p><strong><a href="http://unetbootin.sourceforge.net/">UNetbootin</a></strong></p></li>
-</ul>
-
-
-<h4>2012-2-27 更新：</h4>
-
-<p>今天尝试用这个方法将 Windows7 的ISO启动失败了，原因未知。</p>
-
-<h4>内容参考来源：</h4>
-
-<p>[1] <a href="http://forums.macrumors.com/showthread.php?t=598291">how to &#8220;burn&#8221; an ISO to USB flash drive?</a></p>
-
-<p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
-
-<p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -806,6 +753,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/17/shi-yong-zotero/">试用 Zotero</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/">OS X 10.9 Mavericks 下使用 rbenv</a>
       </li>
     
@@ -819,10 +770,6 @@
     
       <li class="post">
         <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">Tmux 快速教程</a>
       </li>
     
   </ul>

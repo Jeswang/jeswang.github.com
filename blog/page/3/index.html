@@ -9,7 +9,7 @@
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="问题的由来 前几日与同学小聚， 听到了一个这样的说法： 女孩子找对象最好不要找一个学计算机出身的男生， 因为计算机这个东西太容易学会了， 随便找一个本科生学几个月就可以做IT了。 学计算机的男生在社会的竞争中一点优势都没有， 很容易就被淘汰了， 不如其他自然科学的学习来得扎实。 &hellip;">
+  <meta name="description" content="很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。 缘由： 实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。 经常使用U盘安装系统的朋友知道Windows下有一个UltraISO的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,104 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/13/burn-iso-to-usb-on-mac/">Mac下制作U盘启动</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-13T12:50:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/13/burn-iso-to-usb-on-mac/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p class="info">
+很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。
+</p>
+
+
+<h3>缘由：</h3>
+
+<p>实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。</p>
+
+<p>经常使用U盘安装系统的朋友知道Windows下有一个<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a>的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用。</p>
+
+<p>自从使用了Mac的磁盘恢复以后，我就对Mac下的磁盘恢复很有好感，觉得应该也可以直接恢复ISO到U盘。于是就尝试了一下，结果遇到一下问题：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>磁盘工具显示错误：未能验证来源：无效的自变量</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>解决方法：</h3>
+
+<p>使用命令恢复ISO镜像到U盘：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>diskutil list ＃显示当前所有得磁盘情况
+</span><span class='line'><span class="nv">$ </span>diskutil unmountDisk /dev/disk1 ＃卸载U盘上的所有磁盘
+</span><span class='line'><span class="nv">$ </span>dd <span class="k">if</span><span class="o">={</span>ISO_IMAGE_HERE_<span class="o">}</span> <span class="nv">of</span><span class="o">=</span>/dev/disk1 <span class="nv">bs</span><span class="o">=</span>1m <span class="c">#拷贝磁盘</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的命令你看不到复制的过程，你可以通过pv命令（默认Mac没有这条命令，需要brew install pv安装一下）
+如</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>pv -petr ubuntu-11.10-desktop-i386.iso | dd <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>效果如图：</p>
+
+<p><img src="/images/dd.png" alt="dd" /></p>
+
+<p>另外，还有两种图形界面的方法可供参考（未测试）：</p>
+
+<ul>
+<li><p><strong><a href="http://www.gingerbeardman.com/dd-gui/">dd-gui</a></strong></p></li>
+<li><p><strong><a href="http://unetbootin.sourceforge.net/">UNetbootin</a></strong></p></li>
+</ul>
+
+
+<h4>2012-2-27 更新：</h4>
+
+<p>今天尝试用这个方法将 Windows7 的ISO启动失败了，原因未知。</p>
+
+<h4>内容参考来源：</h4>
+
+<p>[1] <a href="http://forums.macrumors.com/showthread.php?t=598291">how to &#8220;burn&#8221; an ISO to USB flash drive?</a></p>
+
+<p>[2] <a href="http://www.freebsd.org/cgi/man.cgi?query=dd&amp;sektion=1">DD(1) FreeBSD General Commands Manual</a></p>
+
+<p>ps: dd用处真大，在为dropbox扩容的过程中，也用到了DD来创建一个指定大小的文件。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -711,71 +809,6 @@ E$*N<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/03/%E4%BC%91%E6%95%B4%40191-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">休整@191 Days 考研倒计</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-03T00:00:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/03/%E4%BC%91%E6%95%B4%40191-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>休整。</p>
-
-<p>又是忙忙碌碌的一天，白天都在综合楼和老婆做网站，晚上看了一场《Paul》，外星人性格很开朗，也很随性，爱。</p>
-
-<p>最近一直在看离散数学，看了三章。看过这些之后就觉得数据结构其实很实用，而且不够抽象。<br />
-
-这些天心里一直重复这样一个看法，大概是从 Livid 那里看来的</p>
-
-<blockquote><p><strong>信息量</strong><br />
-
-这个世界上的人和事无非两类&mdash;&mdash;有信息量的和没信息量。如果一个人每天说的话，都是大部分人已经知道了的，那么在大部分人看来，他就是一个没信息量的人。一个人如果长时间都在说没信息量的话，那么基本上就会进入到一个恶性循环，他只会越来越没有信息量，然后和周围一堆同样没有信息量的人在一起。
-
-</p></blockquote>
-
-<p>我也觉得是这样，一个人只有不断的学习新的东西，接触新的思想，（大概也包括接触新的朋友吧）才会产生属于自己的新的想法。而不去寻找新的内容的人只会慢慢变得腐朽，变得固执，甚至是顽固（因为他总在重复）。<br />
-
-我总是觉得自己看得书太少太少，应该利用更多的时间去接触更多的观点。我也会觉得看过的内容也记得得太少太少，但至少这不太碍事，了解过了，当你再想去接触的时候，你会有种固有重逢的感觉，当然，笔记可以帮助你留住更多的感觉。</p>
-
-<p>That&#8217;s it. 说这些话只是想激励自己勤奋一点。</p>
-
-<p>最近看到的一个人的Blog很受触动：</p>
-
-<p>百姓网CEO <a class="wpGallery" href="http://home.wangjianshuo.com/cn/">王建硕</a>（8年 2700篇博客）。勤奋始于足下啊。</p>
-
-<p>另，今天折腾了一下 @font-face&nbsp; 相关的内容，改天再说。</p>
-
-<p>完。</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -809,6 +842,10 @@ E$*N<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/17/shi-yong-zotero/">试用 Zotero</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/">OS X 10.9 Mavericks 下使用 rbenv</a>
       </li>
     
@@ -822,10 +859,6 @@ E$*N<br />
     
       <li class="post">
         <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/24/tmux-kuai-su-jiao-cheng/">Tmux 快速教程</a>
       </li>
     
   </ul>
