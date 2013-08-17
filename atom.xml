@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-17T17:38:28+08:00</updated>
+  <updated>2013-08-17T17:43:22+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -52,7 +52,7 @@
 
 <h2>插件 Zotfile</h2>
 
-<p> <a href="http://www.columbia.edu/~jpl2136/zotfile.html">Zotfile</a> 是针对 Zotero for Firefox 的一个插件，可以添加附件、重命名 Zotero 库中的 pdf 文件以及将附件复制到指定的文件夹。
+<p> <a href="http://www.columbia.edu/~jpl2136/zotfile.html">Zotfile</a> 是针对 Zotero for Firefox 的一个插件，可以添加附件、重命名 Zotero 库中的 PDF 文件以及将附件复制到指定的文件夹。
 <img src="http://blog.jeswang.org/images/zotfile-reader-rename.jpg" alt="zotfile" /></p>
 
 <center> <p><strong>根据条目信息重命名 pdf 文件的功能非常实用</strong></p></center>
@@ -105,7 +105,7 @@
 </ul>
 
 
-<p>比较了一下之后的结论是：在网页和文献的收集方面可以侧重于使用 Zotero，在输出信息或者策划活动时还得依靠 Evernote。</p>
+<p>结论是：在网页和文献的收集方面可以侧重于使用 Zotero，在输出信息或者策划活动时还得依靠 Evernote。</p>
 
 <h2>结论</h2>
 
@@ -113,7 +113,7 @@
 
 <h3>更多信息</h3>
 
-<p>关于软件的介绍总是写得不够具体，不够明白，自己还需要多加练习才行。更多信息可以参考 <a href="http://www.yangzhiping.com/">阳志平</a>的几篇博客以及其中提到的一些链接：</p>
+<p>关于软件的介绍总是写得不够具体，不够明白，自己还需要多加练习才行。更多信息可以参考 <a href="http://www.yangzhiping.com/">阳志平</a> 的几篇博客以及其中提到的一些链接：</p>
 
 <ul>
 <li><a href="http://www.yangzhiping.com/tech/zotero1.html">Zotero（1）：文献管理软件Zotero基础及进阶示范</a></li>
