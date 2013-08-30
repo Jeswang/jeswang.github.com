@@ -9,7 +9,7 @@
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="很多写入的细节还没有弄清楚，更进一步的内容还需要跟进。 缘由： 实在是无法忍受没有好用命令行的Windows，于是就想将x61整个硬盘格式化，安装一个Linux。 经常使用U盘安装系统的朋友知道Windows下有一个UltraISO的软件，可以直接将iso镜像写入到U盘中启动。我也经常这样使用 &hellip;">
+  <meta name="description" content="制作过程： 前面写过了一个GoogleMusic专辑下载的Python版本，这里是下载脚本另一则。 因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,74 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/">音悦台MV下载 Python版本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-21T23:25:00+08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>制作过程：</h3>
+
+<p>前面写过了一个<a href="/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
+
+<p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
+
+<p>这个过程还是有一点点曲折的：</p>
+
+<ul>
+<li>读HTML代码，发现文件的链接是嵌入的Flash获取一个videoId,然后根据videoId获取的。</li>
+<li>找了一个可以反编译Flash文件的软件<a href="http://www.sothink.com/product/flashdecompiler/">SWFDecompiler</a>,反编译了一下Flash文件，简单读了一下相关的代码，不是很有头绪，然后决定从Flash发起的HTTP请求入手。</li>
+<li>先用了<a href="http://www.wireshark.org/">Wireshark</a>尝试抓了一下包，结果发现自己学艺不精，不太会用<a href="http://www.wireshark.org/">Wireshark</a>，找不到链接是怎么来的。</li>
+<li>决定找一个相对简单的HTTP请求获取的软件，StackOverflow搜到在Mac下有这几个软件可以实现
+
+<ul>
+<li><a href="http://www.charlesproxy.com/">Charles</a>：Mac版本收费。</li>
+<li><a href="http://code.google.com/p/andiparos/">Andiparos</a>：开源软件，功能也很齐全。</li>
+</ul>
+
+
+<p>  我用的是后者，非常好用，简单直接的找到了URL所在的HTTP请求。</p></li>
+<li>Python脚本发送HTTP请求，正则表达式分析出URL，再从原页面获取MV的名字，wget下载。</li>
+</ul>
+
+
+<p>代码在<a href="https://gist.github.com/1844416">这里</a>。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -712,103 +780,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/05/%E6%9D%82%40189-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/">杂@189 Days 考研倒计</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-05T00:00:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/05/%E6%9D%82%40189-days-%E8%80%83%E7%A0%94%E5%80%92%E8%AE%A1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>时间过得真快，一眨眼两天就过去了。本来打算保持每天都记录一点什么，但是总是有各种繁杂的事情扰乱思考的节奏。</p>
-
-<p><strong>LISP</strong></p>
-
-<p>初看完《黑客与画家》，和大家一样，受Graham影响，想见识一下抽象无比，被称为软件杀手锏的LISP语言。下了好多本书，但是解释器还没从VPS拽下来。一顿搜索之后发觉，这确实是一门属于少数人的语言，使用的人少，在国内相关的论坛也没有太多内容，然后就放慢了脚步，没有立刻做下去。大师所荐，必有所长，最经应该会折腾一下。</p>
-
-<p><strong>Zen-Coding</strong><br />
-
-在V2EX上看到有人在用Zen-Coding（什么东西）写HTML和CSS，回头搜索了一下，竟是一个很好用的编辑器插件，学习之并用之。简单记录一下：</p>
-
-<blockquote><p>
-
-E<br />
-
-元素名 (div, p);<br />
-
-E#id<br />
-
-带id的元素 (div#content, p#intro, span#error);<br />
-
-E.class<br />
-
-带class的元素 (div.header, p.error.critial). id 和 class 可以连写，如： div#content.column.width;<br />
-
-E&gt;N<br />
-
-子元素 (div&gt;p, div#footer&gt;p&gt;span);<br />
-
-E+N<br />
-
-兄弟元素 (h1+p, div#header+div#content+div#footer);<br />
-
-E*N<br />
-
-多项元素 (ul#nav&gt;li*5&gt;a);<br />
-
-E$*N<br />
-
-带序号的元素 (ul#nav&gt;li.item-$*5);
-
-</p></blockquote>
-
-<p><strong>抱怨一下ASP.NET</strong><br />
-
-今天下午的时候又去综合楼帮老婆做ASP.NET的程序。写啊写啊写的，一写就是一长串的调用，不禁感慨这语言也也确实很适合初学者去学，因为结构很简单，很直接，来回调用就是了。而且开发用的IDE（vs2008）也很笨重，我总是感觉一卡一卡的，大概是因为我电脑比较卡吧。也接触了一下Mono Develop，虽然这东西在Mac下不支持中文的编辑，但是使用起来比VS感觉要轻巧多了。</p>
-
-<p><strong>星座</strong><br />
-
-天秤座&nbsp;libra</p>
-
-<p><img style="margin: 20px;" src="http://i.imgur.com/xnIjq.jpg" alt="" width="600" height="375" /></p>
-
-<p><strong>Watching</strong></p>
-
-<p><span class="st">Positive.Psychology.Lecture.3</span></p>
-
-<p><span class="st">虽有点繁杂，但求简单记录一下。</span></p>
-
-<p><span class="st">完。</span></p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -842,6 +813,10 @@ E$*N<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/30/fan-qie-gong-zuo-fa-tu-jie/">读「番茄工作法图解」</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/shi-yong-zotero/">试用 Zotero</a>
       </li>
     
@@ -855,10 +830,6 @@ E$*N<br />
     
       <li class="post">
         <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
       </li>
     
   </ul>

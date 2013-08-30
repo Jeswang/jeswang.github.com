@@ -9,7 +9,11 @@
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="2012年是进入研究生学习的第一个半年，尽管了解了很多学习的方向和名词，但是认真阅读的时间很少，深入思考的时间也很少。看的书多是娱乐休闲，好几本有难度需要思考总结的图书都没有完整看完，很惭愧。 决心要在2013年，有一个完整的，有总结的读书计划。读更多的有益之书，读更多英文原著。 ">
+  <meta name="description" content="重复性质的准备工作 每次用Octopress写博客，都要 打开终端，转到Octopress的目录
+敲入rake 文章名字
+打开创建的文件开始写Blog
+在终端输入，rake preview
+浏览器中看到输出的样式 这样重复机械性的工作，不仅增加了写博客的准备时间，也增加了开始写博客的心理代价。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +84,106 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/">Octopress新建博客脚本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-30T21:38:00+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/12/30/octopresskuai-jie-xie-bo-ke-jiao-ben/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>重复性质的准备工作</h2>
+
+<p>每次用Octopress写博客，都要</p>
+
+<ul>
+<li>打开终端，转到Octopress的目录</li>
+<li>敲入<code>rake 文章名字</code></li>
+<li>打开创建的文件开始写Blog</li>
+<li>在终端输入，<code>rake preview</code></li>
+<li>浏览器中看到输出的样式</li>
+</ul>
+
+
+<p>这样重复机械性的工作，不仅增加了写博客的准备时间，也增加了开始写博客的心理代价。</p>
+
+<h2>Mac下的解决方案</h2>
+
+<p>Shell反反复复只写过一些简单的例子，而且也忘得差不多了。写几行程序刚好可以再复习一下相关内容，就写了一段Shell来完成上面的工作。代码如下：</p>
+
+<figure class='code'><figcaption><span>简化创建博客的流程</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">export </span><span class="nv">BLOG</span><span class="o">=</span><span class="s2">&quot;/Path/to/octopress&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">function </span>post<span class="o">()</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="nv">BLOG_NAME</span><span class="o">=</span><span class="nv">$1</span>
+</span><span class='line'>    <span class="nv">BLOG_ADDR</span><span class="o">=</span><span class="nv">$BLOG</span>
+</span><span class='line'>    <span class="nb">cd</span> <span class="nv">$BLOG_ADDR</span>/source/_posts;
+</span><span class='line'>
+</span><span class='line'>    rake new_post<span class="se">\[</span><span class="k">${</span><span class="nv">BLOG_NAME</span><span class="k">}</span><span class="se">\]</span>;
+</span><span class='line'>
+</span><span class='line'>    open <span class="nv">$BLOG_ADDR</span>/source/_posts
+</span><span class='line'>    open <span class="nv">$BLOG_ADDR</span>/source/images
+</span><span class='line'>
+</span><span class='line'>    <span class="nv">NEW_POST_NAME</span><span class="o">=</span><span class="sb">`</span>ls -t|head -1<span class="sb">`</span>
+</span><span class='line'>    <span class="nb">echo</span> <span class="nv">$NEW_POST_NAME</span>
+</span><span class='line'>    open -a Marked <span class="nv">$NEW_POST_NAME</span>
+</span><span class='line'>    open -a Sublime<span class="se">\ </span>Text<span class="se">\ </span>2 <span class="nv">$NEW_POST_NAME</span>
+</span><span class='line'>    <span class="nb">cd</span> -
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样，每次写博客，只需要在命令行输入 <code>post 文章名字</code> 就行了。</p>
+
+<p>- EOF -</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -652,74 +756,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/">音悦台MV下载 Python版本</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-21T23:25:00+08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>制作过程：</h3>
-
-<p>前面写过了一个<a href="/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
-
-<p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
-
-<p>这个过程还是有一点点曲折的：</p>
-
-<ul>
-<li>读HTML代码，发现文件的链接是嵌入的Flash获取一个videoId,然后根据videoId获取的。</li>
-<li>找了一个可以反编译Flash文件的软件<a href="http://www.sothink.com/product/flashdecompiler/">SWFDecompiler</a>,反编译了一下Flash文件，简单读了一下相关的代码，不是很有头绪，然后决定从Flash发起的HTTP请求入手。</li>
-<li>先用了<a href="http://www.wireshark.org/">Wireshark</a>尝试抓了一下包，结果发现自己学艺不精，不太会用<a href="http://www.wireshark.org/">Wireshark</a>，找不到链接是怎么来的。</li>
-<li>决定找一个相对简单的HTTP请求获取的软件，StackOverflow搜到在Mac下有这几个软件可以实现
-
-<ul>
-<li><a href="http://www.charlesproxy.com/">Charles</a>：Mac版本收费。</li>
-<li><a href="http://code.google.com/p/andiparos/">Andiparos</a>：开源软件，功能也很齐全。</li>
-</ul>
-
-
-<p>  我用的是后者，非常好用，简单直接的找到了URL所在的HTTP请求。</p></li>
-<li>Python脚本发送HTTP请求，正则表达式分析出URL，再从原页面获取MV的名字，wget下载。</li>
-</ul>
-
-
-<p>代码在<a href="https://gist.github.com/1844416">这里</a>。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/21/yin-yue-tai-mv-xia-zai/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -753,6 +789,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/30/fan-qie-gong-zuo-fa-tu-jie/">读「番茄工作法图解」</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/17/shi-yong-zotero/">试用 Zotero</a>
       </li>
     
@@ -766,10 +806,6 @@
     
       <li class="post">
         <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/25/chang-yong-de-chromecha-jian/">常用的 Chrome 插件</a>
       </li>
     
   </ul>

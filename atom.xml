@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-08-17T17:43:22+08:00</updated>
+  <updated>2013-08-30T15:22:33+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[读「番茄工作法图解」]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/08/30/fan-qie-gong-zuo-fa-tu-jie/"/>
+    <updated>2013-08-30T14:17:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/08/30/fan-qie-gong-zuo-fa-tu-jie</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.jeswang.org/images/pomodoro/pomodoro3.jpg" alt="pomodoro" /></p>
+
+<p>知道番茄工作法这个概念一段时间了，但是一直没有找机会真正了解一下。前几天借着买书凑单的机会买了一本「<a href="http://book.douban.com/subject/5916234/">番茄工作法图解</a>」，花了2个小时阅读了一下。</p>
+
+<h2>形式</h2>
+
+<p>整本书都在介绍番茄工作法的方方面面，就书的形式上有几点感触：</p>
+
+<ul>
+<li>每页都是一个独立的部分，上面是插图，下面是标题和内容。让人阅读起来一点都不费劲，有一种很畅快轻松的感觉。</li>
+<li>书中的数据和观点基本上都标明了出处，不存在让人云里雾里的例子和结论。</li>
+<li>举了一些真实的例子，和日常生活能对上号，很实用。</li>
+</ul>
+
+
+<h2>内容</h2>
+
+<p>除了书的形式上很具有可读性以外，还让我弄清了一些我隐隐约约能感觉到的道理：</p>
+
+<ol>
+<li><p>“<strong>一双脚不能同时跳两场舞。</strong>” 道理很简单，人不能同时专注与两件事情，抱着什么都通吃的状态，到最后什么都吃不好。
+<img src="http://blog.jeswang.org/images/pomodoro/pomodoro2.jpg" alt="pomodoro2" /></p></li>
+<li><p>人的<strong>注意力</strong>是有限的，管理自己就是管理<strong>注意力</strong>。</p></li>
+<li><p><strong>逞一时的英雄</strong>是不对的。适当地工作和休息，稳健持续地前进才是正确的方法。
+<img src="http://blog.jeswang.org/images/pomodoro/pomodoro4.jpg" alt="pomodoro4" /></p></li>
+<li><p>有一种状态叫做“<strong>心流</strong>”。在这种状态下，人可以专注地做自己的事情，感觉时间都静止了，只有你和你思考的问题。</p></li>
+<li><strong>一直处于的“心流”的状态也是不行的</strong>，这种状态让你只能观察到事物的局部，而不能通观全局，换句话说，就是不能帮助你做出更大一点的选择。所以每工作 25 分钟，就要休息一下，跳出“心流”的状态，审视一下是不是该继续当前的工作。</li>
+</ol>
+
+
+<p>如果只是表面地去想，可能会问出这样的问题：人受到一个“番茄”的控制是不是太愚蠢了？它说开始就开始，它说停止就停止？但是再深入地想想，我们要如何接纳自身的懒惰、拖延以及各种缺陷，做一点工作呢？除了训练自己，借用一些科学的方法和工具，怕是没有别的方法了。</p>
+
+<p>读这本书是一个开始，重要的是去实践。就想杨绛先生说的：「问题在于，读书太少，而想得太多。」</p>
+
+<p>- EOF -</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[试用 Zotero]]></title>
@@ -1796,67 +1839,6 @@
 <li><a href="http://wiki.ktmud.com/tips/vim/ways-to-sync-vimwiki.html">同步 vimwiki 到线上的各种方法</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[音悦台MV下载 Python版本]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai/"/>
-    <updated>2012-02-21T23:25:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/02/21/yin-yue-tai-mv-xia-zai</id>
-    <content type="html"><![CDATA[<h3>制作过程：</h3>
-
-<p>前面写过了一个<a href="http://blog.jeswang.org/blog/2011/07/30/GMusicDown/">GoogleMusic专辑下载的Python版本</a>，这里是下载脚本另一则。</p>
-
-<p>因为前段时间在人人上总能看见音悦台里MV的推荐链接，用Chrome查看网页加载的文件也可以很容易的找出播放的MV的URL，然后用wget轻松下载到本地。既然浏览器能把文件的地址显示出来，用程序也一定可以。</p>
-
-<p>这个过程还是有一点点曲折的：</p>
-
-<ul>
-<li>读HTML代码，发现文件的链接是嵌入的Flash获取一个videoId,然后根据videoId获取的。</li>
-<li>找了一个可以反编译Flash文件的软件<a href="http://www.sothink.com/product/flashdecompiler/">SWFDecompiler</a>,反编译了一下Flash文件，简单读了一下相关的代码，不是很有头绪，然后决定从Flash发起的HTTP请求入手。</li>
-<li>先用了<a href="http://www.wireshark.org/">Wireshark</a>尝试抓了一下包，结果发现自己学艺不精，不太会用<a href="http://www.wireshark.org/">Wireshark</a>，找不到链接是怎么来的。</li>
-<li>决定找一个相对简单的HTTP请求获取的软件，StackOverflow搜到在Mac下有这几个软件可以实现
-
-<ul>
-<li><a href="http://www.charlesproxy.com/">Charles</a>：Mac版本收费。</li>
-<li><a href="http://code.google.com/p/andiparos/">Andiparos</a>：开源软件，功能也很齐全。</li>
-</ul>
-
-
-<p>  我用的是后者，非常好用，简单直接的找到了URL所在的HTTP请求。</p></li>
-<li>Python脚本发送HTTP请求，正则表达式分析出URL，再从原页面获取MV的名字，wget下载。</li>
-</ul>
-
-
-<p>代码在<a href="https://gist.github.com/1844416">这里</a>。</p>
-
-<!-- more -->
-
-
-
-
-<script src="https://gist.github.com/1844416.js"> </script>
-
-
-<h3>总结：</h3>
-
-<p>其实音悦台也提供了下载功能，但是需要下载一个Winodows的客户端，有没有其他的需要我不知道，因为客户端也没用过。</p>
-
-<p>写这种脚本，纯粹是为了满足自己需要。回头想想，觉得这种有用的脚本除了能被人方便的使用以外，还可以告诉程序员：程序无所不能，所有你可以看到的数据都可以获取。</p>
-
-<p>PS：</p>
-
-<p>还搜索到了几个有用的脚本，在这里分享一下：</p>
-
-<ul>
-<li><a href="https://github.com/iambus/youku-lixian">youku-lixian</a>：优酷视频下载的Python脚本。</li>
-<li><a href="https://github.com/rg3/youtube-dl">youtube-dl</a>：Youtube视频下载。</li>
-<li><a href="http://www.cnblogs.com/chinull/archive/2011/07/02/2096317.html">易读文库下载器</a>：Windows平台下载百度文库中文档的工具，话说我也简单分析了一下百度文库的Flash，有机会也搞一个脚本试试。</li>
-</ul>
-
-
-<p>完。</p>
 ]]></content>
   </entry>
   
