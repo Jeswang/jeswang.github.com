@@ -9,11 +9,36 @@
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="重复性质的准备工作 每次用Octopress写博客，都要 打开终端，转到Octopress的目录
-敲入rake 文章名字
-打开创建的文件开始写Blog
-在终端输入，rake preview
-浏览器中看到输出的样式 这样重复机械性的工作，不仅增加了写博客的准备时间，也增加了开始写博客的心理代价。 &hellip;">
+  <meta name="description" content="这学期的课都上完了，终于有时间和代码相处了。 好久没有使用vim，有些快捷键的淡忘了。 整理一下配置文件，重新来过。 我的VIM配置文件1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +109,195 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian/">我的VIM配置文件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-14T12:54:00+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/14/wo-de-vimpei-zhi-wen-jian/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这学期的课都上完了，终于有时间和代码相处了。</p>
+
+<p>好久没有使用vim，有些快捷键的淡忘了。</p>
+
+<p>整理一下配置文件，重新来过。</p>
+
+<figure class='code'><figcaption><span>我的VIM配置文件</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>inoremap &lt;C-e&gt; &lt;END&gt;
+</span><span class='line'>inoremap &lt;C-a&gt; &lt;HOME&gt;
+</span><span class='line'>inoremap &lt;C-f&gt; &lt;Right&gt;
+</span><span class='line'>inoremap &lt;C-b&gt; &lt;Left&gt;
+</span><span class='line'>
+</span><span class='line'>nmap &lt;Left&gt; :bp&lt;CR&gt;
+</span><span class='line'>nmap &lt;Right&gt; :bn&lt;CR&gt;
+</span><span class='line'>nmap &lt;F4&gt; :bd&lt;CR&gt;
+</span><span class='line'>
+</span><span class='line'><span class="nb">set </span>nocompatible
+</span><span class='line'>syntax on
+</span><span class='line'>filetype off
+</span><span class='line'>colorscheme desert
+</span><span class='line'><span class="nb">set </span>nu
+</span><span class='line'><span class="nb">set </span><span class="nv">mouse</span><span class="o">=</span>a
+</span><span class='line'><span class="nb">set </span>rtp+<span class="o">=</span>~/.vim/bundle/vundle/
+</span><span class='line'>call vundle#rc<span class="o">()</span>
+</span><span class='line'>Bundle <span class="s1">&#39;gmarik/vundle&#39;</span>
+</span><span class='line'>filetype plugin indent on
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;Lokaltog/vim-powerline&#39;</span>
+</span><span class='line'><span class="nb">set </span>nocompatible
+</span><span class='line'>
+</span><span class='line'><span class="nb">set </span><span class="nv">laststatus</span><span class="o">=</span>2
+</span><span class='line'><span class="nb">set </span><span class="nv">t_Co</span><span class="o">=</span>256
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;ZenCoding.vim&#39;</span>
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;a.vim&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;mileszs/ack.vim&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;cocoa.vim&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;FencView.vim&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;Markdown-syntax&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;unite.vim&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;Syntastic&#39;</span>
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;Tagbar&#39;</span>
+</span><span class='line'><span class="nb">let </span>g:tagbar_ctags_bin<span class="o">=</span><span class="s1">&#39;/usr/local/bin/ctags&#39;</span>
+</span><span class='line'><span class="nb">let </span>g:tagbar_width<span class="o">=</span>26
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;taglist.vim&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;taglist-plus&#39;</span>
+</span><span class='line'><span class="nb">let </span><span class="nv">Tlist_Use_Right_Window</span><span class="o">=</span>1
+</span><span class='line'><span class="nb">let </span><span class="nv">Tlist_File_Fold_Auto_Close</span><span class="o">=</span>1
+</span><span class='line'><span class="nb">let </span><span class="nv">Tlist_Ctags_Cmd</span><span class="o">=</span><span class="s1">&#39;/usr/local/bin/ctags&#39;</span>
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;The-NERD-tree&#39;</span>
+</span><span class='line'><span class="nb">let </span><span class="nv">NERDTreeShowBookmarks</span><span class="o">=</span>1
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;altercation/vim-colors-solarized&#39;</span>
+</span><span class='line'><span class="s2">&quot; set background=dark</span>
+</span><span class='line'><span class="s2">&quot;</span> colorscheme solarized
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;neocomplcache&#39;</span>
+</span><span class='line'><span class="nb">let </span>g:neocomplcache_enable_at_startup<span class="o">=</span>1
+</span><span class='line'>autocmd FileType python setlocal <span class="nv">omnifunc</span><span class="o">=</span>pythoncomplete#Complete
+</span><span class='line'>
+</span><span class='line'>Bundle <span class="s1">&#39;pyflackes&#39;</span>
+</span><span class='line'>Bundle <span class="s1">&#39;python_flod&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if </span>has<span class="o">(</span><span class="s2">&quot;gui_running&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="err">&quot;</span>    <span class="nb">set </span><span class="nv">guifont</span><span class="o">=</span>Microsoft<span class="se">\ </span>YaHei<span class="se">\ </span>Mono:h16
+</span><span class='line'>    <span class="nb">set </span><span class="nv">guifont</span><span class="o">=</span>Monaco:h14
+</span><span class='line'>    <span class="nb">set </span><span class="nv">guifontwide</span><span class="o">=</span>Microsoft<span class="se">\ </span>YaHei:h15
+</span><span class='line'>    <span class="nb">set </span><span class="nv">linespace</span><span class="o">=</span>2
+</span><span class='line'>    <span class="nb">set </span>guioptions-<span class="o">=</span>T
+</span><span class='line'>    <span class="nb">set </span>guioptions-<span class="o">=</span>r
+</span><span class='line'>    <span class="nb">set </span>guioptions-<span class="o">=</span>L
+</span><span class='line'>    <span class="nb">set </span><span class="nv">showtabline</span><span class="o">=</span>1
+</span><span class='line'>    <span class="nb">set </span>noimd
+</span><span class='line'>endif
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>- EOF -</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -638,124 +852,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/04/my-wiki-life/">每个人都需要VimWiki</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-04T19:29:00+08:00" pubdate data-updated="true">Apr 4<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/04/04/my-wiki-life/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>为什么要记录？</h2>
-
-<ul>
-<li><p>学过的东西，要么学的时候就不太明白，要么当时学明白了，后来渐渐淡忘了。</p></li>
-<li><p>搜过的东西，遇到了相同的问题还要重新搜索。</p></li>
-<li><p>好的网址用各种书签工具都无法分类处理。</p></li>
-<li><p>内容整理在一起，方便将来再查看和使用。</p></li>
-</ul>
-
-
-<h2>尝试过Mac下的软件</h2>
-
-<table>
-<thead>
-<tr>
-<th>工具   </th>
-<th> 价钱  </th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> VoodooPad</td>
-<td> 39.95$ </td>
-<td> 最早尝试过的一款笔记软件，但是不太喜欢其内容组织形式，没使用太长时间。<br />网址：<a href="http://flyingmeat.com/voodoopad">http://flyingmeat.com/voodoopad</a></td>
-</tr>
-<tr>
-<td> Evernote </td>
-<td> Free </td>
-<td> 功能多，支持多种平台同步的一款笔记软件。但是我觉得有很多功能是我不需要的，而且富文本编辑对我来说让内容很难做到美观。<br />网址：<a href="http://www.evernote.com">http://www.evernote.com</a>                    </td>
-</tr>
-<tr>
-<td> Notational Velocity</td>
-<td> Free</td>
-<td> simplenote的Mac客户端程序。开源，足够简洁，整个界面一个按钮也没有，适合记录一些暂时需要，而且不需要整理的内容。<br />网址：<a href="http://notational.net">http://notational.net</a>                                                      </td>
-</tr>
-<tr>
-<td> nvALT   </td>
-<td> Free</td>
-<td>Notational Velocity的加强软件。添加的很多功能都很实用。<br />网址：<a href="http://brettterpstra.com/project/nvalt">http://brettterpstra.com/project/nvalt</a> </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>VimWiki</h2>
-
-<p>随着渐渐习惯了使用vim进行文件的编辑，对其爱不释手，并且发现了好用的VimWiki。</p>
-
-<p>VimWiki完全满足了我想要记录内容的需要：</p>
-
-<ul>
-<li>简单的语法。</li>
-<li>内容可以任意组织。</li>
-<li>可以生成HTML随时浏览。</li>
-<li>自定义模版，怎么舒服怎么来。</li>
-</ul>
-
-
-<p><img src="/images/vimwiki.png" alt="My VimWiki" /></p>
-
-<h2>链接</h2>
-
-<h4>在线Wiki链接：</h4>
-
-<ul>
-<li><a href="http://wiki.hotoo.me/">闲耘™.Wiki</a></li>
-<li><a href="http://zwiki.sinaapp.com/">拾墨.wiki</a></li>
-<li><a href="http://wiki.ktmud.com/index.html">丘迟.wiki</a></li>
-</ul>
-
-
-<h4>其他介绍个人知识管理的博客链接：</h4>
-
-<ul>
-<li><a href="http://www.gracecode.com/archives/3022/">推荐 VimWiki</a></li>
-<li><a href="http://www.gtdstudy.com/?p=2234">个人知识管理：我为什么使用Onenote</a></li>
-<li><a href="http://blog.hotoo.me/use-vimwiki-for-blog.html">用 Vimwiki 写博客</a></li>
-<li><a href="http://wiki.ktmud.com/tips/vim/ways-to-sync-vimwiki.html">同步 vimwiki 到线上的各种方法</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -789,6 +885,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/04/shu-xu-guan-dao-ru-sou-gou-bin-ci-ku/">鼠须管导入搜狗 Bin 词库</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/30/fan-qie-gong-zuo-fa-tu-jie/">读「番茄工作法图解」</a>
       </li>
     
@@ -802,10 +902,6 @@
     
       <li class="post">
         <a href="/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/">PPI vs. DPI: 有什么区别?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/31/xin-xiang-ji/">新相机 —— GF5</a>
       </li>
     
   </ul>
