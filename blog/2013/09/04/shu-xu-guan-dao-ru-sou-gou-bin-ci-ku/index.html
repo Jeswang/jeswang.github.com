@@ -1207,7 +1207,20 @@
 
 <h2>导入 Rime 词库</h2>
 
-<p>有了 user.dic 文件以后：</p>
+<p>有了 user.dic 文件以后：
+- 找到 rime_dict_manager，使用这个 bash 脚本就行了：</p>
+
+<div><script src='https://gist.github.com/5464868.js?file=rime_dict_manager'></script>
+<noscript><pre><code>#!/bin/bash
+#
+# put this script in ~/Library/Rime, list existing user dictionaries:
+# ./rime_dict_manager --list
+# see other supported options:
+# ./rime_dict_manager
+
+DYLD_LIBRARY_PATH=&quot;/Library/Input Methods/Squirrel.app/Contents/Frameworks&quot; &quot;/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_dict_manager&quot; $@
+</code></pre></noscript></div>
+
 
 <ul>
 <li>拷贝rime_dict_manager、转化后的鼠须管词库（user.dic）至~/Library/Rime目录；</li>
