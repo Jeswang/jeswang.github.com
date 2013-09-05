@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>鼠须管导入搜狗 Bin 词库 - Jeswang's Blog</title>
+  <title>「鼠须管」导入搜狗 Bin 词库 - Jeswang's Blog</title>
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content="「鼠须管」真是个好用的输入法。最大的优势就是其反应速度之快，快到换用「搜狗输入法」就会有输入明显变卡的感觉。但是因为在搜狗的用户词库里有了一些自己输入过的词，所以每次想要换用「鼠须管」，总是坚持时间不长就换回了搜狗。 没办法，只能自己想办法把用户词库加到「鼠须管」里了。 准备阶段 问： &hellip;">
+  <meta name="description" content="「鼠须管」真是个好用的输入法。最大的优势就是反应很快，快到换用「搜狗输入法」就会有输入明显变卡的感觉。但是因为在搜狗的用户词库里有了一些自己输入过的词，所以每次想要换用「鼠须管」，总是使用时间不长就换回了搜狗。 没办法，只能自己想办法把用户词库加到「鼠须管」里了。 准备阶段 问： &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">鼠须管导入搜狗 Bin 词库</h1>
+      <h1 class="entry-title">「鼠须管」导入搜狗 Bin 词库</h1>
     
     
       <p class="meta">
@@ -110,7 +110,7 @@
 
 <div class="entry-content"><p><img src="/images/rime.png" alt="rime 来自 http://iyeslogo.com" /></p>
 
-<p>「鼠须管」真是个好用的输入法。最大的优势就是其反应速度之快，快到换用「搜狗输入法」就会有输入明显变卡的感觉。但是因为在搜狗的用户词库里有了一些自己输入过的词，所以每次想要换用「鼠须管」，总是坚持时间不长就换回了搜狗。</p>
+<p>「鼠须管」真是个好用的输入法。最大的优势就是反应很快，快到换用「搜狗输入法」就会有输入明显变卡的感觉。但是因为在搜狗的用户词库里有了一些自己输入过的词，所以每次想要换用「鼠须管」，总是使用时间不长就换回了搜狗。</p>
 
 <p>没办法，只能自己想办法把用户词库加到「鼠须管」里了。</p>
 
@@ -131,21 +131,49 @@
 
 <p>问：这可是个二进制文件啊，大哥。要怎么解析它？</p>
 
-<p>答：初看确实头大。但是搜了一下发现居然有人解析过，就是这个开源项目 <a href="https://github.com/studyzy/imewlconverter">studyzy/imewlconverter</a> 。唯一比较遗憾的是这是一个 Windows 下的程序，Mac 下没法直接使用。</p>
+<p>答：使用 <a href="http://ridiculousfish.com/hexfiend/">Hex Field</a> 看一下，确实头大：
+<img src="/images/sogou_bin_file.png" alt="sogou_bin_file" />
+但是搜了一下发现居然有人解析过，就是这个开源项目 <a href="https://github.com/studyzy/imewlconverter">studyzy/imewlconverter</a> （真佩服他二进制解读的能力）。唯一比较遗憾的是这是一个 Windows 下的程序，Mac 下没法直接使用。</p>
 
 <p>这下开源的好处就体现出了来，自己动手丰衣足食吧。</p>
 
-<h2>如何导出词库</h2>
+<h2>导出搜狗词库</h2>
 
-<p>解析的工作按照 imewlconverter 中的 <a href="https://github.com/studyzy/imewlconverter/blob/master/IME%20WL%20Converter/IME%20WL%20Converter/IME/SougouPinyinBin.cs">imewlconverter/IME WL Converter/IME WL Converter/IME/SougouPinyinBin.cs</a> 来就可以了。</p>
+<p>解析的工作按照 imewlconverter 中的 <a href="https://github.com/studyzy/imewlconverter/blob/master/IME%20WL%20Converter/IME%20WL%20Converter/IME/SougouPinyinBin.cs">SougouPinyinBin.cs</a> 来就可以了。</p>
 
-<p>导入词库的时候，要将信息保存在 .dic 的文件里，dic 文件的格式为：</p>
+<h3>二进制的文件是大端还是小端</h3>
+
+<p>用 <a href="http://ridiculousfish.com/hexfiend/">Hex Field</a> 查看发现小端的输出比较合理，所以认定是小端。在读取的时候，需要使用 Python 的 Struct 包读取时指明是小端：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def read_int_32(f):
+</span><span class='line'>      byte = f.read(4)
+</span><span class='line'>      byte = struct.unpack("&lt;L", byte)
+</span><span class='line'>      return byte[0]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>二进制中的文字使用的是什么编码？</h3>
+
+<p>我用户词库的第一个字是“厑”，使用 <a href="http://earthlingsoft.net/UnicodeChecker/">UnicodeChecker</a> 就能看到使用的应该是Unicode Hex 或者 UTF-16 Hex。
+<img src="/images/cjk_a.png" alt="cjk_a" />
+使用 Codes 模块就可以了：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>word = codecs.utf_16_le_decode(f.read(word_count))[0]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>导出词库的格式</h3>
+
+<p>导入词库的时候，要将信息保存在 .dic 的文件里，.dic 文件的格式为：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>中文词组[Tab]以空格分割的拼音组[Tab]频率</span></code></pre></td></tr></table></div></figure>
 
 
-<p>具体的代码如下：</p>
+<h3>具体的代码</h3>
 
 <figure class='code'><figcaption><span>导出搜狗用户词库 (read_sogou_bin.py)</span> <a href='/downloads/code/read_sogou_bin.py'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1177,7 +1205,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>如何导入词库</h2>
+<h2>导入 Rime 词库</h2>
 
 <p>有了 user.dic 文件以后：</p>
 
@@ -1275,7 +1303,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/09/04/shu-xu-guan-dao-ru-sou-gou-bin-ci-ku/">鼠须管导入搜狗 Bin 词库</a>
+        <a href="/blog/2013/09/04/shu-xu-guan-dao-ru-sou-gou-bin-ci-ku/">「鼠须管」导入搜狗 Bin 词库</a>
       </li>
     
       <li class="post">
