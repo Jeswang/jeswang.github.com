@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-09-05T08:56:47+08:00</updated>
+  <updated>2013-09-05T08:58:05+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -1118,7 +1118,7 @@
 <h2>导入 Rime 词库</h2>
 
 <p>有了 user.dic 文件以后：
-- 找到 rime_dict_manager，使用这个 bash 脚本就行了：</p>
+- 找到 rime_dict_manager。把这个 bash 脚本保存到 ~/Library/Rime/rime_dict_manager：</p>
 
 <div><script src='https://gist.github.com/5464868.js?file=rime_dict_manager'></script>
 <noscript><pre><code>#!/bin/bash
@@ -1133,7 +1133,7 @@ DYLD_LIBRARY_PATH=&quot;/Library/Input Methods/Squirrel.app/Contents/Frameworks&
 
 
 <ul>
-<li>拷贝rime_dict_manager、转化后的鼠须管词库（user.dic）至~/Library/Rime目录；</li>
+<li>拷贝转化后的鼠须管词库（user.dic）至~/Library/Rime目录；</li>
 <li>打开终端，先kill：killall Squirrel</li>
 <li>单个导入：./rime_dict_manager -i luna_pinyin  user.dic</li>
 </ul>
