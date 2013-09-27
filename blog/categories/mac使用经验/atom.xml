@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mac使用经验 | Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/blog/categories/mac使用经验/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-09-05T08:58:05+08:00</updated>
+  <updated>2013-09-27T19:35:50+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -12,6 +12,1142 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[「鼠须管」导入搜狗 Bin 词库]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/09/04/shu-xu-guan-dao-ru-sou-gou-bin-ci-ku/"/>
+    <updated>2013-09-04T22:11:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/09/04/shu-xu-guan-dao-ru-sou-gou-bin-ci-ku</id>
+    <content type="html"><![CDATA[<p><img src="/images/rime.png" alt="rime 来自 http://iyeslogo.com" /></p>
+
+<p>「鼠须管」真是个好用的输入法。最大的优势就是反应很快，快到换用「搜狗输入法」就会有输入明显变卡的感觉。但是因为在搜狗的用户词库里有了一些自己输入过的词，所以每次想要换用「鼠须管」，总是使用时间不长就换回了搜狗。</p>
+
+<p>没办法，只能自己想办法把用户词库加到「鼠须管」里了。</p>
+
+<!-- more -->
+
+
+<h2>准备阶段</h2>
+
+<p>问：搜狗输入法的用户词库在哪里？</p>
+
+<p>答：输入一个会被记录的词，这个文件就会更新：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/Users/用户名/Library/Input Methods/Sogou/SogouPY.users/00000001/sgim_usr_v1.bin</span></code></pre></td></tr></table></div></figure></notextile></div>
+一搜文件名，果然是它。</p>
+
+<p>问：这可是个二进制文件啊，大哥。要怎么解析它？</p>
+
+<p>答：使用 <a href="http://ridiculousfish.com/hexfiend/">Hex Field</a> 看一下，确实头大：
+<img src="/images/sogou_bin_file.png" alt="sogou_bin_file" />
+但是搜了一下发现居然有人解析过，就是这个开源项目 <a href="https://github.com/studyzy/imewlconverter">studyzy/imewlconverter</a> （真佩服他二进制解读的能力）。唯一比较遗憾的是这是一个 Windows 下的程序，Mac 下没法直接使用。</p>
+
+<p>这下开源的好处就体现出了来，自己动手丰衣足食吧。</p>
+
+<h2>导出搜狗词库</h2>
+
+<p>解析的工作按照 imewlconverter 中的 <a href="https://github.com/studyzy/imewlconverter/blob/master/IME%20WL%20Converter/IME%20WL%20Converter/IME/SougouPinyinBin.cs">SougouPinyinBin.cs</a> 来就可以了。</p>
+
+<h3>二进制的文件是大端还是小端</h3>
+
+<p>用 <a href="http://ridiculousfish.com/hexfiend/">Hex Field</a> 查看发现小端的输出比较合理，所以认定是小端。在读取的时候，需要使用 Python 的 Struct 包读取时指明是小端：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def read_int_32(f):&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>    byte = f.read(4)
+</span><span class='line'>    byte = struct.unpack("&lt;L", byte)
+</span><span class='line'>    return byte[0]
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>二进制中的文字使用的是什么编码？</h3>
+
+<p>我用户词库的第一个字是“厑”，使用 <a href="http://earthlingsoft.net/UnicodeChecker/">UnicodeChecker</a> 就能看到使用的应该是Unicode Hex 或者 UTF-16 Hex。
+<img src="/images/cjk_a.png" alt="cjk_a" />
+使用 Codes 模块就可以了：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>word = codecs.utf_16_le_decode(f.read(word_count))[0]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>导出词库的格式</h3>
+
+<p>导入词库的时候，要将信息保存在 .dic 的文件里，.dic 文件的格式为：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>中文词组[Tab]以空格分割的拼音组[Tab]频率</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>具体的代码</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>导出搜狗用户词库 (read_sogou_bin.py)</span> <a href='/downloads/code/read_sogou_bin.py'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+<span class='line-number'>189</span>
+<span class='line-number'>190</span>
+<span class='line-number'>191</span>
+<span class='line-number'>192</span>
+<span class='line-number'>193</span>
+<span class='line-number'>194</span>
+<span class='line-number'>195</span>
+<span class='line-number'>196</span>
+<span class='line-number'>197</span>
+<span class='line-number'>198</span>
+<span class='line-number'>199</span>
+<span class='line-number'>200</span>
+<span class='line-number'>201</span>
+<span class='line-number'>202</span>
+<span class='line-number'>203</span>
+<span class='line-number'>204</span>
+<span class='line-number'>205</span>
+<span class='line-number'>206</span>
+<span class='line-number'>207</span>
+<span class='line-number'>208</span>
+<span class='line-number'>209</span>
+<span class='line-number'>210</span>
+<span class='line-number'>211</span>
+<span class='line-number'>212</span>
+<span class='line-number'>213</span>
+<span class='line-number'>214</span>
+<span class='line-number'>215</span>
+<span class='line-number'>216</span>
+<span class='line-number'>217</span>
+<span class='line-number'>218</span>
+<span class='line-number'>219</span>
+<span class='line-number'>220</span>
+<span class='line-number'>221</span>
+<span class='line-number'>222</span>
+<span class='line-number'>223</span>
+<span class='line-number'>224</span>
+<span class='line-number'>225</span>
+<span class='line-number'>226</span>
+<span class='line-number'>227</span>
+<span class='line-number'>228</span>
+<span class='line-number'>229</span>
+<span class='line-number'>230</span>
+<span class='line-number'>231</span>
+<span class='line-number'>232</span>
+<span class='line-number'>233</span>
+<span class='line-number'>234</span>
+<span class='line-number'>235</span>
+<span class='line-number'>236</span>
+<span class='line-number'>237</span>
+<span class='line-number'>238</span>
+<span class='line-number'>239</span>
+<span class='line-number'>240</span>
+<span class='line-number'>241</span>
+<span class='line-number'>242</span>
+<span class='line-number'>243</span>
+<span class='line-number'>244</span>
+<span class='line-number'>245</span>
+<span class='line-number'>246</span>
+<span class='line-number'>247</span>
+<span class='line-number'>248</span>
+<span class='line-number'>249</span>
+<span class='line-number'>250</span>
+<span class='line-number'>251</span>
+<span class='line-number'>252</span>
+<span class='line-number'>253</span>
+<span class='line-number'>254</span>
+<span class='line-number'>255</span>
+<span class='line-number'>256</span>
+<span class='line-number'>257</span>
+<span class='line-number'>258</span>
+<span class='line-number'>259</span>
+<span class='line-number'>260</span>
+<span class='line-number'>261</span>
+<span class='line-number'>262</span>
+<span class='line-number'>263</span>
+<span class='line-number'>264</span>
+<span class='line-number'>265</span>
+<span class='line-number'>266</span>
+<span class='line-number'>267</span>
+<span class='line-number'>268</span>
+<span class='line-number'>269</span>
+<span class='line-number'>270</span>
+<span class='line-number'>271</span>
+<span class='line-number'>272</span>
+<span class='line-number'>273</span>
+<span class='line-number'>274</span>
+<span class='line-number'>275</span>
+<span class='line-number'>276</span>
+<span class='line-number'>277</span>
+<span class='line-number'>278</span>
+<span class='line-number'>279</span>
+<span class='line-number'>280</span>
+<span class='line-number'>281</span>
+<span class='line-number'>282</span>
+<span class='line-number'>283</span>
+<span class='line-number'>284</span>
+<span class='line-number'>285</span>
+<span class='line-number'>286</span>
+<span class='line-number'>287</span>
+<span class='line-number'>288</span>
+<span class='line-number'>289</span>
+<span class='line-number'>290</span>
+<span class='line-number'>291</span>
+<span class='line-number'>292</span>
+<span class='line-number'>293</span>
+<span class='line-number'>294</span>
+<span class='line-number'>295</span>
+<span class='line-number'>296</span>
+<span class='line-number'>297</span>
+<span class='line-number'>298</span>
+<span class='line-number'>299</span>
+<span class='line-number'>300</span>
+<span class='line-number'>301</span>
+<span class='line-number'>302</span>
+<span class='line-number'>303</span>
+<span class='line-number'>304</span>
+<span class='line-number'>305</span>
+<span class='line-number'>306</span>
+<span class='line-number'>307</span>
+<span class='line-number'>308</span>
+<span class='line-number'>309</span>
+<span class='line-number'>310</span>
+<span class='line-number'>311</span>
+<span class='line-number'>312</span>
+<span class='line-number'>313</span>
+<span class='line-number'>314</span>
+<span class='line-number'>315</span>
+<span class='line-number'>316</span>
+<span class='line-number'>317</span>
+<span class='line-number'>318</span>
+<span class='line-number'>319</span>
+<span class='line-number'>320</span>
+<span class='line-number'>321</span>
+<span class='line-number'>322</span>
+<span class='line-number'>323</span>
+<span class='line-number'>324</span>
+<span class='line-number'>325</span>
+<span class='line-number'>326</span>
+<span class='line-number'>327</span>
+<span class='line-number'>328</span>
+<span class='line-number'>329</span>
+<span class='line-number'>330</span>
+<span class='line-number'>331</span>
+<span class='line-number'>332</span>
+<span class='line-number'>333</span>
+<span class='line-number'>334</span>
+<span class='line-number'>335</span>
+<span class='line-number'>336</span>
+<span class='line-number'>337</span>
+<span class='line-number'>338</span>
+<span class='line-number'>339</span>
+<span class='line-number'>340</span>
+<span class='line-number'>341</span>
+<span class='line-number'>342</span>
+<span class='line-number'>343</span>
+<span class='line-number'>344</span>
+<span class='line-number'>345</span>
+<span class='line-number'>346</span>
+<span class='line-number'>347</span>
+<span class='line-number'>348</span>
+<span class='line-number'>349</span>
+<span class='line-number'>350</span>
+<span class='line-number'>351</span>
+<span class='line-number'>352</span>
+<span class='line-number'>353</span>
+<span class='line-number'>354</span>
+<span class='line-number'>355</span>
+<span class='line-number'>356</span>
+<span class='line-number'>357</span>
+<span class='line-number'>358</span>
+<span class='line-number'>359</span>
+<span class='line-number'>360</span>
+<span class='line-number'>361</span>
+<span class='line-number'>362</span>
+<span class='line-number'>363</span>
+<span class='line-number'>364</span>
+<span class='line-number'>365</span>
+<span class='line-number'>366</span>
+<span class='line-number'>367</span>
+<span class='line-number'>368</span>
+<span class='line-number'>369</span>
+<span class='line-number'>370</span>
+<span class='line-number'>371</span>
+<span class='line-number'>372</span>
+<span class='line-number'>373</span>
+<span class='line-number'>374</span>
+<span class='line-number'>375</span>
+<span class='line-number'>376</span>
+<span class='line-number'>377</span>
+<span class='line-number'>378</span>
+<span class='line-number'>379</span>
+<span class='line-number'>380</span>
+<span class='line-number'>381</span>
+<span class='line-number'>382</span>
+<span class='line-number'>383</span>
+<span class='line-number'>384</span>
+<span class='line-number'>385</span>
+<span class='line-number'>386</span>
+<span class='line-number'>387</span>
+<span class='line-number'>388</span>
+<span class='line-number'>389</span>
+<span class='line-number'>390</span>
+<span class='line-number'>391</span>
+<span class='line-number'>392</span>
+<span class='line-number'>393</span>
+<span class='line-number'>394</span>
+<span class='line-number'>395</span>
+<span class='line-number'>396</span>
+<span class='line-number'>397</span>
+<span class='line-number'>398</span>
+<span class='line-number'>399</span>
+<span class='line-number'>400</span>
+<span class='line-number'>401</span>
+<span class='line-number'>402</span>
+<span class='line-number'>403</span>
+<span class='line-number'>404</span>
+<span class='line-number'>405</span>
+<span class='line-number'>406</span>
+<span class='line-number'>407</span>
+<span class='line-number'>408</span>
+<span class='line-number'>409</span>
+<span class='line-number'>410</span>
+<span class='line-number'>411</span>
+<span class='line-number'>412</span>
+<span class='line-number'>413</span>
+<span class='line-number'>414</span>
+<span class='line-number'>415</span>
+<span class='line-number'>416</span>
+<span class='line-number'>417</span>
+<span class='line-number'>418</span>
+<span class='line-number'>419</span>
+<span class='line-number'>420</span>
+<span class='line-number'>421</span>
+<span class='line-number'>422</span>
+<span class='line-number'>423</span>
+<span class='line-number'>424</span>
+<span class='line-number'>425</span>
+<span class='line-number'>426</span>
+<span class='line-number'>427</span>
+<span class='line-number'>428</span>
+<span class='line-number'>429</span>
+<span class='line-number'>430</span>
+<span class='line-number'>431</span>
+<span class='line-number'>432</span>
+<span class='line-number'>433</span>
+<span class='line-number'>434</span>
+<span class='line-number'>435</span>
+<span class='line-number'>436</span>
+<span class='line-number'>437</span>
+<span class='line-number'>438</span>
+<span class='line-number'>439</span>
+<span class='line-number'>440</span>
+<span class='line-number'>441</span>
+<span class='line-number'>442</span>
+<span class='line-number'>443</span>
+<span class='line-number'>444</span>
+<span class='line-number'>445</span>
+<span class='line-number'>446</span>
+<span class='line-number'>447</span>
+<span class='line-number'>448</span>
+<span class='line-number'>449</span>
+<span class='line-number'>450</span>
+<span class='line-number'>451</span>
+<span class='line-number'>452</span>
+<span class='line-number'>453</span>
+<span class='line-number'>454</span>
+<span class='line-number'>455</span>
+<span class='line-number'>456</span>
+<span class='line-number'>457</span>
+<span class='line-number'>458</span>
+<span class='line-number'>459</span>
+<span class='line-number'>460</span>
+<span class='line-number'>461</span>
+<span class='line-number'>462</span>
+<span class='line-number'>463</span>
+<span class='line-number'>464</span>
+<span class='line-number'>465</span>
+<span class='line-number'>466</span>
+<span class='line-number'>467</span>
+<span class='line-number'>468</span>
+<span class='line-number'>469</span>
+<span class='line-number'>470</span>
+<span class='line-number'>471</span>
+<span class='line-number'>472</span>
+<span class='line-number'>473</span>
+<span class='line-number'>474</span>
+<span class='line-number'>475</span>
+<span class='line-number'>476</span>
+<span class='line-number'>477</span>
+<span class='line-number'>478</span>
+<span class='line-number'>479</span>
+<span class='line-number'>480</span>
+<span class='line-number'>481</span>
+<span class='line-number'>482</span>
+<span class='line-number'>483</span>
+<span class='line-number'>484</span>
+<span class='line-number'>485</span>
+<span class='line-number'>486</span>
+<span class='line-number'>487</span>
+<span class='line-number'>488</span>
+<span class='line-number'>489</span>
+<span class='line-number'>490</span>
+<span class='line-number'>491</span>
+<span class='line-number'>492</span>
+<span class='line-number'>493</span>
+<span class='line-number'>494</span>
+<span class='line-number'>495</span>
+<span class='line-number'>496</span>
+<span class='line-number'>497</span>
+<span class='line-number'>498</span>
+<span class='line-number'>499</span>
+<span class='line-number'>500</span>
+<span class='line-number'>501</span>
+<span class='line-number'>502</span>
+<span class='line-number'>503</span>
+<span class='line-number'>504</span>
+<span class='line-number'>505</span>
+<span class='line-number'>506</span>
+<span class='line-number'>507</span>
+<span class='line-number'>508</span>
+<span class='line-number'>509</span>
+<span class='line-number'>510</span>
+<span class='line-number'>511</span>
+<span class='line-number'>512</span>
+<span class='line-number'>513</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># -*- coding: UTF-8 -*-</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">struct</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">codecs</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">PinYinDic</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'><span class="s">&quot;a&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;an&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ba&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ban&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ben&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;beng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;biao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bing&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;bu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ca&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;can&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ce&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ceng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cha&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;che&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cheng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chuai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chuang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;chuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ci&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;cuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;da&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;de&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;den&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;deng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;di&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dia&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;diao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;die&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ding&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;diu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;du&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;duan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;dun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;duo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;e&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;en&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;eng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;er&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fa&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;feng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fiao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;fu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ga&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ge&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;geng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;guai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;guan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;guang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;gun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;guo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ha&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;han&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;he&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;heng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;huai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;huan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;huang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;hun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;huo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ji&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jia&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jiang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jiao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jing&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jiong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jiu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ju&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;juan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jue&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;jun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ka&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ke&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ken&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;keng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ku&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kuai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kuang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;kuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;la&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;le&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;leng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;li&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lia&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;liang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;liao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ling&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;liu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;long&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;luan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lue&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;luo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;lv&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ma&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;man&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;me&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;men&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;meng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;miao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;min&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ming&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;miu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;mu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;na&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ne&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;neng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ni&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;niang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;niao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ning&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;niu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nue&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;nv&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;o&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pa&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;peng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;piao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ping&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;po&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;pu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qia&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qiang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qiao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qing&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qiong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qiu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;quan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;que&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;qun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ran&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;rang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;rao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;re&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ren&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;reng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ri&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;rong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;rou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ru&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;rua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ruan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;rui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;run&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ruo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sa&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;san&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;se&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;seng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sha&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;she&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sheng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shuai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shuang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;shuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;si&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;song&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;su&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;suan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;sun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;suo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ta&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;te&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;teng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ti&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tiao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ting&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;tuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wa&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;weng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;wu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xia&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xian&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xiang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xiao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xie&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xing&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xiong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xiu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xue&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;xun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ya&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ye&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yin&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ying&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;you&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yue&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;yun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;za&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;ze&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zeng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zha&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhao&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhe&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhei&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhen&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zheng&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhua&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhuai&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhuang&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zhuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zi&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zong&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zou&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zu&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zuan&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zui&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zun&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;zuo&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;A&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;B&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;C&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;D&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;E&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;F&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;G&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;H&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;I&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;J&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;K&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;L&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;M&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;N&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;O&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;P&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;Q&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;R&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;S&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;T&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;U&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;V&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;W&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;X&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;Y&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&quot;Z&quot;</span>
+</span><span class='line'><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span><span class='line'>		<span class="n">byte</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'>		<span class="n">byte</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&quot;&lt;h&quot;</span><span class="p">,</span> <span class="n">byte</span><span class="p">)</span>
+</span><span class='line'>		<span class="k">return</span> <span class="n">byte</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">read_int_32</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span><span class='line'>		<span class="n">byte</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'>		<span class="n">byte</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&quot;&lt;L&quot;</span><span class="p">,</span> <span class="n">byte</span><span class="p">)</span>
+</span><span class='line'>		<span class="k">return</span> <span class="n">byte</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">read_bin_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+</span><span class='line'>	<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>			<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mh">0x18</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>			<span class="n">total_word_count</span> <span class="o">=</span> <span class="n">read_int_32</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>			<span class="k">print</span> <span class="s">&quot;Total word is </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">total_word_count</span>
+</span><span class='line'>			<span class="n">current_word_num</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>			<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mh">0x30</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>			<span class="k">while</span> <span class="n">current_word_num</span> <span class="o">&lt;</span> <span class="n">total_word_count</span> <span class="p">:</span>
+</span><span class='line'>				<span class="n">same_py_count</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>				<span class="n">unknow_var</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>				<span class="n">py_count</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="n">py_str</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">py_count</span><span class="p">):</span>
+</span><span class='line'>					<span class="n">idx</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>					<span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">PinYinDic</span><span class="p">)</span> <span class="ow">and</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>						<span class="n">py_str</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PinYinDic</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+</span><span class='line'>					<span class="k">else</span><span class="p">:</span>
+</span><span class='line'>						<span class="n">py_str</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;--&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">same_py_count</span><span class="p">):</span>
+</span><span class='line'>					<span class="n">word_count</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>					<span class="n">word</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">utf_16_le_decode</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">word_count</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>					<span class="n">count</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>					<span class="n">count2</span> <span class="o">=</span> <span class="n">read_int_16</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>					<span class="n">unknow_var2</span> <span class="o">=</span> <span class="n">read_int_32</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'>					<span class="n">word_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;count&quot;</span><span class="p">:</span><span class="n">count</span><span class="p">,</span> <span class="s">&quot;word&quot;</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="s">&quot;pinyin&quot;</span><span class="p">:</span> <span class="n">py_str</span><span class="p">}</span>
+</span><span class='line'>					<span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_dic</span><span class="p">)</span>
+</span><span class='line'>					<span class="k">print</span> <span class="s">&quot;current_word_num: </span><span class="si">%s</span><span class="s"> and pinyin </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">current_word_num</span><span class="p">,</span> <span class="n">py_str</span><span class="p">)</span>
+</span><span class='line'>					<span class="n">current_word_num</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>			<span class="k">return</span> <span class="n">res</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">try_pinyin</span><span class="p">():</span>
+</span><span class='line'>	<span class="k">print</span> <span class="s">&#39;Number of arguments:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="s">&#39;arguments.&#39;</span>
+</span><span class='line'>	<span class="k">print</span> <span class="s">&#39;Argument List:&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</span><span class='line'>	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span class='line'>		<span class="k">print</span> <span class="n">PinYinDic</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">save_words_to_path</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
+</span><span class='line'>	<span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">,</span> <span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+</span><span class='line'>	<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+</span><span class='line'>		<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">u&quot;</span><span class="si">%s</span><span class="se">\t</span><span class="si">%s</span><span class="se">\t</span><span class="si">%d</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="s">&quot;word&quot;</span><span class="p">],</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="s">&quot;pinyin&quot;</span><span class="p">]),</span> <span class="n">word</span><span class="p">[</span><span class="s">&quot;count&quot;</span><span class="p">]))</span>
+</span><span class='line'>	<span class="k">print</span> <span class="s">&quot;共写入 </span><span class="si">%d</span><span class="s"> 词组&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>	
+</span><span class='line'>	<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span class='line'>	<span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/Users/用户名/Library/Input Methods/Sogou/SogouPY.users/00000001/sgim_usr_v1.bin&quot;</span>
+</span><span class='line'>	<span class="n">res</span> <span class="o">=</span> <span class="n">read_bin_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'>	<span class="k">print</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>	<span class="n">save_words_to_path</span><span class="p">(</span><span class="s">&quot;user.dic&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>导入 Rime 词库</h2>
+
+<p>有了 user.dic 文件以后：
+- 找到 rime_dict_manager。把这个 bash 脚本保存到 ~/Library/Rime/rime_dict_manager：
+<div><script src='https://gist.github.com/5464868.js?file=rime_dict_manager'></script>
+<noscript><pre><code>#!/bin/bash
+#
+# put this script in ~/Library/Rime, list existing user dictionaries:
+# ./rime_dict_manager --list
+# see other supported options:
+# ./rime_dict_manager
+
+DYLD_LIBRARY_PATH=&quot;/Library/Input Methods/Squirrel.app/Contents/Frameworks&quot; &quot;/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_dict_manager&quot; $@
+</code></pre></noscript></div>
+</p>
+
+<ul>
+<li>拷贝转化后的鼠须管词库（user.dic）至~/Library/Rime目录；</li>
+<li>打开终端，先kill：killall Squirrel</li>
+<li>单个导入：./rime_dict_manager -i luna_pinyin  user.dic</li>
+</ul>
+
+
+<h2>更多链接</h2>
+
+<ul>
+<li><a href="https://www.byvoid.com/zhs/blog/recommend-rime">推荐一个神级输入法——Rime - BYVoid</a></li>
+<li><a href="https://github.com/studyzy/imewlconverter">studyzy/imewlconverter</a></li>
+<li><a href="http://www.ukuang.com/2012/10/13/%E9%BC%A0%E9%A1%BB%E7%AE%A1%E8%BE%93%E5%85%A5%E6%B3%95%E5%AF%BC%E5%85%A5%E6%90%9C%E7%8B%97%E7%BB%86%E8%83%9E%E8%AF%8D%E5%BA%93/">鼠须管输入法导入搜狗细胞词库 | 跑马圈地</a></li>
+</ul>
+
+
+<p>- EOF -</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[每个人都需要VimWiki]]></title>

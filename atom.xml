@@ -4,7 +4,7 @@
   <title><![CDATA[Jeswang's Blog]]></title>
   <link href="http://blog.jeswang.org/atom.xml" rel="self"/>
   <link href="http://blog.jeswang.org/"/>
-  <updated>2013-09-05T08:58:05+08:00</updated>
+  <updated>2013-09-27T19:35:50+08:00</updated>
   <id>http://blog.jeswang.org/</id>
   <author>
     <name><![CDATA[jeswang]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[编码吧，在这个最好的时代]]></title>
+    <link href="http://blog.jeswang.org/blog/2013/09/27/zhe-shi-zui-hao-de-shi-dai/"/>
+    <updated>2013-09-27T15:48:00+08:00</updated>
+    <id>http://blog.jeswang.org/blog/2013/09/27/zhe-shi-zui-hao-de-shi-dai</id>
+    <content type="html"><![CDATA[<p>我不是郭敬明的粉丝，也没看过『小时代』系列小说。但是，偶然看到『小时代1.0』的结尾，觉得有句话说得对：『这是我们的时代。』应该再加上一句，这是最好的时代。</p>
+
+<h2>为什么现在是最好的时代？</h2>
+
+<!-- more -->
+
+
+<h3>我们可以知道得更多</h3>
+
+<p>每次浏览网络中的信息，都让我有种深陷其中的感觉。你几乎可以知道任何<strong>几秒钟</strong>以前发生的事情。随时都有人拿着手机疯狂的输入和拍照，虽然网络中的这些信息大部分都是废话，但是实时性和覆盖得到了保证，只要你想知道，你就可以知道。只要你敢提问，就有人敢回复你。</p>
+
+<h3>我们可以抛弃身边的人、寻找志同道合之人</h3>
+
+<p>很多美剧出现过一句话：『There’re others.』，鲁迅也曾经在为文的时候鼓励『真正的勇者』，你们并不孤单，很多人都在和你一样在努力和挣扎。没有相似的经验，自然不能理解，身边的人很有可能并不懂你。有了互联网这种情况得到了改善，无论你是小清新还是个怪大叔，豆瓣小组、百度贴吧以及各种论坛，总有一款适合你。你终于找到了属于自己的领地，终于可以不在看着周围困惑的眼神，苦苦地思索为什么没人理解，而是尽情地撒野。</p>
+
+<h3>我们可以做到更多</h3>
+
+<p>点点手指就有人把你需要的东西送到你的楼下，你轻轻呼唤就有人在周末和你同游，你举起手机，轻轻摇晃，人生从此不再寂寞。一切似乎都在你的掌控之中，你沉醉与自己力量的伟大，不能自拔。就这样，人和人被更加紧密地连接在了一起。</p>
+
+<h3>浮躁正在褪去</h3>
+
+<p>有人说当前的社会是浮躁的，我以为然，但是这浮躁正在不知不觉中退却。拿电子书市场来说吧，在国内盗版如此普及的情况下，为什么电子书市场（多看、唐茶等）还可以崛起？因为越来越多的人不满足于混乱的、有错别字的阅读体验，不满足于每次都要到处搜索、在一个四处都是广告的页面里下载的 TXT。最初的慌乱总是难免的，但是随着时间的推移，人们慢慢就倦了，累了，不再折腾，毕竟，谁也不愿一直生活在慌乱里。</p>
+
+<h2>然而，这并不是全部</h2>
+
+<h3>科技让人固执</h3>
+
+<p>因为拥有太多的选择，你只是选择着自己熟悉的内容，只认识认同你理解你的人，然后就变得固执和偏激。</p>
+
+<h3>但是你也可以做出改变</h3>
+
+<p>不知道从什么时候开始，计算机作为一个工具已经渗透到了各个行业，简直到了令人发指的程度。对于编辑、程序员、会计、老师、店小二、科研人员、学生来说，计算机甚至已经成为了必需的甚至唯一的工具。现在各种公司对于电脑的依赖太过头了，如果有天地球像『末世』里描述的，突然没电了，一切就都玩不转了。</p>
+
+<p>如果有人说他们代表先进的生产力，我想他肯定是个程序员。没有程序员，你怎么能知道此时此刻的韩国偶吧正在做出什么卖萌的表情；没有程序员，你怎么能在工位上、沙发上、地铁里当其他人都不存在似的看着书、玩着游戏，听着歌；没有程序员，靠什么控制机械的运行，造出精确的零件；没有程序员，我们大概还在痴痴地望着月亮，心里偷偷地迷恋着传说中的嫦娥。</p>
+
+<p>高考填报志愿的时候我对于什么是代码还一无所知，只记得当时对于 PPStream 这类复杂的程序是怎么造出来的感到很好奇。机缘巧合，因为分数原因被调剂到软件学院，才开始了作为程序员的职业生涯，一直到现在都还在学习相关的知识。关于这一切，我只能说自己是很幸运的，学会了在这个时代很重要的一项技能。</p>
+
+<p>你也应当学学编程，学会了写程序的你，除了可以更加自由地表达自己，还可以参与到这场宏大的变革中来，成为无数齿轮中的一个，用力地转动甚至搅动，加速历史的车轮。</p>
+
+<p>本来想说说科技进步给我们带的变革，结果写着写着才发现题目写太大了，写烟儿炮了。信也罢，不信也罢，绝知此事须躬行。总之，这是最最自由的时代，这是我们的时代，最好的时代。</p>
+
+<p>- EOF -</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[「鼠须管」导入搜狗 Bin 词库]]></title>
@@ -2726,172 +2776,6 @@ DYLD_LIBRARY_PATH=&quot;/Library/Input Methods/Squirrel.app/Contents/Frameworks&
 <h2>其他人的画：</h2>
 
 <p>更多使用Paper创作的精彩作品：<a href="http://madewithpaper.fiftythree.com/">#MadeWithPaper</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[天涯书城 生成 TXT]]></title>
-    <link href="http://blog.jeswang.org/blog/2012/04/12/tianya-book/"/>
-    <updated>2012-04-12T08:43:00+08:00</updated>
-    <id>http://blog.jeswang.org/blog/2012/04/12/tianya-book</id>
-    <content type="html"><![CDATA[<p class="info">
-视频地址：<br />
-<a href="http://www.56.com/u85/v_NjI1MzgzMzA.html">有一种大哥叫刘华强</a>
-</p>
-
-
-<h4>看完了视频觉得孙红雷真Man，这是什么电视剧？</h4>
-
-<p>征服。(<a href="http://baike.baidu.com/view/84818.htm#sub8097649">百度百科</a>)</p>
-
-<h4>没看过，这黑帮老大是不是有原型啊？</h4>
-
-<p>一搜，果真有，原型是刘华强。（<a href="http://baike.baidu.com/view/1615163.htm">百度百科</a>）</p>
-
-<h4>我记得我在天涯里看过一个8新中国各种犯罪分子的帖子来着，回头找找。</h4>
-
-<p>哎呀，天涯论坛居然打不开（联通无线），太坑爹了，刷新几次。</p>
-
-<p>仍然打不开，百度下天涯，从首页进吧。</p>
-
-<h4>一搜，看到了天涯在线书库。进去随便找了本书，翻了两页。</h4>
-
-<p>在线看太麻烦了，整个网站抓下来又比较大，而且怕是无法搜索。</p>
-
-<p>算了，抓到本地生成TXT在Kindle下看吧。</p>
-
-<p>打开Vim开始写。。。</p>
-
-<p>代码在<a href="https://gist.github.com/2356875">这里</a>：</p>
-
-<!-- more -->
-
-
-
-
-<figure class='code'><figcaption><span> (tianyabook.py)</span> <a href='http://blog.jeswang.org/downloads/code/tianyabook.py'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c">#!/usr/local/bin/python</span>
-</span><span class='line'><span class="c"># -*- coding: utf-8 -*-</span>
-</span><span class='line'>
-</span><span class='line'><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="o">*</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">codecs</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">urlToTxt</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">bookUrl</span> <span class="o">=</span> <span class="n">url</span>
-</span><span class='line'>    <span class="n">suffix</span> <span class="o">=</span> <span class="s">&quot;html&quot;</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">url</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s">&#39;htm&#39;</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;htm&#39;</span>
-</span><span class='line'>    <span class="n">source</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">bookUrl</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">rootSoup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">charpterNum</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">u&#39;[0-9]+(?:\.[0-9]*)?.&#39;</span><span class="o">+</span><span class="n">suffix</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">charpterNum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charpterNum</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">links</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;class&quot;</span> <span class="p">:</span> <span class="s">&quot;tt2&quot;</span> <span class="p">})</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">bookName</span> <span class="o">=</span> <span class="n">rootSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;书的名字是 &#39;</span> <span class="o">+</span> <span class="n">bookName</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;共有 &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">charpterNum</span><span class="p">)</span> <span class="o">+</span> <span class="s">u&#39; 章节&#39;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">bookName</span><span class="o">+</span><span class="s">u&quot;.txt&quot;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;http:/www.tianyabook.com&#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">continue</span>
-</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="o">+</span><span class="s">&#39;------------------------------------------&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="o">+</span><span class="n">i</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">getStrFromUrl</span><span class="p">(</span><span class="n">url</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span><span class="o">+</span><span class="n">i</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">]))</span>
-</span><span class='line'>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">getStrFromUrl</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">u&#39;正在获取&#39;</span> <span class="o">+</span> <span class="n">url</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s">u&#39;&#39;</span>
-</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">pageSoup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;GB18030&quot;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">text</span> <span class="o">=</span> <span class="n">pageSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s">&#39;586&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">continue</span>
-</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="c">#result += &#39;\n\r&#39; </span>
-</span><span class='line'>            <span class="k">continue</span>
-</span><span class='line'>        <span class="k">else</span> <span class="p">:</span>
-</span><span class='line'>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>            <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span>
-</span><span class='line'>            <span class="n">result</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">result</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span class='line'>    <span class="c">#urlToTxt(&quot;http://www.tianyabook.com/zw/shijieyinnibutong/index.html&quot;)</span>
-</span><span class='line'>    <span class="c">#getStrFromFile(&quot;32.html&quot;)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;输入书籍目录URL&#39;</span>
-</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">urlToTxt</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;生成完毕&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>完。</p>
 ]]></content>
   </entry>
   

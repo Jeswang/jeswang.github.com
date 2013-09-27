@@ -9,7 +9,7 @@
   <meta name="author" content="jeswang">
 
   
-  <meta name="description" content=" 「鼠须管」真是个好用的输入法。最大的优势就是反应很快，快到换用「搜狗输入法」就会有输入明显变卡的感觉。但是因为在搜狗的用户词库里有了一些自己输入过的词，所以每次想要换用「鼠须管」，总是使用时间不长就换回了搜狗。 没办法，只能自己想办法把用户词库加到「鼠须管」里了。 ">
+  <meta name="description" content="我不是郭敬明的粉丝，也没看过『小时代』系列小说。但是，偶然看到『小时代1.0』的结尾，觉得有句话说得对：『这是我们的时代。』应该再加上一句，这是最好的时代。 为什么现在是最好的时代？ ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/27/zhe-shi-zui-hao-de-shi-dai/">编码吧，在这个最好的时代</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T15:48:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/09/27/zhe-shi-zui-hao-de-shi-dai/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我不是郭敬明的粉丝，也没看过『小时代』系列小说。但是，偶然看到『小时代1.0』的结尾，觉得有句话说得对：『这是我们的时代。』应该再加上一句，这是最好的时代。</p>
+
+<h2>为什么现在是最好的时代？</h2>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/09/27/zhe-shi-zui-hao-de-shi-dai/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -709,312 +754,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/18/dou-ban-tu-shu-he-dian-ying-lie-biao/">豆瓣图书和电影列表</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-18T01:00:00+08:00" pubdate data-updated="true">Mar 18<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/18/dou-ban-tu-shu-he-dian-ying-lie-biao/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">
-一年以前写的抓取自己豆瓣电影和图书列表的脚本。
-</p>
-
-
-
-
-<figure class='code'><figcaption><span>[抓取代码] (getDoubanList.py)</span> <a href='/downloads/code/getDoubanList.py'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c">#!/usr/local/bin/python</span>
-</span><span class='line'><span class="c"># -*- coding: utf-8 -*-</span>
-</span><span class='line'><span class="c"># auther: jeswang</span>
-</span><span class='line'><span class="c"># finished time: 2012.2.4</span>
-</span><span class='line'>
-</span><span class='line'><span class="kn">import</span> <span class="nn">os</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">stat</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">urllib</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">datetime</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">threading</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">string</span>
-</span><span class='line'><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
-</span><span class='line'><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="o">*</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="n">BOOK_HEAD</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;---</span>
-</span><span class='line'><span class="s">layout: page</span>
-</span><span class='line'><span class="s">title: &quot;Book&quot;</span>
-</span><span class='line'><span class="s">comments: true</span>
-</span><span class='line'><span class="s">sharing: true</span>
-</span><span class='line'><span class="s">footer: false</span>
-</span><span class='line'><span class="s">---</span>
-</span><span class='line'>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">MOVIE_HEAD</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;---</span>
-</span><span class='line'><span class="s">layout: page</span>
-</span><span class='line'><span class="s">title: &quot;Moive&quot;</span>
-</span><span class='line'><span class="s">comments: true</span>
-</span><span class='line'><span class="s">sharing: true</span>
-</span><span class='line'><span class="s">footer: false</span>
-</span><span class='line'><span class="s">---</span>
-</span><span class='line'>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">list_kind</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">c</span><span class="o">=</span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span><span class="o">+</span><span class="n">list_kind</span><span class="o">+</span><span class="s">&#39;?sort=time&amp;start=0&amp;filter=all&amp;mode=grid&amp;tags_sort=count&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</span><span class='line'>    <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">totalNumber</span> <span class="o">=</span><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;span&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;class&quot;</span> <span class="p">:</span> <span class="s">&quot;subject-num&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">separator</span> <span class="o">=</span> <span class="s">&quot;/&quot;</span>
-</span><span class='line'><span class="c">#    print totalNumber</span>
-</span><span class='line'>    <span class="n">totalNumber</span> <span class="o">=</span> <span class="n">totalNumber</span><span class="p">[</span><span class="n">totalNumber</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span> <span class="o">+</span> <span class="mi">7</span><span class="p">:]</span>
-</span><span class='line'>    <span class="n">totalNumber</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">atoi</span><span class="p">(</span><span class="n">totalNumber</span><span class="p">)</span>
-</span><span class='line'><span class="c">#    print totalNumber</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">bookList</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;class&quot;</span> <span class="p">:</span> <span class="s">&quot;nbg&quot;</span><span class="p">})</span>
-</span><span class='line'><span class="c">#    print bookList</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">beginNumber</span> <span class="o">=</span> <span class="mi">15</span>
-</span><span class='line'>    <span class="k">while</span> <span class="n">totalNumber</span><span class="o">-</span><span class="mi">15</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span><span class="o">+</span><span class="n">list_kind</span><span class="o">+</span><span class="s">&#39;?sort=time&amp;start=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">beginNumber</span><span class="p">)</span><span class="o">+</span><span class="s">&#39;&amp;filter=all&amp;mode=grid&amp;tags_sort=count&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</span><span class='line'>        <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>        <span class="n">bookList</span> <span class="o">=</span> <span class="n">bookList</span> <span class="o">+</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;class&quot;</span> <span class="p">:</span> <span class="s">&quot;nbg&quot;</span><span class="p">})</span>
-</span><span class='line'>        <span class="n">totalNumber</span> <span class="o">=</span> <span class="n">totalNumber</span> <span class="o">-</span> <span class="mi">15</span>
-</span><span class='line'>        <span class="n">beginNumber</span> <span class="o">+=</span> <span class="mi">15</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">bookList</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">book_file</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="s">&#39;../octopress/source/book/index.markdown&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">BOOK_HEAD</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;获取正在读的书籍列表&quot;</span>
-</span><span class='line'>    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&#39;http://book.douban.com/people/dowang/&#39;</span>
-</span><span class='line'>    <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&#39;&#39;## 在读的书</span>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s">&#39;do&#39;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;spic&#39;</span><span class="p">,</span><span class="s">&#39;mpic&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;读过的书籍列表&quot;</span>
-</span><span class='line'>    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&#39;http://book.douban.com/people/dowang/&#39;</span>
-</span><span class='line'>    <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span>
-</span><span class='line'><span class="s">## 读过的书</span>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s">&#39;collect&#39;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;spic&#39;</span><span class="p">,</span><span class="s">&#39;mpic&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;想要的书籍列表&quot;</span>
-</span><span class='line'>    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&#39;http://book.douban.com/people/dowang/&#39;</span>
-</span><span class='line'>    <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span>
-</span><span class='line'><span class="s">## 想要读的书</span>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s">&#39;wish&#39;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">book_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;spic&#39;</span><span class="p">,</span><span class="s">&#39;mpic&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">movie_file</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="s">&#39;../octopress/source/movie/index.markdown&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">MOVIE_HEAD</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;获取正在看的电影列表&quot;</span>
-</span><span class='line'>    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&#39;http://movie.douban.com/people/dowang/&#39;</span>
-</span><span class='line'>    <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&#39;&#39;## 在看的电影</span>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s">&#39;do&#39;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;spic&#39;</span><span class="p">,</span><span class="s">&#39;mpic&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;看过的电影列表&quot;</span>
-</span><span class='line'>    <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span>
-</span><span class='line'><span class="s">## 看过的电影</span>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s">&#39;collect&#39;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;spic&#39;</span><span class="p">,</span><span class="s">&#39;mpic&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;想要的电影列表&quot;</span>
-</span><span class='line'>    <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span>
-</span><span class='line'><span class="s">## 想要看的电影</span>
-</span><span class='line'><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">getList</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s">&#39;wish&#39;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">movie_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;spic&#39;</span><span class="p">,</span><span class="s">&#39;mpic&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;Finish!&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>使用方法：</h2>
-
-<ul>
-<li>要把文件保存在和Octopress同级的另一个目录下</li>
-</ul>
-
-
-<p><img src="/images/getdouban.png" alt="image-1" /></p>
-
-<ul>
-<li>修改代码中的dowang为你的豆瓣名字。</li>
-<li>给Octopress加上两个链接，方便访问。</li>
-</ul>
-
-
-<p>定期运行一下,就可以让Octopress有你自己的豆瓣列表了。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1037,13 +776,17 @@
   <h1>Categories</h1>
   
       
-            <ul id='Categories'><li class='category'><a class='category' href='/blog/categories/bash-script/'>Bash_Script</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/octopress/'>Octopress</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/python/'>Python</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ruby/'>Ruby</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ios开发/'>iOS开发</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/信息来源/'>信息来源</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/工具控/'>工具控</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/生活记录/'>生活记录</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/译文/'>译文</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/阅读/'>阅读</a></li></ul>      
+            <ul id='Categories'><li class='category'><a class='category' href='/blog/categories/bash-script/'>Bash_Script</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/mac使用经验/'>Mac使用经验</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/octopress/'>Octopress</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/python/'>Python</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ruby/'>Ruby</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/ios开发/'>iOS开发</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/信息来源/'>信息来源</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/工具控/'>工具控</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/生活记录/'>生活记录</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/译文/'>译文</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/阅读/'>阅读</a></li></ul><ul id='Categories'><li class='category'><a class='category' href='/blog/categories/随笔/'>随笔</a></li></ul>      
       
   
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/27/zhe-shi-zui-hao-de-shi-dai/">编码吧，在这个最好的时代</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/04/shu-xu-guan-dao-ru-sou-gou-bin-ci-ku/">「鼠须管」导入搜狗 Bin 词库</a>
@@ -1059,10 +802,6 @@
     
       <li class="post">
         <a href="/blog/2013/08/12/os-x-10-dot-9-mavericks-xia-an-zhuang-rbenv/">OS X 10.9 Mavericks 下使用 rbenv</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/">PPI vs. DPI: 有什么区别?</a>
       </li>
     
   </ul>
